@@ -4,14 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: "#0b1220",
-        graphite: "#1d232d",
-        "warm-white": "#f8f3ea",
-        bone: "#efe6d8",
-        gold: "#80591e",
-        "gold-fill": "#c79a47",
-        "gold-soft": "#dfc083",
-        mist: "#aeb8c2"
+        ink: "#07111f",
+        night: "#0b1727",
+        graphite: "#20242b",
+        "warm-white": "#f8f1e7",
+        bone: "#eee2d2",
+        vellum: "#fbf7ef",
+        gold: "#8b6329",
+        "gold-fill": "#c29343",
+        "gold-soft": "#dfbf7b",
+        copper: "#a8663e",
+        sage: "#9aa88f",
+        mist: "#b8c0c5"
       },
       fontFamily: {
         serif: ["Georgia", "Cambria", "Times New Roman", "serif"],

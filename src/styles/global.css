@@ -4,8 +4,8 @@
 
 :root {
   color-scheme: light;
-  --page-bg: #f8f3ea;
-  --ink: #0b1220;
+  --page-bg: #f8f1e7;
+  --ink: #07111f;
 }
 
 html {
@@ -16,7 +16,9 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: var(--page-bg);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(194, 147, 67, 0.12), transparent 30rem),
+    linear-gradient(180deg, #fbf7ef 0%, var(--page-bg) 42%, #eee2d2 100%);
   color: var(--ink);
   font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
   text-rendering: optimizeLegibility;
@@ -63,7 +65,7 @@ summary:focus-visible {
 
 .container-page {
   width: calc(100% - 2rem);
-  max-width: 1120px;
+  max-width: 1180px;
   margin-inline: auto;
 }
 
@@ -71,6 +73,42 @@ summary:focus-visible {
   width: 56px;
   height: 2px;
   background: #80591e;
+}
+
+.soft-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(194, 147, 67, 0.65), transparent);
+}
+
+.threshold-panel {
+  background:
+    linear-gradient(145deg, rgba(248, 241, 231, 0.08), rgba(248, 241, 231, 0.015)),
+    rgba(7, 17, 31, 0.76);
+  border: 1px solid rgba(223, 191, 123, 0.38);
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(12px);
+}
+
+.contact-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(223, 191, 123, 0.14), transparent 70%);
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.contact-link:hover::before {
+  opacity: 1;
+}
+
+.text-balance {
+  text-wrap: balance;
 }
 
 .prose-site p {

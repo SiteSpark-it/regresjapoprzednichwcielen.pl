@@ -27,29 +27,32 @@ const sessionSteps = [
 <BaseLayout title={title} description={description} schema={[serviceSchema, faqSchema]}>
   <main>
     <Hero
-      title="Regresja poprzednich wcieleń — sesja PLR z historią duszy"
+      title="Regresja poprzednich wcieleń — podróż do historii duszy"
       subtitle="Spokojna sesja regresji duchowej dla osób, które chcą przyjrzeć się obrazom, emocjom, snom, relacjom i wzorcom kojarzonym z poprzednim życiem — bez presji jednej interpretacji."
     />
 
-    <section class="bg-warm-white py-16" aria-labelledby="najwazniejsze-tematy">
+    <section class="bg-vellum py-16" aria-labelledby="najwazniejsze-tematy">
       <div class="container-page">
-        <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+        <div class="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
           <div>
             <h2 id="najwazniejsze-tematy" class="font-serif text-4xl leading-tight md:text-5xl">Najważniejsze tematy</h2>
             <div class="gold-rule mt-5"></div>
             <p class="mt-5 text-base leading-8 text-graphite/76">
-              Jeśli jesteś tu pierwszy raz, możesz zacząć od tych stron. Pomogą Ci spokojnie rozróżnić PLR, sesję poprzedniego życia, regresję między wcieleniami i autorską metodę Brama Dusz LBL™.
+              Jeśli jesteś tu pierwszy raz, potraktuj tę listę jak spokojną ścieżkę. Najpierw zrozum, czym jest PLR, potem zobacz przebieg sesji, a dopiero później zdecyduj, czy chcesz napisać lub umówić rozmowę.
             </p>
           </div>
-          <div class="grid gap-3 sm:grid-cols-2">
+          <ol class="grid gap-3 sm:grid-cols-2">
             {
-              prioritySitelinks.map((item) => (
-                <a class="border border-ink/10 bg-white/60 p-5 text-sm font-semibold text-ink transition hover:border-gold hover:text-gold" href={item.href}>
-                  {item.title}
-                </a>
+              prioritySitelinks.map((item, index) => (
+                <li>
+                  <a class="group grid min-h-full grid-cols-[3rem_1fr] gap-4 border border-ink/10 bg-white/72 p-4 transition hover:border-gold hover:bg-white" href={item.href}>
+                    <span class="font-serif text-2xl text-gold">{String(index + 1).padStart(2, "0")}</span>
+                    <span class="pt-1 text-sm font-semibold leading-6 text-ink group-hover:text-gold">{item.title}</span>
+                  </a>
+                </li>
               ))
             }
-          </div>
+          </ol>
         </div>
       </div>
     </section>
@@ -80,47 +83,60 @@ const sessionSteps = [
       </div>
     </section>
 
-    <section class="bg-ink py-20 text-warm-white" aria-labelledby="krotkie-odpowiedzi">
+    <section class="relative overflow-hidden bg-ink py-20 text-warm-white" aria-labelledby="krotkie-odpowiedzi">
+      <div class="absolute inset-y-0 left-1/2 hidden w-px bg-gold-soft/18 lg:block"></div>
       <div class="container-page">
-        <div class="max-w-3xl">
-          <h2 id="krotkie-odpowiedzi" class="font-serif text-4xl leading-tight md:text-5xl">Krótkie odpowiedzi na częste pytania</h2>
-          <div class="gold-rule mt-5"></div>
-          <p class="mt-5 text-base leading-8 text-warm-white/72">
-            Te odpowiedzi są krótkie celowo: pomagają szybko zrozumieć podstawy, zanim wejdziesz w dłuższe opisy sesji.
-          </p>
-        </div>
-        <div class="mt-12 grid gap-5 md:grid-cols-2">
+        <div class="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+          <div class="lg:sticky lg:top-8">
+            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold-soft">krótkie odpowiedzi</p>
+            <h2 id="krotkie-odpowiedzi" class="mt-4 font-serif text-4xl leading-tight md:text-5xl">Zanim wejdziesz głębiej</h2>
+            <div class="gold-rule mt-5"></div>
+            <p class="mt-5 text-base leading-8 text-warm-white/72">
+              Te odpowiedzi są krótkie celowo. Mają dać orientację bez patosu i bez wymuszania wiary w jeden sposób rozumienia doświadczenia.
+            </p>
+          </div>
+          <div class="grid gap-4">
           {
             snippetAnswers.map((item) => (
-              <article class="border border-white/10 bg-white/[0.04] p-6">
+              <article class="border-l border-gold-soft/40 bg-white/[0.045] p-6">
                 <h3 class="font-serif text-2xl leading-tight text-gold-soft">{item.question}</h3>
                 <p class="mt-4 text-sm leading-7 text-warm-white/76">{item.answer}</p>
               </article>
             ))
           }
+          </div>
         </div>
       </div>
     </section>
 
     <section class="bg-warm-white py-20" id="sesja">
       <div class="container-page">
-        <div class="mx-auto max-w-3xl text-center">
-          <h2 class="font-serif text-4xl leading-tight md:text-5xl">Jak wygląda sesja PLR?</h2>
-          <div class="gold-rule mx-auto mt-5"></div>
-          <p class="mt-5 text-base leading-8 text-graphite/75">
-            Sesja ma prostą strukturę, ale nie jest mechanicznym scenariuszem. Prowadzenie dostosowuje się do osoby, tempa i tego, co pojawia się w doświadczeniu.
-          </p>
+        <div class="grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">przebieg pracy</p>
+            <h2 class="mt-4 font-serif text-4xl leading-tight md:text-5xl">Jak wygląda sesja PLR?</h2>
+            <div class="gold-rule mt-5"></div>
+            <p class="mt-5 text-base leading-8 text-graphite/75">
+              Sesja ma prostą strukturę, ale nie jest mechanicznym scenariuszem. Prowadzenie dostosowuje się do osoby, tempa i tego, co pojawia się w doświadczeniu.
+            </p>
+            <div class="mt-8 border border-gold/24 bg-bone/75 p-6">
+              <h3 class="font-serif text-2xl leading-tight text-ink">Najpierw bezpieczeństwo, potem eksploracja.</h3>
+              <p class="mt-4 text-sm leading-7 text-graphite/76">
+                Dobra sesja nie polega na poganianiu obrazów. Ważniejsze jest spokojne prowadzenie, kontakt z ciałem, możliwość zatrzymania i późniejsza integracja znaczeń.
+              </p>
+            </div>
+          </div>
+          <ol class="grid gap-0 border-y border-ink/10">
+            {
+              sessionSteps.map((step, index) => (
+                <li class="grid gap-5 border-b border-ink/10 py-6 last:border-b-0 sm:grid-cols-[5rem_1fr]">
+                  <span class="font-serif text-4xl text-gold">{String(index + 1).padStart(2, "0")}</span>
+                  <p class="text-base leading-8 text-graphite/78">{step}</p>
+                </li>
+              ))
+            }
+          </ol>
         </div>
-        <ol class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {
-            sessionSteps.map((step, index) => (
-              <li class="border-t border-gold/60 bg-white/55 p-6">
-                <span class="font-serif text-4xl text-gold">{String(index + 1).padStart(2, "0")}</span>
-                <p class="mt-4 text-sm leading-7 text-graphite/78">{step}</p>
-              </li>
-            ))
-          }
-        </ol>
       </div>
     </section>
 
@@ -140,6 +156,49 @@ const sessionSteps = [
           <ServiceCard title="Sny i symbole" icon="dream" text="Miejsca, postacie, epoki lub obrazy, które powracają w snach, medytacji albo intuicyjnych skojarzeniach." />
           <ServiceCard title="Poczucie misji" icon="compass" text="Pytania o kierunek, talenty, sens doświadczeń i spokojne rozpoznanie tego, co naprawdę woła o uwagę." />
           <ServiceCard title="Historia duszy" icon="path" text="Szukanie szerszego kontekstu dla tego, kim jesteś, czego się uczysz i co chcesz w sobie lepiej zrozumieć." />
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-vellum py-20" aria-labelledby="dalej">
+      <div class="container-page">
+        <div class="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">jak przejść dalej</p>
+            <h2 id="dalej" class="mt-4 font-serif text-4xl leading-tight md:text-5xl">Od ciekawości do rozmowy</h2>
+            <div class="gold-rule mt-5"></div>
+            <p class="mt-5 text-base leading-8 text-graphite/76">
+              Ta strona nie ma popychać do decyzji. Ma pomóc nazwać temat i zobaczyć, czy rozmowa o sesji ma sens. Jeśli coś w opisie jest bliskie Twojemu doświadczeniu, możesz napisać krótko i zwyczajnie.
+            </p>
+          </div>
+          <div class="grid gap-4 md:grid-cols-3">
+            <article class="border-t border-gold/55 bg-white/72 p-6">
+              <span class="font-serif text-4xl text-gold">01</span>
+              <h3 class="mt-5 font-serif text-2xl leading-tight">Przeczytaj</h3>
+              <p class="mt-3 text-sm leading-7 text-graphite/76">Zacznij od opisu PLR i przebiegu sesji. Nie musisz od razu wybierać metody.</p>
+            </article>
+            <article class="border-t border-gold/55 bg-white/72 p-6">
+              <span class="font-serif text-4xl text-gold">02</span>
+              <h3 class="mt-5 font-serif text-2xl leading-tight">Nazwij temat</h3>
+              <p class="mt-3 text-sm leading-7 text-graphite/76">Relacja, sen, emocja, symbol, pytanie o sens albo powracający wzorzec wystarczą jako punkt wyjścia.</p>
+            </article>
+            <article class="border-t border-gold/55 bg-white/72 p-6">
+              <span class="font-serif text-4xl text-gold">03</span>
+              <h3 class="mt-5 font-serif text-2xl leading-tight">Napisz</h3>
+              <p class="mt-3 text-sm leading-7 text-graphite/76">Wyślij wiadomość, zadzwoń albo sprawdź terminy w Instytucie Regresji, gdy poczujesz spokojną gotowość.</p>
+            </article>
+          </div>
+        </div>
+        <div class="mt-10 flex flex-col gap-3 sm:flex-row">
+          <a class="inline-flex justify-center bg-gold-fill px-7 py-4 text-sm font-bold text-ink transition hover:bg-gold-soft" href={siteData.cta.url} rel="noopener noreferrer">
+            Sprawdź terminy sesji
+          </a>
+          <a class="inline-flex justify-center border border-ink/18 px-7 py-4 text-sm font-bold text-ink transition hover:border-gold hover:text-gold" href={siteData.contact.whatsapp} rel="noopener noreferrer">
+            Napisz na WhatsApp
+          </a>
+          <a class="inline-flex justify-center border border-ink/18 px-7 py-4 text-sm font-bold text-ink transition hover:border-gold hover:text-gold" href={siteData.contact.emailHref}>
+            Wyślij email
+          </a>
         </div>
       </div>
     </section>
@@ -166,13 +225,15 @@ const sessionSteps = [
     </section>
 
     <section class="bg-warm-white py-20">
-      <div class="container-page grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-        <div class="border border-ink/10 bg-white/70 p-8 shadow-soft">
-          <p class="font-serif text-3xl leading-tight text-ink">„To nie jest praca, w której ktoś narzuca znaczenia. Największą wartością jest spokojne prowadzenie, uważność i przestrzeń na własne doświadczenie.”</p>
+      <div class="container-page grid gap-12 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+        <div class="relative border-l border-gold/50 bg-white/72 p-8 shadow-[0_18px_55px_rgba(7,17,31,0.08)]">
+          <span class="absolute -left-px top-8 h-20 w-px bg-gold-fill"></span>
+          <p class="font-serif text-3xl leading-tight text-ink">„Największą wartością nie była obietnica niezwykłego efektu, tylko spokojne prowadzenie, granice i przestrzeń na własne znaczenie doświadczenia.”</p>
           <p class="mt-6 text-sm leading-7 text-graphite/70">perspektywa osoby korzystającej z sesji</p>
         </div>
         <div>
-          <h2 class="font-serif text-4xl leading-tight md:text-5xl">Maciej Maślanka i Instytut Regresji</h2>
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">rekomendowany prowadzący</p>
+          <h2 class="mt-4 font-serif text-4xl leading-tight md:text-5xl">Maciej Maślanka i Instytut Regresji</h2>
           <div class="gold-rule mt-5"></div>
           <div class="mt-7 space-y-5 text-base leading-8 text-graphite/78">
             <p>

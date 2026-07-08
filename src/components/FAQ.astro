@@ -13,14 +13,16 @@ const { items } = Astro.props;
 
 <section class="bg-warm-white py-20" id="faq">
   <div class="container-page">
-    <div class="mx-auto max-w-3xl text-center">
-      <h2 class="font-serif text-4xl leading-tight md:text-5xl">FAQ</h2>
-      <div class="gold-rule mx-auto mt-5"></div>
-      <p class="mt-5 text-base leading-8 text-graphite/72">
+    <div class="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+      <div class="lg:sticky lg:top-8">
+        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">pytania przed decyzją</p>
+        <h2 class="mt-4 font-serif text-4xl leading-tight md:text-5xl">FAQ</h2>
+        <div class="gold-rule mt-5"></div>
+        <p class="mt-5 text-base leading-8 text-graphite/72">
         Odpowiedzi na najczęstsze pytania dotyczące regresji poprzednich wcieleń, przygotowania i przebiegu sesji.
-      </p>
-    </div>
-    <div class="mx-auto mt-12 max-w-4xl divide-y divide-ink/10 border-y border-ink/10">
+        </p>
+      </div>
+    <div class="divide-y divide-ink/10 border-y border-ink/10">
       {
         items.map((item) => (
           <details class="group py-6">
@@ -32,6 +34,7 @@ const { items } = Astro.props;
           </details>
         ))
       }
+    </div>
     </div>
   </div>
 </section>

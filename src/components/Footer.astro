@@ -2,11 +2,11 @@
 import { navigation, siteData } from "@/content/siteData";
 ---
 
-<footer class="bg-ink text-warm-white">
+<footer class="border-t border-gold-soft/18 bg-ink text-warm-white">
   <div class="container-page grid gap-10 py-12 md:grid-cols-[1.1fr_1fr_1.4fr]">
     <div>
       <a href="/" class="flex items-center gap-3">
-        <span class="grid h-11 w-11 place-items-center rounded border border-gold-fill/70 text-gold-soft" aria-hidden="true">
+        <span class="grid h-11 w-11 place-items-center border border-gold-fill/70 text-gold-soft" aria-hidden="true">
           <svg viewBox="0 0 32 32" class="h-7 w-7" fill="none">
             <path d="M8 27V13a8 8 0 0 1 16 0v14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
             <path d="M12 27V14a4 4 0 0 1 8 0v13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
@@ -43,7 +43,10 @@ import { navigation, siteData } from "@/content/siteData";
       </div>
       <div class="mt-5 flex flex-wrap gap-3">
         <a class="border border-gold-fill bg-gold-fill px-5 py-3 text-sm font-semibold text-ink" href={siteData.cta.url} rel="noopener noreferrer">
-          {siteData.cta.label}
+          Umów rozmowę
+        </a>
+        <a class="border border-white/20 px-5 py-3 text-sm font-semibold text-warm-white" href={siteData.contact.emailHref}>
+          Email
         </a>
         <a class="border border-white/20 px-5 py-3 text-sm font-semibold text-warm-white" href={siteData.links.personal} rel="noopener noreferrer">
           MaciejRegresja.pl
