@@ -11,8 +11,11 @@ export const siteData = {
     url: "https://instytutregresji.pl"
   },
   contact: {
-    phone: "Aktualny kontakt przez Instytut Regresji",
-    email: "Formularz zapisów na instytutregresji.pl"
+    phone: "+48 455 448 119",
+    phoneHref: "tel:+48455448119",
+    whatsapp: "https://wa.me/48455448119",
+    email: "info@instytutregresji.pl",
+    emailHref: "mailto:info@instytutregresji.pl"
   },
   links: {
     home: "/",

@@ -45,12 +45,22 @@ const pageFaq = pageFaqs.contact;
           </div>
           <div class="mt-10 grid gap-4 text-sm text-graphite/76 sm:grid-cols-2">
             <div class="border border-ink/10 bg-white/65 p-5">
-              <p class="font-semibold text-ink">Kontakt</p>
-              <p class="mt-2">{siteData.contact.phone}</p>
+              <p class="font-semibold text-ink">Telefon i WhatsApp</p>
+              <p class="mt-2">
+                <a class="text-gold underline underline-offset-4" href={siteData.contact.phoneHref}>{siteData.contact.phone}</a>
+              </p>
+              <p class="mt-2">
+                <a class="text-gold underline underline-offset-4" href={siteData.contact.whatsapp} rel="noopener noreferrer">Napisz na WhatsApp</a>
+              </p>
             </div>
             <div class="border border-ink/10 bg-white/65 p-5">
-              <p class="font-semibold text-ink">Zapisy</p>
-              <p class="mt-2">{siteData.contact.email}</p>
+              <p class="font-semibold text-ink">Email</p>
+              <p class="mt-2">
+                <a class="text-gold underline underline-offset-4" href={siteData.contact.emailHref}>{siteData.contact.email}</a>
+              </p>
+              <p class="mt-2">
+                <a class="text-gold underline underline-offset-4" href={siteData.links.booking} rel="noopener noreferrer">instytutregresji.pl</a>
+              </p>
             </div>
           </div>
         </div>

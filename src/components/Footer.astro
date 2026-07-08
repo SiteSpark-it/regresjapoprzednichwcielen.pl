@@ -31,6 +31,16 @@ import { navigation, siteData } from "@/content/siteData";
       <p class="mt-5 text-sm leading-7 text-warm-white/72">
         Zapisy i informacje organizacyjne prowadzi Instytut Regresji. Sesje mają charakter rozwojowy i duchowy; decyzję o udziale warto podjąć spokojnie, po zapoznaniu się z opisem pracy.
       </p>
+      <div class="mt-5 space-y-2 text-sm text-warm-white/72">
+        <p>
+          Telefon i WhatsApp:
+          <a class="text-gold-soft underline underline-offset-4" href={siteData.contact.phoneHref}>{siteData.contact.phone}</a>
+        </p>
+        <p>
+          Email:
+          <a class="text-gold-soft underline underline-offset-4" href={siteData.contact.emailHref}>{siteData.contact.email}</a>
+        </p>
+      </div>
       <div class="mt-5 flex flex-wrap gap-3">
         <a class="border border-gold-fill bg-gold-fill px-5 py-3 text-sm font-semibold text-ink" href={siteData.cta.url} rel="noopener noreferrer">
           {siteData.cta.label}

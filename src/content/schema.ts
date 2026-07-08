@@ -16,6 +16,8 @@ export const organizationSchema = {
   "@type": "Organization",
   name: siteData.organization,
   url: siteData.links.booking,
+  telephone: siteData.contact.phone,
+  email: siteData.contact.email,
   sameAs: [siteData.links.personal]
 };
 
@@ -59,6 +61,12 @@ export const serviceSchema = {
     {
       "@type": "ServiceChannel",
       serviceUrl: siteData.links.booking,
+      servicePhone: {
+        "@type": "ContactPoint",
+        telephone: siteData.contact.phone,
+        contactType: "customer service",
+        availableLanguage: "pl"
+      },
       serviceLocation: {
         "@type": "VirtualLocation",
         url: siteData.links.booking
