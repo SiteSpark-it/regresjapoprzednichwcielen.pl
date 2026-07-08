@@ -1,0 +1,89 @@
+---
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import CTASection from "@/components/CTASection.astro";
+import DisclaimerBox from "@/components/DisclaimerBox.astro";
+import FAQ from "@/components/FAQ.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { articleSchema, createFaqSchema, serviceSchema } from "@/content/schema";
+import { pageFaqs } from "@/content/pageFaqs";
+import { siteData } from "@/content/siteData";
+
+const title = "Regresja do poprzedniego życia — przebieg sesji PLR";
+const description =
+  "Jak wygląda regresja do poprzedniego życia: przygotowanie, relaks, obrazy, emocje i integracja po sesji PLR online lub stacjonarnie.";
+const breadcrumbs = [{ label: "Regresja do poprzedniego życia" }];
+const phases = [
+  ["Intencja", "Rozmawiamy o temacie, z którym przychodzisz: relacji, śnie, emocji, powtarzającym się wzorcu albo pytaniu o kierunek."],
+  ["Relaks", "Przechodzisz w spokojny stan skupienia. Nie chodzi o utratę kontroli, tylko o wyciszenie i uważność."],
+  ["Historia", "Prowadzenie pomaga zauważać obrazy, emocje, symbole i sceny bez wymuszania konkretnego przebiegu."],
+  ["Integracja", "Na końcu wracasz do pełnej orientacji i omawiamy, co z doświadczenia warto zapamiętać i zapisać."]
+];
+const pageFaq = pageFaqs.session;
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, articleSchema({ title, description, url: `${siteData.url}/regresja-do-poprzedniego-zycia/` }), createFaqSchema(pageFaq)]}>
+  <main>
+    <section class="bg-ink pb-20 text-warm-white">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="container-page pt-14">
+        <h1 class="max-w-4xl font-serif text-4xl leading-tight md:text-6xl">Regresja do poprzedniego życia — jak wygląda sesja?</h1>
+        <p class="mt-7 max-w-3xl text-lg leading-8 text-warm-white/75">
+          Sesja PLR nie jest pokazem niezwykłych historii. To spokojna praca z tym, co pojawia się w relaksie: obrazem, emocją, symbolem albo poczuciem znaczenia.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-warm-white py-20">
+      <div class="container-page grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
+        <div>
+          <h2 class="font-serif text-4xl leading-tight">Przebieg pracy</h2>
+          <div class="gold-rule mt-5"></div>
+          <p class="mt-5 text-base leading-8 text-graphite/76">
+            Struktura pomaga utrzymać bezpieczeństwo i kierunek, ale nie zamyka doświadczenia w sztywnym scenariuszu.
+          </p>
+        </div>
+        <div class="grid gap-5 md:grid-cols-2">
+          {
+            phases.map(([phaseTitle, text], index) => (
+              <article class="border border-ink/10 bg-white/65 p-6">
+                <span class="font-serif text-4xl text-gold">{index + 1}</span>
+                <h2 class="mt-4 font-serif text-2xl">{phaseTitle}</h2>
+                <p class="mt-3 text-sm leading-7 text-graphite/75">{text}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-bone py-20">
+      <div class="container-page grid gap-12 lg:grid-cols-2">
+        <article class="prose-site text-base leading-8 text-graphite/80">
+          <h2 class="text-4xl">Jak przygotować się do sesji?</h2>
+          <p>
+            Wybierz dzień, w którym nie musisz od razu wracać do intensywnych obowiązków. Przy sesji online przygotuj spokojne miejsce, słuchawki, wodę i stabilne połączenie. Dobrze jest mieć też notatnik na pierwsze wrażenia po zakończeniu.
+          </p>
+          <p>
+            Pomaga prosta intencja. Nie musi być idealna. Może brzmieć: „chcę lepiej zrozumieć tę relację”, „chcę zobaczyć źródło tego wzorca” albo „chcę spokojnie przyjrzeć się temu snowi”.
+          </p>
+          <h2 class="text-4xl">Co po sesji?</h2>
+          <p>
+            Po regresji warto dać sobie czas. Niektóre obrazy układają się od razu, inne potrzebują kilku dni. Integracja polega na spokojnym zapisaniu doświadczenia, zauważeniu emocji i sprawdzeniu, co naprawdę jest przydatne w obecnym życiu.
+          </p>
+        </article>
+        <div class="space-y-6">
+          <DisclaimerBox />
+          <div class="border border-gold/30 bg-ink p-8 text-warm-white">
+            <h2 class="font-serif text-3xl leading-tight">Sesja online i stacjonarnie</h2>
+            <p class="mt-5 text-sm leading-7 text-warm-white/72">
+              Zapisy prowadzi Instytut Regresji. Sesje mogą odbywać się online; forma stacjonarna zależy od dostępnych terminów i ustaleń organizacyjnych.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <FAQ items={pageFaq} />
+    <CTASection title="Umów sesję PLR bez pośpiechu" text="Jeśli opis procesu jest dla Ciebie zrozumiały i czujesz gotowość, sprawdź terminy w Instytucie Regresji." />
+  </main>
+</BaseLayout>

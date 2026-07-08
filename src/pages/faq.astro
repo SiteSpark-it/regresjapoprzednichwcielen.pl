@@ -1,0 +1,29 @@
+---
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import CTASection from "@/components/CTASection.astro";
+import FAQ from "@/components/FAQ.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { faqItems } from "@/content/faqItems";
+import { faqSchema, serviceSchema } from "@/content/schema";
+
+const title = "FAQ — regresja poprzednich wcieleń, PLR i Brama Dusz LBL™";
+const description =
+  "Najczęstsze pytania o regresję poprzednich wcieleń, sesję PLR, Brama Dusz LBL™, przygotowanie, sesję online i bezpieczeństwo pracy.";
+const breadcrumbs = [{ label: "FAQ" }];
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, faqSchema]}>
+  <main>
+    <section class="bg-ink pb-16 text-warm-white">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="container-page pt-14">
+        <h1 class="max-w-4xl font-serif text-4xl leading-tight md:text-6xl">FAQ o regresji poprzednich wcieleń</h1>
+        <p class="mt-7 max-w-3xl text-lg leading-8 text-warm-white/75">
+          Pytania, które realnie pojawiają się przed pierwszą sesją: o wiarę, obrazy, lęk, sesję online, terapię i rozróżnienie względem oficjalnego LBL.
+        </p>
+      </div>
+    </section>
+    <FAQ items={faqItems} />
+    <CTASection title="Masz pytanie przed sesją?" text="Przejdź do Instytutu Regresji i sprawdź aktualną formę kontaktu. Decyzję o sesji możesz podjąć spokojnie, bez presji." />
+  </main>
+</BaseLayout>

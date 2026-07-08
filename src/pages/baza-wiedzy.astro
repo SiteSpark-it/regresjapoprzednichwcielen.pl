@@ -1,0 +1,75 @@
+---
+import ArticleCard from "@/components/ArticleCard.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import CTASection from "@/components/CTASection.astro";
+import FAQ from "@/components/FAQ.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { knowledgeArticles } from "@/content/articles";
+import { articleSchema, createFaqSchema, serviceSchema } from "@/content/schema";
+import { pageFaqs } from "@/content/pageFaqs";
+import { siteData } from "@/content/siteData";
+
+const title = "Baza wiedzy o regresji poprzednich wcieleń i PLR";
+const description =
+  "Baza wiedzy o regresji poprzednich wcieleń, PLR, regresji między wcieleniami, Brama Dusz LBL™ i przygotowaniu do sesji.";
+const breadcrumbs = [{ label: "Baza wiedzy" }];
+const topics = [
+  ["Czym jest regresja poprzednich wcieleń?", "Podstawy PLR, podejście duchowe i symboliczne oraz granice odpowiedzialnego języka.", "/czym-jest-regresja-poprzednich-wcielen/"],
+  ["Regresja do poprzedniego życia", "Jak wygląda przebieg sesji, jak przygotować się do pracy i co zrobić po spotkaniu.", "/regresja-do-poprzedniego-zycia/"],
+  ["Past life regression po polsku", "Tłumaczenie pojęcia PLR i spokojne wyjaśnienie, czym różni się od LBL.", "/past-life-regression-po-polsku/"],
+  ["Brama Dusz LBL™", "Autorska metoda, jej inspiracje, granice i odpowiedzialne rozróżnienie względem MNI.", "/brama-dusz-lbl/"],
+  ["Regresja między wcieleniami", "Czym jest praca z przestrzenią między wcieleniami i kiedy warto zacząć od PLR.", "/regresja-miedzy-wcieleniami/"],
+  ["Maciej Maślanka", "Opis prowadzącego, sposobu pracy, kwalifikacji i zapisu na sesję.", "/o-macieju/"],
+  ["FAQ", "Najczęstsze pytania przed pierwszą sesją regresji poprzednich wcieleń.", "/faq/"]
+];
+const pageFaq = pageFaqs.knowledge;
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, articleSchema({ title, description, url: `${siteData.url}/baza-wiedzy/` }), createFaqSchema(pageFaq)]}>
+  <main>
+    <section class="bg-ink pb-20 text-warm-white">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="container-page pt-14">
+        <h1 class="max-w-4xl font-serif text-4xl leading-tight md:text-6xl">Baza wiedzy o regresji poprzednich wcieleń</h1>
+        <p class="mt-7 max-w-3xl text-lg leading-8 text-warm-white/75">
+          Zebrane w jednym miejscu teksty dla osób, które chcą zrozumieć PLR, regresję między wcieleniami i metodę Brama Dusz LBL™ bez sztucznego języka.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-warm-white py-20">
+      <div class="container-page grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
+        <div>
+          <h2 class="font-serif text-4xl leading-tight">Od czego zacząć?</h2>
+          <div class="gold-rule mt-5"></div>
+          <p class="mt-5 text-base leading-8 text-graphite/76">
+            Jeśli nie znasz tematu, zacznij od podstaw PLR i opisu sesji. Jeśli interesuje Cię głębsza praca duchowa, przejdź później do Bramy Dusz LBL™ i regresji między wcieleniami.
+          </p>
+        </div>
+        <div>
+          {topics.map(([topicTitle, text, href]) => <ArticleCard title={topicTitle} text={text} href={href} />)}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-bone py-20">
+      <div class="container-page">
+        <h2 class="font-serif text-4xl leading-tight md:text-5xl">Artykuły pogłębiające temat</h2>
+        <div class="gold-rule mt-5"></div>
+        <p class="mt-5 max-w-3xl text-base leading-8 text-graphite/76">
+          Te teksty rozwijają pytania, które często pojawiają się przed pierwszą sesją: sceptycyzm, sny, relacje, symbole, sesja online i integracja po doświadczeniu.
+        </p>
+        <div class="mt-8">
+          {
+            knowledgeArticles.map((article) => (
+              <ArticleCard title={article.title} text={article.excerpt} href={`/baza-wiedzy/${article.slug}/`} />
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <FAQ items={pageFaq} />
+    <CTASection title="Masz swój temat do pracy?" text="Przeczytaj materiały, a gdy poczujesz gotowość, sprawdź terminy sesji w Instytucie Regresji." />
+  </main>
+</BaseLayout>

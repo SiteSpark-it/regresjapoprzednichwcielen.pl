@@ -1,0 +1,49 @@
+---
+import { navigation, siteData } from "@/content/siteData";
+---
+
+<footer class="bg-ink text-warm-white">
+  <div class="container-page grid gap-10 py-12 md:grid-cols-[1.1fr_1fr_1.4fr]">
+    <div>
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid h-11 w-11 place-items-center rounded border border-gold-fill/70 text-gold-soft" aria-hidden="true">
+          <svg viewBox="0 0 32 32" class="h-7 w-7" fill="none">
+            <path d="M8 27V13a8 8 0 0 1 16 0v14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            <path d="M12 27V14a4 4 0 0 1 8 0v13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+            <path d="M6 27h20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+        </span>
+        <span class="font-serif text-xl leading-tight text-gold-soft">{siteData.name}</span>
+      </a>
+      <p class="mt-5 max-w-sm text-sm leading-7 text-warm-white/70">{siteData.tagline}</p>
+      <p class="mt-5 text-sm text-warm-white/60">{siteData.domain}</p>
+    </div>
+
+    <div>
+      <h2 class="font-serif text-xl text-gold-soft">Najważniejsze strony</h2>
+      <ul class="mt-5 space-y-3 text-sm text-warm-white/72">
+        {navigation.map((item) => <li><a class="hover:text-gold-soft" href={item.href}>{item.label}</a></li>)}
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="font-serif text-xl text-gold-soft">Kontakt i zapisy</h2>
+      <p class="mt-5 text-sm leading-7 text-warm-white/72">
+        Zapisy i informacje organizacyjne prowadzi Instytut Regresji. Sesje mają charakter rozwojowy i duchowy; decyzję o udziale warto podjąć spokojnie, po zapoznaniu się z opisem pracy.
+      </p>
+      <div class="mt-5 flex flex-wrap gap-3">
+        <a class="border border-gold-fill bg-gold-fill px-5 py-3 text-sm font-semibold text-ink" href={siteData.cta.url} rel="noopener noreferrer">
+          {siteData.cta.label}
+        </a>
+        <a class="border border-white/20 px-5 py-3 text-sm font-semibold text-warm-white" href={siteData.links.personal} rel="noopener noreferrer">
+          MaciejRegresja.pl
+        </a>
+      </div>
+      <p class="mt-6 text-xs leading-6 text-warm-white/55">{siteData.disclaimer}</p>
+      <p class="mt-2 text-xs leading-6 text-warm-white/60">{siteData.disclaimerNote}</p>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-5">
+    <p class="container-page text-xs text-warm-white/50">© {new Date().getFullYear()} {siteData.organization}. Wszelkie prawa zastrzeżone.</p>
+  </div>
+</footer>

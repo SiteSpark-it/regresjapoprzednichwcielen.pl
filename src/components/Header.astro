@@ -1,0 +1,56 @@
+---
+import { navigation, siteData } from "@/content/siteData";
+---
+
+<header class="absolute inset-x-0 top-0 z-30 border-b border-white/10 text-warm-white">
+  <nav class="container-page flex min-h-20 items-center justify-between gap-4" aria-label="Główna nawigacja">
+    <a href="/" class="flex min-w-0 items-center gap-3" aria-label={`${siteData.name} - strona główna`}>
+      <span class="grid h-11 w-11 shrink-0 place-items-center rounded border border-gold-fill/70 text-gold-soft" aria-hidden="true">
+        <svg viewBox="0 0 32 32" class="h-7 w-7" fill="none">
+          <path d="M8 27V13a8 8 0 0 1 16 0v14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          <path d="M12 27V14a4 4 0 0 1 8 0v13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+          <path d="M6 27h20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+      </span>
+      <span class="max-w-44 text-sm font-semibold leading-tight tracking-wide">{siteData.name}</span>
+    </a>
+
+    <div class="hidden items-center gap-4 xl:flex">
+      {
+        navigation.map((item) => (
+          <a class="text-xs font-medium text-warm-white/82 transition hover:text-gold-soft 2xl:text-sm" href={item.href}>
+            {item.label}
+          </a>
+        ))
+      }
+    </div>
+
+    <a
+      class="hidden border border-gold-fill/70 px-5 py-3 text-sm font-semibold text-gold-soft transition hover:bg-gold-fill hover:text-ink xl:inline-flex"
+      href={siteData.cta.url}
+      rel="noopener noreferrer"
+    >
+      {siteData.cta.label}
+    </a>
+
+    <details class="relative xl:hidden">
+      <summary class="list-none border border-white/20 px-4 py-3 text-sm font-semibold text-warm-white marker:hidden">
+        Menu
+      </summary>
+      <div class="absolute right-0 mt-3 w-72 max-w-[calc(100vw-2rem)] border border-white/10 bg-ink p-4 shadow-soft">
+        <div class="grid gap-2">
+          {
+            navigation.map((item) => (
+              <a class="px-2 py-2 text-sm text-warm-white/82 hover:text-gold-soft" href={item.href}>
+                {item.label}
+              </a>
+            ))
+          }
+          <a class="mt-2 bg-gold-fill px-4 py-3 text-center text-sm font-bold text-ink" href={siteData.cta.url} rel="noopener noreferrer">
+            {siteData.cta.label}
+          </a>
+        </div>
+      </div>
+    </details>
+  </nav>
+</header>

@@ -1,0 +1,57 @@
+---
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import CTASection from "@/components/CTASection.astro";
+import DisclaimerBox from "@/components/DisclaimerBox.astro";
+import FAQ from "@/components/FAQ.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { articleSchema, createFaqSchema, serviceSchema } from "@/content/schema";
+import { pageFaqs } from "@/content/pageFaqs";
+import { siteData } from "@/content/siteData";
+
+const title = "Past life regression po polsku — co oznacza PLR?";
+const description =
+  "Past life regression po polsku: czym jest PLR, jak rozumieć regresję poprzednich wcieleń i czym różni się od pracy LBL.";
+const breadcrumbs = [{ label: "Past life regression po polsku" }];
+const pageFaq = pageFaqs.englishTerm;
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, articleSchema({ title, description, url: `${siteData.url}/past-life-regression-po-polsku/` }), createFaqSchema(pageFaq)]}>
+  <main>
+    <section class="bg-ink pb-20 text-warm-white">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="container-page pt-14">
+        <h1 class="max-w-4xl font-serif text-4xl leading-tight md:text-6xl">Past life regression po polsku</h1>
+        <p class="mt-7 max-w-3xl text-lg leading-8 text-warm-white/75">
+          PLR to skrót od angielskiego past life regression. Po polsku najczęściej mówimy: regresja poprzednich wcieleń albo regresja do poprzedniego życia.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-warm-white py-20">
+      <div class="container-page grid gap-12 lg:grid-cols-[minmax(0,1fr)_320px]">
+        <article class="prose-site max-w-3xl text-base leading-8 text-graphite/80">
+          <h2 class="text-4xl">Dlaczego ludzie szukają PLR?</h2>
+          <p>
+            Część osób trafia na termin past life regression w książkach, podcastach albo materiałach anglojęzycznych. Szukają spokojnego wyjaśnienia po polsku: czy trzeba wierzyć w reinkarnację, jak wygląda sesja i czy można potraktować to doświadczenie symbolicznie.
+          </p>
+          <p>
+            Dobre tłumaczenie PLR nie powinno robić z sesji atrakcji. Ważne są emocje, relacje, powtarzające się wzorce i to, jak człowiek wraca z doświadczeniem do codziennego życia.
+          </p>
+          <h2 class="text-4xl">PLR, LBL i Brama Dusz LBL™</h2>
+          <p>
+            PLR skupia się przede wszystkim na poprzednim wcieleniu. LBL, czyli Life Between Lives®, odnosi się do pracy z przestrzenią między wcieleniami. Brama Dusz LBL™ jest autorską metodą inspirowaną publikacjami dr. Michaela Newtona, ale nie jest oficjalną usługą The Michael Newton Institute.
+          </p>
+          <p>
+            Jeśli interesuje Cię ten nurt, możesz sprawdzić materiały na <a class="text-gold underline underline-offset-4" href={siteData.links.michaelNewtonOrg} rel="noopener noreferrer">michaelnewton.org</a>. Jeśli szukasz informacji o sesjach między wcieleniami, zobacz także <a class="text-gold underline underline-offset-4" href={siteData.links.betweenLives} rel="noopener noreferrer">regresjamiedzywcieleniami.pl</a>.
+          </p>
+        </article>
+        <aside>
+          <DisclaimerBox compact />
+        </aside>
+      </div>
+    </section>
+
+    <FAQ items={pageFaq} />
+    <CTASection title="Szukasz sesji PLR po polsku?" text="Zapisy prowadzi Instytut Regresji. Przejdź dalej dopiero wtedy, gdy czujesz, że ta forma pracy jest dla Ciebie właściwa." />
+  </main>
+</BaseLayout>

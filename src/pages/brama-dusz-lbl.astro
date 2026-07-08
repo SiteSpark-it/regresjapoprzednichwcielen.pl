@@ -1,0 +1,66 @@
+---
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import CTASection from "@/components/CTASection.astro";
+import DisclaimerBox from "@/components/DisclaimerBox.astro";
+import FAQ from "@/components/FAQ.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { articleSchema, createFaqSchema, serviceSchema } from "@/content/schema";
+import { pageFaqs } from "@/content/pageFaqs";
+import { siteData } from "@/content/siteData";
+
+const title = "Brama Dusz LBL™ — autorska metoda regresji duchowej";
+const description =
+  "Brama Dusz LBL™ jako autorska metoda regresji duchowej inspirowana publikacjami dr. Michaela Newtona. Granice, przebieg i odpowiedzialny opis.";
+const breadcrumbs = [{ label: "Brama Dusz LBL™" }];
+const pageFaq = pageFaqs.gate;
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, articleSchema({ title, description, url: `${siteData.url}/brama-dusz-lbl/` }), createFaqSchema(pageFaq)]}>
+  <main>
+    <section class="bg-ink pb-20 text-warm-white">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="container-page pt-14">
+        <h1 class="max-w-4xl font-serif text-4xl leading-tight md:text-6xl">Brama Dusz LBL™</h1>
+        <p class="mt-7 max-w-3xl text-lg leading-8 text-warm-white/75">
+          Autorska metoda regresji duchowej, która łączy pracę z poprzednimi wcieleniami, symboliczne przejście i integrację doświadczeń między wcieleniami.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-warm-white py-20">
+      <div class="container-page grid gap-12 lg:grid-cols-[minmax(0,1fr)_330px]">
+        <article class="prose-site max-w-3xl text-base leading-8 text-graphite/80">
+          <h2 class="text-4xl">Czym jest ta metoda?</h2>
+          <p>
+            Brama Dusz LBL™ jest autorskim sposobem prowadzenia sesji regresji duchowej. Może zaczynać się od poprzedniego wcielenia, a następnie przechodzić do pracy z doświadczeniem przejścia, sensem relacji, symbolami i przestrzenią między wcieleniami.
+          </p>
+          <p>
+            Metoda jest inspirowana publikacjami dr. Michaela Newtona, ale nie jest oficjalną usługą The Michael Newton Institute. To rozróżnienie jest ważne: inspiracja nie oznacza afiliacji, certyfikacji ani przedstawiania sesji jako oficjalnego Life Between Lives®.
+          </p>
+
+          <h2 class="text-4xl">Po co w nazwie „brama”?</h2>
+          <p>
+            Brama jest tu symbolem przejścia. W sesji nie chodzi o wymuszanie wielkich wizji, lecz o łagodne przejście przez historię, emocję i sens, który może pojawić się między jednym doświadczeniem a drugim. To obraz porządkujący pracę, nie obietnica konkretnego przeżycia.
+          </p>
+
+          <h2 class="text-4xl">Dla kogo może być ta praca?</h2>
+          <p>
+            Dla osób, które znają już temat regresji poprzednich wcieleń albo czują, że samo pytanie o jedno poprzednie życie nie wyczerpuje ich doświadczenia. Brama Dusz LBL™ może być kierunkiem dla pytań o sens, relacje duszy, powtarzające się lekcje i spokojną integrację.
+          </p>
+        </article>
+        <aside class="space-y-6">
+          <DisclaimerBox compact />
+          <div class="border border-ink/10 bg-white/70 p-6">
+            <h2 class="font-serif text-2xl">Powiązane strony</h2>
+            <p class="mt-4 text-sm leading-7 text-graphite/75">
+              Zobacz także <a class="text-gold underline underline-offset-4" href="/regresja-miedzy-wcieleniami/">regresję między wcieleniami</a> oraz szerszy kontekst na <a class="text-gold underline underline-offset-4" href={siteData.links.lbl} rel="noopener noreferrer">regresjalbl.pl</a>.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <FAQ items={pageFaq} />
+    <CTASection title="Chcesz zapytać o Brama Dusz LBL™?" text="Przejdź do zapisów w Instytucie Regresji i sprawdź, która forma sesji najlepiej pasuje do Twojego tematu." />
+  </main>
+</BaseLayout>

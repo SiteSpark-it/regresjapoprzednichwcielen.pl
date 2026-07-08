@@ -1,0 +1,71 @@
+---
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import CTASection from "@/components/CTASection.astro";
+import DisclaimerBox from "@/components/DisclaimerBox.astro";
+import FAQ from "@/components/FAQ.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { createFaqSchema, serviceSchema } from "@/content/schema";
+import { pageFaqs } from "@/content/pageFaqs";
+import { siteData } from "@/content/siteData";
+
+const title = "Kontakt i zapisy — sesja regresji poprzednich wcieleń";
+const description =
+  "Kontakt i zapisy na sesję regresji poprzednich wcieleń. Główne miejsce zapisów: Instytut Regresji. Informacje o prowadzącym: MaciejRegresja.pl.";
+const breadcrumbs = [{ label: "Kontakt i zapisy" }];
+const pageFaq = pageFaqs.contact;
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, createFaqSchema(pageFaq)]}>
+  <main>
+    <section class="bg-ink pb-20 text-warm-white">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="container-page pt-14">
+        <h1 class="max-w-4xl font-serif text-4xl leading-tight md:text-6xl">Kontakt i zapisy na sesję</h1>
+        <p class="mt-7 max-w-3xl text-lg leading-8 text-warm-white/75">
+          Główne zapisy na sesje regresji poprzednich wcieleń prowadzi Instytut Regresji. Jeśli chcesz poznać prowadzącego, zajrzyj także na MaciejRegresja.pl.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-warm-white py-20">
+      <div class="container-page grid gap-12 lg:grid-cols-[1fr_0.9fr]">
+        <div>
+          <h2 class="font-serif text-4xl leading-tight md:text-5xl">Sprawdź terminy</h2>
+          <div class="gold-rule mt-5"></div>
+          <p class="mt-7 max-w-2xl text-base leading-8 text-graphite/78">
+            Jeśli po przeczytaniu strony czujesz, że ta forma pracy jest dla Ciebie, przejdź do zapisów. Tam znajdziesz aktualną formę kontaktu, dostępność i informacje organizacyjne.
+          </p>
+          <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+            <a class="inline-flex justify-center bg-gold-fill px-7 py-4 text-sm font-bold text-ink transition hover:bg-gold-soft" href={siteData.cta.url} rel="noopener noreferrer">
+              Przejdź do zapisów
+            </a>
+            <a class="inline-flex justify-center border border-ink/20 px-7 py-4 text-sm font-bold text-ink transition hover:border-gold hover:text-gold" href={siteData.links.personal} rel="noopener noreferrer">
+              MaciejRegresja.pl
+            </a>
+          </div>
+          <div class="mt-10 grid gap-4 text-sm text-graphite/76 sm:grid-cols-2">
+            <div class="border border-ink/10 bg-white/65 p-5">
+              <p class="font-semibold text-ink">Kontakt</p>
+              <p class="mt-2">{siteData.contact.phone}</p>
+            </div>
+            <div class="border border-ink/10 bg-white/65 p-5">
+              <p class="font-semibold text-ink">Zapisy</p>
+              <p class="mt-2">{siteData.contact.email}</p>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <DisclaimerBox />
+          <div class="border border-gold/30 bg-bone p-8">
+            <h2 class="font-serif text-3xl leading-tight">Przed kontaktem</h2>
+            <p class="mt-5 text-sm leading-7 text-graphite/76">
+              Zastanów się, z jakim tematem przychodzisz: relacją, snem, emocją, powtarzającym się wzorcem, pytaniem o kierunek albo zainteresowaniem metodą Brama Dusz LBL™. Nie musisz mieć gotowej odpowiedzi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <FAQ items={pageFaq} />
+    <CTASection title="Gotowy sprawdzić dostępne terminy?" text="Najbezpieczniej zacząć od informacji organizacyjnych w Instytucie Regresji. Przejdź dalej wtedy, gdy czujesz spokojną gotowość do sesji." />
+  </main>
+</BaseLayout>

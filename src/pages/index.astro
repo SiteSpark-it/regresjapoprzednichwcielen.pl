@@ -1,0 +1,218 @@
+---
+import ArticleCard from "@/components/ArticleCard.astro";
+import CTASection from "@/components/CTASection.astro";
+import DisclaimerBox from "@/components/DisclaimerBox.astro";
+import FAQ from "@/components/FAQ.astro";
+import Hero from "@/components/Hero.astro";
+import ServiceCard from "@/components/ServiceCard.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { faqItems, snippetAnswers } from "@/content/faqItems";
+import { faqSchema, serviceSchema } from "@/content/schema";
+import { prioritySitelinks, siteData } from "@/content/siteData";
+
+const title = "Regresja poprzednich wcieleń — sesja PLR online";
+const description =
+  "Regresja poprzednich wcieleń jako spokojna praca z obrazami, emocjami i historią duszy. Sesje PLR online, bez presji i obietnic.";
+
+const sessionSteps = [
+  "Krótka rozmowa o intencji, granicach i tym, z czym przychodzisz.",
+  "Wejście w spokojny relaks, bez utraty kontroli i bez pośpiechu.",
+  "Eksploracja obrazów, emocji, symboli albo historii poprzedniego życia.",
+  "Zatrzymanie się przy scenach, które mają znaczenie dla obecnego życia.",
+  "Łagodne zakończenie procesu i powrót do pełnej orientacji.",
+  "Omówienie doświadczenia oraz zapisanie najważniejszych wniosków."
+];
+---
+
+<BaseLayout title={title} description={description} schema={[serviceSchema, faqSchema]}>
+  <main>
+    <Hero
+      title="Regresja poprzednich wcieleń — sesja PLR z historią duszy"
+      subtitle="Spokojna sesja regresji duchowej dla osób, które chcą przyjrzeć się obrazom, emocjom, snom, relacjom i wzorcom kojarzonym z poprzednim życiem — bez presji jednej interpretacji."
+    />
+
+    <section class="bg-warm-white py-16" aria-labelledby="najwazniejsze-tematy">
+      <div class="container-page">
+        <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <div>
+            <h2 id="najwazniejsze-tematy" class="font-serif text-4xl leading-tight md:text-5xl">Najważniejsze tematy</h2>
+            <div class="gold-rule mt-5"></div>
+            <p class="mt-5 text-base leading-8 text-graphite/76">
+              Jeśli jesteś tu pierwszy raz, możesz zacząć od tych stron. Pomogą Ci spokojnie rozróżnić PLR, sesję poprzedniego życia, regresję między wcieleniami i autorską metodę Brama Dusz LBL™.
+            </p>
+          </div>
+          <div class="grid gap-3 sm:grid-cols-2">
+            {
+              prioritySitelinks.map((item) => (
+                <a class="border border-ink/10 bg-white/60 p-5 text-sm font-semibold text-ink transition hover:border-gold hover:text-gold" href={item.href}>
+                  {item.title}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-warm-white py-20" id="czym-jest">
+      <div class="container-page grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div>
+          <h2 class="font-serif text-4xl leading-tight md:text-5xl">Czym jest regresja poprzednich wcieleń?</h2>
+          <div class="gold-rule mt-5"></div>
+          <div class="mt-7 space-y-5 text-base leading-8 text-graphite/78">
+            <p>
+              Regresja poprzednich wcieleń, często nazywana PLR, jest spokojną sesją rozwojową i duchową. W jej trakcie pojawiają się obrazy, emocje, symbole albo historie, które można przeżywać jako poprzednie życie lub jako ważną opowieść wewnętrzną.
+            </p>
+            <p>
+              Nie trzeba robić z tego widowiska. Czasem najważniejszy jest jeden obraz, napięcie w ciele, poczucie znanej relacji albo scena, która pomaga zobaczyć obecny wzorzec z większego dystansu.
+            </p>
+            <p>
+              Sesja nie służy diagnozie ani leczeniu. Jest zaproszeniem do uważnej pracy z doświadczeniem: takim, jakie się pojawia, bez nacisku na konkretny wynik.
+            </p>
+          </div>
+        </div>
+        <div class="border border-gold/30 bg-bone p-8 shadow-soft">
+          <h3 class="font-serif text-3xl leading-tight text-ink">Nie musisz niczego udowadniać.</h3>
+          <p class="mt-5 text-base leading-8 text-graphite/78">
+            Możesz potraktować sesję duchowo, symbolicznie albo psychologiczno-duchowo. Ważne jest to, co dana historia porusza w Tobie i jak można ją później spokojnie zintegrować z codziennym życiem.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-ink py-20 text-warm-white" aria-labelledby="krotkie-odpowiedzi">
+      <div class="container-page">
+        <div class="max-w-3xl">
+          <h2 id="krotkie-odpowiedzi" class="font-serif text-4xl leading-tight md:text-5xl">Krótkie odpowiedzi na częste pytania</h2>
+          <div class="gold-rule mt-5"></div>
+          <p class="mt-5 text-base leading-8 text-warm-white/72">
+            Te odpowiedzi są krótkie celowo: pomagają szybko zrozumieć podstawy, zanim wejdziesz w dłuższe opisy sesji.
+          </p>
+        </div>
+        <div class="mt-12 grid gap-5 md:grid-cols-2">
+          {
+            snippetAnswers.map((item) => (
+              <article class="border border-white/10 bg-white/[0.04] p-6">
+                <h3 class="font-serif text-2xl leading-tight text-gold-soft">{item.question}</h3>
+                <p class="mt-4 text-sm leading-7 text-warm-white/76">{item.answer}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-warm-white py-20" id="sesja">
+      <div class="container-page">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="font-serif text-4xl leading-tight md:text-5xl">Jak wygląda sesja PLR?</h2>
+          <div class="gold-rule mx-auto mt-5"></div>
+          <p class="mt-5 text-base leading-8 text-graphite/75">
+            Sesja ma prostą strukturę, ale nie jest mechanicznym scenariuszem. Prowadzenie dostosowuje się do osoby, tempa i tego, co pojawia się w doświadczeniu.
+          </p>
+        </div>
+        <ol class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {
+            sessionSteps.map((step, index) => (
+              <li class="border-t border-gold/60 bg-white/55 p-6">
+                <span class="font-serif text-4xl text-gold">{String(index + 1).padStart(2, "0")}</span>
+                <p class="mt-4 text-sm leading-7 text-graphite/78">{step}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </section>
+
+    <section class="bg-ink py-20 text-warm-white" id="tematy">
+      <div class="container-page">
+        <div class="max-w-3xl">
+          <h2 class="font-serif text-4xl leading-tight md:text-5xl">Jakie tematy można eksplorować?</h2>
+          <div class="gold-rule mt-5"></div>
+          <p class="mt-5 text-base leading-8 text-warm-white/72">
+            Regresja do poprzedniego życia bywa pomocna wtedy, gdy wraca pytanie: dlaczego ta relacja, emocja albo symbol są dla mnie tak silne?
+          </p>
+        </div>
+        <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <ServiceCard title="Relacje i więzi" icon="relations" text="Silne przyciąganie, powtarzające się role, dawne zobowiązania albo poczucie, że dana relacja niesie starszą historię." />
+          <ServiceCard title="Lęki i napięcia" icon="heart" text="Emocje, które pojawiają się bez oczywistej przyczyny i proszą raczej o uważność niż szybką etykietę." />
+          <ServiceCard title="Wzorce i schematy" icon="cycle" text="Decyzje, reakcje i wewnętrzne role, które wracają mimo prób zmiany na poziomie samej analizy." />
+          <ServiceCard title="Sny i symbole" icon="dream" text="Miejsca, postacie, epoki lub obrazy, które powracają w snach, medytacji albo intuicyjnych skojarzeniach." />
+          <ServiceCard title="Poczucie misji" icon="compass" text="Pytania o kierunek, talenty, sens doświadczeń i spokojne rozpoznanie tego, co naprawdę woła o uwagę." />
+          <ServiceCard title="Historia duszy" icon="path" text="Szukanie szerszego kontekstu dla tego, kim jesteś, czego się uczysz i co chcesz w sobie lepiej zrozumieć." />
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-bone py-20">
+      <div class="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <h2 class="font-serif text-4xl leading-tight md:text-5xl">PLR a Brama Dusz LBL™</h2>
+          <div class="gold-rule mt-5"></div>
+          <div class="mt-7 space-y-5 text-base leading-8 text-graphite/78">
+            <p>
+              PLR koncentruje się głównie na poprzednim wcieleniu: historii, emocjach, relacjach i scenach, które mogą mieć znaczenie dla obecnego życia.
+            </p>
+            <p>
+              <a class="text-gold underline underline-offset-4" href="/brama-dusz-lbl/">Brama Dusz LBL™</a> to autorska metoda regresji duchowej. Może prowadzić przez doświadczenie poprzedniego życia, symboliczne przejście i pracę z przestrzenią między wcieleniami. Jest inspirowana publikacjami dr. Michaela Newtona, ale nie jest oficjalną usługą The Michael Newton Institute.
+            </p>
+            <p>
+              Jeśli chcesz poznać szerszy kontekst, możesz zajrzeć do materiałów informacyjnych na <a class="text-gold underline underline-offset-4" href={siteData.links.michaelNewtonOrg} rel="noopener noreferrer">michaelnewton.org</a>. Zapisy na sesje prowadzi <a class="text-gold underline underline-offset-4" href={siteData.links.booking} rel="noopener noreferrer">Instytut Regresji</a>.
+            </p>
+          </div>
+        </div>
+        <DisclaimerBox />
+      </div>
+    </section>
+
+    <section class="bg-warm-white py-20">
+      <div class="container-page grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div class="border border-ink/10 bg-white/70 p-8 shadow-soft">
+          <p class="font-serif text-3xl leading-tight text-ink">„Nie narzucam interpretacji. Pomagam spokojnie przejść przez doświadczenie i wrócić do niego z większą jasnością.”</p>
+          <p class="mt-6 text-sm leading-7 text-graphite/70">Maciej Maślanka</p>
+        </div>
+        <div>
+          <h2 class="font-serif text-4xl leading-tight md:text-5xl">Maciej Maślanka i Instytut Regresji</h2>
+          <div class="gold-rule mt-5"></div>
+          <div class="mt-7 space-y-5 text-base leading-8 text-graphite/78">
+            <p>
+              Nazywam się Maciej Maślanka. Pracuję z regresją duchową i regresją poprzednich wcieleń, ukończyłem szkolenia z regresji i hipnozy regresyjnej, studiuję psychologię w Warszawie i rozwijam się dalej w obszarze pracy inspirowanej LBL.
+            </p>
+            <p>
+              Interesuje mnie praca, która łączy duchowość z psychologicznym rozumieniem człowieka. Bez tonu guru, bez obietnic, bez nacisku. Ważne jest dla mnie, żeby sesja była bezpieczna, uważna i możliwa do zintegrowania po powrocie do codzienności.
+            </p>
+            <p>
+              Główne zapisy i informacje organizacyjne prowadzi <a class="text-gold underline underline-offset-4" href={siteData.links.booking} rel="noopener noreferrer">Instytut Regresji</a>. Więcej o mojej pracy znajdziesz na <a class="text-gold underline underline-offset-4" href={siteData.links.personal} rel="noopener noreferrer">maciejregresja.pl</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-bone py-20">
+      <div class="container-page">
+        <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <h2 class="font-serif text-4xl leading-tight md:text-5xl">Baza wiedzy</h2>
+            <div class="gold-rule mt-5"></div>
+            <p class="mt-5 text-base leading-8 text-graphite/75">
+              Te teksty odpowiadają na różne intencje: od pierwszego pytania „czy to dla mnie?” po różnicę między poprzednim wcieleniem a pracą między wcieleniami.
+            </p>
+          </div>
+          <div>
+            <ArticleCard title="Czym jest regresja poprzednich wcieleń?" text="Edukacyjne wyjaśnienie PLR bez presji przyjmowania jednej interpretacji." href="/czym-jest-regresja-poprzednich-wcielen/" />
+            <ArticleCard title="Regresja do poprzedniego życia" text="Jak wygląda sesja, czego się spodziewać i jak przygotować się bez napięcia." href="/regresja-do-poprzedniego-zycia/" />
+            <ArticleCard title="Regresja poprzednich wcieleń dla sceptyków" text="Jak podejść do sesji bez konieczności przyjmowania gotowego światopoglądu." href="/baza-wiedzy/regresja-poprzednich-wcielen-dla-sceptykow/" />
+            <ArticleCard title="Symbol czy wspomnienie w sesji PLR?" text="Co zrobić, gdy doświadczenie jest obrazem, odczuciem albo niejednoznacznym znakiem." href="/baza-wiedzy/symbol-czy-wspomnienie-w-sesji-plr/" />
+            <ArticleCard title="Brama Dusz LBL™" text="Opis autorskiej metody, jej granic i relacji do publikacji dr. Michaela Newtona." href="/brama-dusz-lbl/" />
+            <ArticleCard title="Regresja między wcieleniami" text="Czym jest praca z przestrzenią między wcieleniami i jak odróżnić ją od PLR." href="/regresja-miedzy-wcieleniami/" />
+            <ArticleCard title="Past life regression po polsku" text="Polski kontekst pojęcia PLR i spokojne tłumaczenie najważniejszych terminów." href="/past-life-regression-po-polsku/" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+    <CTASection title="Jeśli czujesz, że to właściwy moment, sprawdź dostępne terminy" text="Nie musisz podejmować decyzji pod wpływem chwili. Zobacz opis sesji, wróć do pytań i umów spotkanie dopiero wtedy, gdy czujesz gotowość." />
+  </main>
+</BaseLayout>

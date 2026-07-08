@@ -1,0 +1,30 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { siteData } from "@/content/siteData";
+
+const title = "Nie znaleziono strony — Regresja Poprzednich Wcieleń";
+const description =
+  "Ta strona nie istnieje albo została przeniesiona. Wróć do bazy wiedzy o regresji poprzednich wcieleń lub przejdź do zapisów w Instytucie Regresji.";
+---
+
+<BaseLayout title={title} description={description} noindex>
+  <main>
+    <section class="bg-ink py-28 text-warm-white md:py-36">
+      <div class="container-page max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold-soft">404</p>
+        <h1 class="mt-5 font-serif text-4xl leading-tight md:text-6xl">Nie znaleziono tej strony</h1>
+        <p class="mt-7 text-lg leading-8 text-warm-white/76">
+          Adres może być nieaktualny albo wpisany z błędem. Najprościej wrócić do głównych materiałów o regresji poprzednich wcieleń lub przejść do informacji o zapisach.
+        </p>
+        <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+          <a class="inline-flex justify-center bg-gold-fill px-7 py-4 text-sm font-bold text-ink transition hover:bg-gold-soft" href="/baza-wiedzy/">
+            Przejdź do bazy wiedzy
+          </a>
+          <a class="inline-flex justify-center border border-gold-fill/70 px-7 py-4 text-sm font-bold text-gold-soft transition hover:bg-white/8" href={siteData.cta.url} rel="noopener noreferrer">
+            Sprawdź terminy sesji
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

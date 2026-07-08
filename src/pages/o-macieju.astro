@@ -1,0 +1,60 @@
+---
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import CTASection from "@/components/CTASection.astro";
+import DisclaimerBox from "@/components/DisclaimerBox.astro";
+import FAQ from "@/components/FAQ.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { createFaqSchema, personSchema, serviceSchema } from "@/content/schema";
+import { pageFaqs } from "@/content/pageFaqs";
+import { siteData } from "@/content/siteData";
+
+const title = "Maciej Maślanka — regresja duchowa i Brama Dusz LBL™";
+const description =
+  "Maciej Maślanka: praca z regresją duchową, regresją poprzednich wcieleń, studiowanie psychologii w Warszawie i autorska metoda Brama Dusz LBL™.";
+const breadcrumbs = [{ label: "O Macieju" }];
+const pageFaq = pageFaqs.author;
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, personSchema, createFaqSchema(pageFaq)]}>
+  <main>
+    <section class="bg-ink pb-20 text-warm-white">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="container-page pt-14">
+        <h1 class="max-w-4xl font-serif text-4xl leading-tight md:text-6xl">Maciej Maślanka</h1>
+        <p class="mt-7 max-w-3xl text-lg leading-8 text-warm-white/75">
+          Pracuję z regresją duchową, regresją poprzednich wcieleń i autorską metodą Brama Dusz LBL™. Łączę duchowość z uważnym, psychologicznym rozumieniem człowieka.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-warm-white py-20">
+      <div class="container-page grid gap-12 lg:grid-cols-[minmax(0,1fr)_330px]">
+        <article class="prose-site max-w-3xl text-base leading-8 text-graphite/80">
+          <h2 class="text-4xl">Jak pracuję</h2>
+          <p>
+            W sesji najważniejsze jest dla mnie tempo osoby, jej granice i możliwość spokojnej integracji po doświadczeniu. Nie narzucam interpretacji i nie traktuję regresji jak gotowej odpowiedzi na wszystko.
+          </p>
+          <p>
+            Ukończyłem szkolenia z regresji i hipnozy regresyjnej, studiuję psychologię w Warszawie i jestem w procesie dalszego rozwoju w obszarze pracy inspirowanej LBL. Pracuję z regresją poprzednich wcieleń oraz autorską metodą Brama Dusz LBL™.
+          </p>
+
+          <h2 class="text-4xl">Duchowość bez tonu guru</h2>
+          <p>
+            Można mówić o duszy, symbolach, snach i przewodnictwie w sposób spokojny. Bez obietnic, bez presji i bez udawania, że prowadzący wie więcej o Twoim życiu niż Ty. Moja rola polega na prowadzeniu procesu, zadawaniu pytań i trzymaniu bezpiecznej struktury.
+          </p>
+
+          <h2 class="text-4xl">Gdzie zapisać się na sesję?</h2>
+          <p>
+            Informacje organizacyjne i zapisy prowadzi <a class="text-gold underline underline-offset-4" href={siteData.links.booking} rel="noopener noreferrer">Instytut Regresji</a>. Więcej o mojej pracy możesz przeczytać również na <a class="text-gold underline underline-offset-4" href={siteData.links.personal} rel="noopener noreferrer">maciejregresja.pl</a>.
+          </p>
+        </article>
+        <aside>
+          <DisclaimerBox compact />
+        </aside>
+      </div>
+    </section>
+
+    <FAQ items={pageFaq} />
+    <CTASection title="Chcesz porozmawiać o sesji?" text="Przejdź do zapisów w Instytucie Regresji i sprawdź aktualną formę kontaktu oraz dostępne terminy." />
+  </main>
+</BaseLayout>

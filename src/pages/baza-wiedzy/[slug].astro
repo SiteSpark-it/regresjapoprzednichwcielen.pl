@@ -1,0 +1,104 @@
+---
+import ArticleCard from "@/components/ArticleCard.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import CTASection from "@/components/CTASection.astro";
+import DisclaimerBox from "@/components/DisclaimerBox.astro";
+import FAQ from "@/components/FAQ.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getKnowledgeArticle, knowledgeArticles } from "@/content/articles";
+import { articleSchema, createFaqSchema, serviceSchema } from "@/content/schema";
+import { siteData } from "@/content/siteData";
+
+export function getStaticPaths() {
+  return knowledgeArticles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article }
+  }));
+}
+
+const { article } = Astro.props;
+const breadcrumbs = [
+  { label: "Baza wiedzy", href: "/baza-wiedzy/" },
+  { label: article.h1 }
+];
+const relatedArticles = article.related
+  .map((slug: string) => getKnowledgeArticle(slug))
+  .filter(Boolean);
+const canonicalUrl = `${siteData.url}/baza-wiedzy/${article.slug}/`;
+---
+
+<BaseLayout
+  title={article.title}
+  description={article.description}
+  canonical={canonicalUrl}
+  breadcrumbs={breadcrumbs}
+  schema={[serviceSchema, articleSchema({ title: article.title, description: article.description, url: canonicalUrl }), createFaqSchema(article.faq)]}
+>
+  <main>
+    <section class="bg-ink pb-20 text-warm-white">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="container-page pt-14">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold-soft">{article.readingTime}</p>
+        <h1 class="mt-5 max-w-4xl font-serif text-4xl leading-tight md:text-6xl">{article.h1}</h1>
+        <p class="mt-7 max-w-3xl text-lg leading-8 text-warm-white/75">{article.excerpt}</p>
+        <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+          <a class="inline-flex justify-center bg-gold-fill px-7 py-4 text-sm font-bold text-ink transition hover:bg-gold-soft" href={siteData.cta.url} rel="noopener noreferrer">
+            Sprawdź terminy sesji
+          </a>
+          <a class="inline-flex justify-center border border-gold/70 px-7 py-4 text-sm font-bold text-gold-soft transition hover:bg-white/8" href="/baza-wiedzy/">
+            Wróć do bazy wiedzy
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <article class="bg-warm-white py-20">
+      <div class="container-page grid gap-12 lg:grid-cols-[minmax(0,1fr)_330px]">
+        <div class="prose-site max-w-3xl text-base leading-8 text-graphite/80">
+          {
+            article.sections.map((section) => (
+              <section class="mb-12">
+                <h2 class="text-4xl">{section.heading}</h2>
+                {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+              </section>
+            ))
+          }
+        </div>
+
+        <aside class="space-y-6">
+          <DisclaimerBox compact />
+          <div class="border border-ink/10 bg-white/70 p-6">
+            <h2 class="font-serif text-2xl">Dalsze czytanie</h2>
+            <ul class="mt-5 space-y-3 text-sm leading-7 text-graphite/76">
+              <li><a class="text-gold underline underline-offset-4" href="/czym-jest-regresja-poprzednich-wcielen/">Czym jest regresja poprzednich wcieleń?</a></li>
+              <li><a class="text-gold underline underline-offset-4" href="/regresja-do-poprzedniego-zycia/">Jak wygląda sesja PLR?</a></li>
+              <li><a class="text-gold underline underline-offset-4" href="/brama-dusz-lbl/">Brama Dusz LBL™</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </article>
+
+    <section class="bg-bone py-20">
+      <div class="container-page">
+        <div class="max-w-3xl">
+          <h2 class="font-serif text-4xl leading-tight md:text-5xl">Powiązane tematy</h2>
+          <div class="gold-rule mt-5"></div>
+          <p class="mt-5 text-base leading-8 text-graphite/76">
+            Jeśli ten tekst dotyka Twojego tematu, te artykuły pomogą zobaczyć go z innej strony.
+          </p>
+        </div>
+        <div class="mt-8">
+          {
+            relatedArticles.map((related) => (
+              <ArticleCard title={related.title} text={related.excerpt} href={`/baza-wiedzy/${related.slug}/`} />
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <FAQ items={article.faq} />
+    <CTASection title="Chcesz przejść od czytania do pracy z własnym tematem?" text="Sprawdź dostępne terminy w Instytucie Regresji i wybierz sesję dopiero wtedy, gdy czujesz spokojną gotowość." />
+  </main>
+</BaseLayout>

@@ -1,0 +1,85 @@
+---
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import CTASection from "@/components/CTASection.astro";
+import DisclaimerBox from "@/components/DisclaimerBox.astro";
+import FAQ from "@/components/FAQ.astro";
+import ServiceCard from "@/components/ServiceCard.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { articleSchema, createFaqSchema, serviceSchema } from "@/content/schema";
+import { pageFaqs } from "@/content/pageFaqs";
+import { siteData } from "@/content/siteData";
+
+const title = "Czym jest regresja poprzednich wcieleń? Spokojne wyjaśnienie PLR";
+const description =
+  "Czym jest regresja poprzednich wcieleń, czy trzeba wierzyć w reinkarnację i jak rozumieć obrazy z sesji PLR bez sensacji i obietnic.";
+const breadcrumbs = [{ label: "Czym jest regresja poprzednich wcieleń?" }];
+const pageFaq = pageFaqs.whatIsPlr;
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, articleSchema({ title, description, url: `${siteData.url}/czym-jest-regresja-poprzednich-wcielen/` }), createFaqSchema(pageFaq)]}>
+  <main>
+    <section class="bg-ink pb-20 text-warm-white">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="container-page pt-14">
+        <h1 class="max-w-4xl font-serif text-4xl leading-tight md:text-6xl">Czym jest regresja poprzednich wcieleń?</h1>
+        <p class="mt-7 max-w-3xl text-lg leading-8 text-warm-white/75">
+          Regresja poprzednich wcieleń to praca z obrazami, emocjami i symbolami, które mogą układać się w historię poprzedniego życia albo ważną opowieść wewnętrzną.
+        </p>
+      </div>
+    </section>
+
+    <article class="bg-warm-white py-20">
+      <div class="container-page grid gap-12 lg:grid-cols-[minmax(0,1fr)_320px]">
+        <div class="prose-site max-w-3xl text-base leading-8 text-graphite/80">
+          <h2 class="text-4xl">Nie chodzi o sensację</h2>
+          <p>
+            Pytanie „kim byłem w poprzednim wcieleniu?” często jest tylko początkiem. Pod nim może być potrzeba zrozumienia relacji, lęku, snu, powtarzającego się wzorca albo poczucia, że jakaś historia wciąż działa w tle obecnego życia.
+          </p>
+          <p>
+            Podczas sesji mogą pojawić się obrazy miejsc, postacie, emocje, odczucia z ciała, pojedyncze zdania albo bardziej symboliczne wrażenia. Nie trzeba ich od razu oceniać. Ważniejsze jest to, co poruszają i jak można z nimi pracować po sesji.
+          </p>
+
+          <h2 class="text-4xl">Duchowo, symbolicznie albo psychologiczno-duchowo</h2>
+          <p>
+            Jedna osoba uzna doświadczenie za realne wspomnienie duszy. Inna potraktuje je jako język symboli i wyobraźni. Oba podejścia mogą być sensowne, jeśli nie narzucają odpowiedzi i pozwalają spokojnie zobaczyć emocje oraz relacje.
+          </p>
+          <p>
+            W moim podejściu nie trzeba udowadniać, czym „naprawdę” jest każdy obraz. Sesja ma pomóc w uważnym kontakcie z doświadczeniem, a nie w tworzeniu spektakularnej opowieści.
+          </p>
+
+          <h2 class="text-4xl">Granice pracy</h2>
+          <p>
+            Regresja poprzednich wcieleń nie jest diagnozą, leczeniem ani psychoterapią kliniczną. Jeśli jesteś w kryzysie psychicznym, po silnej traumie albo w aktywnym leczeniu psychiatrycznym, decyzję o takiej pracy warto skonsultować z odpowiednim specjalistą.
+          </p>
+          <p>
+            Odpowiedzialny język jest ważny. Nie obiecuję konkretnego efektu ani pewności co do natury każdego obrazu. Proponuję przestrzeń, w której można przyjrzeć się doświadczeniu i później spokojnie je zintegrować.
+          </p>
+        </div>
+        <aside class="space-y-6">
+          <DisclaimerBox compact />
+          <div class="border border-ink/10 bg-white/70 p-6">
+            <h2 class="font-serif text-2xl">Dalszy kontekst</h2>
+            <p class="mt-4 text-sm leading-7 text-graphite/75">
+              Jeśli interesuje Cię szersza perspektywa, zobacz także <a class="text-gold underline underline-offset-4" href={siteData.links.spiritualRegression} rel="noopener noreferrer">regresjaduchowa.pl</a> oraz zapisy w <a class="text-gold underline underline-offset-4" href={siteData.links.booking} rel="noopener noreferrer">Instytucie Regresji</a>.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </article>
+
+    <section class="bg-bone py-20">
+      <div class="container-page">
+        <h2 class="font-serif text-4xl leading-tight md:text-5xl">Co może pojawić się w sesji?</h2>
+        <div class="gold-rule mt-5"></div>
+        <div class="mt-12 grid gap-5 md:grid-cols-3">
+          <ServiceCard title="Obraz lub scena" text="Miejsce, postać, fragment zdarzenia albo symboliczny kadr, który niesie emocjonalny ciężar." icon="path" />
+          <ServiceCard title="Emocja lub wzorzec" text="Odczucie, które zaczyna mieć sens dopiero wtedy, gdy widzisz je w szerszej historii." icon="heart" />
+          <ServiceCard title="Relacja lub rola" text="Poczucie więzi, straty, zobowiązania albo dynamiki, która powtarza się w obecnym życiu." icon="relations" />
+        </div>
+      </div>
+    </section>
+
+    <FAQ items={pageFaq} />
+    <CTASection title="Chcesz zobaczyć, czy PLR jest dla Ciebie?" text="Przeczytaj spokojnie opis sesji, a jeśli poczujesz gotowość, przejdź do zapisów w Instytucie Regresji." />
+  </main>
+</BaseLayout>

@@ -1,0 +1,66 @@
+---
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import CTASection from "@/components/CTASection.astro";
+import DisclaimerBox from "@/components/DisclaimerBox.astro";
+import FAQ from "@/components/FAQ.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { articleSchema, createFaqSchema, serviceSchema } from "@/content/schema";
+import { pageFaqs } from "@/content/pageFaqs";
+import { siteData } from "@/content/siteData";
+
+const title = "Regresja między wcieleniami — czym różni się od PLR?";
+const description =
+  "Regresja między wcieleniami: czym jest, czym różni się od regresji poprzednich wcieleń i jak rozumieć ją duchowo oraz symbolicznie.";
+const breadcrumbs = [{ label: "Regresja między wcieleniami" }];
+const pageFaq = pageFaqs.betweenLives;
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, articleSchema({ title, description, url: `${siteData.url}/regresja-miedzy-wcieleniami/` }), createFaqSchema(pageFaq)]}>
+  <main>
+    <section class="bg-ink pb-20 text-warm-white">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="container-page pt-14">
+        <h1 class="max-w-4xl font-serif text-4xl leading-tight md:text-6xl">Regresja między wcieleniami</h1>
+        <p class="mt-7 max-w-3xl text-lg leading-8 text-warm-white/75">
+          To praca z doświadczeniem opisywanym jako przestrzeń pomiędzy wcieleniami: z sensem, relacjami, przewodnictwem i spokojną integracją.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-warm-white py-20">
+      <div class="container-page grid gap-12 lg:grid-cols-[minmax(0,1fr)_330px]">
+        <article class="prose-site max-w-3xl text-base leading-8 text-graphite/80">
+          <h2 class="text-4xl">PLR a przestrzeń między wcieleniami</h2>
+          <p>
+            Regresja poprzednich wcieleń zwykle skupia się na historii: kim była dana postać, jakie relacje ją otaczały, co przeżyła i co z tej historii ma znaczenie dziś. Regresja między wcieleniami idzie krok dalej, w stronę symbolicznego pytania o sens i szerszą perspektywę duszy.
+          </p>
+          <p>
+            Dla jednych osób jest to doświadczenie duchowe. Dla innych bardziej symboliczna praca z wyobraźnią, intuicją i wewnętrznym porządkiem. Nie trzeba z góry rozstrzygać, która interpretacja jest właściwa.
+          </p>
+
+          <h2 class="text-4xl">Jakie pytania mogą się pojawić?</h2>
+          <p>
+            Osoby wybierające ten kierunek często pytają o powtarzające się lekcje, relacje duszy, poczucie misji, wybory życiowe albo znaczenie trudnych doświadczeń. Ważne, by takie pytania prowadzić spokojnie i bez obietnic gotowych odpowiedzi.
+          </p>
+
+          <h2 class="text-4xl">Kiedy zacząć od PLR?</h2>
+          <p>
+            Jeśli to pierwsza sesja, często sensownie jest zacząć od poprzedniego wcielenia. Historia bywa bardziej konkretna: ma sceny, emocje i relacje. Dopiero później można zobaczyć, czy naturalnie pojawia się temat przestrzeni między wcieleniami.
+          </p>
+        </article>
+        <aside class="space-y-6">
+          <DisclaimerBox compact />
+          <div class="border border-ink/10 bg-white/70 p-6">
+            <h2 class="font-serif text-2xl">Więcej kontekstu</h2>
+            <p class="mt-4 text-sm leading-7 text-graphite/75">
+              Osobna strona poświęcona temu tematowi to <a class="text-gold underline underline-offset-4" href={siteData.links.betweenLives} rel="noopener noreferrer">regresjamiedzywcieleniami.pl</a>.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <FAQ items={pageFaq} />
+    <CTASection title="Nie wiesz, czy wybrać PLR czy pracę między wcieleniami?" text="Sprawdź opis sesji i skontaktuj się przez Instytut Regresji. Dobór formy pracy można omówić przed spotkaniem." />
+  </main>
+</BaseLayout>

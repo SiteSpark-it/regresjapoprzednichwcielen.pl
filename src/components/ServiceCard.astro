@@ -1,0 +1,28 @@
+---
+interface Props {
+  title: string;
+  text: string;
+  icon?: "relations" | "cycle" | "dream" | "path" | "heart" | "compass";
+}
+
+const { title, text, icon = "path" } = Astro.props;
+
+const icons = {
+  relations: "M8 20c1.5-3 4-4.5 8-4.5s6.5 1.5 8 4.5M10 9.5a3 3 0 1 0 6 0 3 3 0 0 0-6 0Zm8 0a3 3 0 1 0 6 0 3 3 0 0 0-6 0Z",
+  cycle: "M23 9a9 9 0 0 0-15.5 4.5M7 8v5h5m-3 10a9 9 0 0 0 15.5-4.5M25 24v-5h-5",
+  dream: "M9 20h14a5 5 0 0 0-1-9.9A7 7 0 0 0 8.4 12 4.5 4.5 0 0 0 9 20Z",
+  path: "M16 5v22m0-22c4 3 6 6 6 11s-2 8-6 11m0-22c-4 3-6 6-6 11s2 8 6 11",
+  heart: "M16 25s-9-5.3-9-12a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.7-9 12-9 12Z",
+  compass: "M16 27a11 11 0 1 0 0-22 11 11 0 0 0 0 22Zm4-15-2.5 5.5L12 20l2.5-5.5L20 12Z"
+};
+---
+
+<article class="border border-ink/10 bg-white/58 p-6 shadow-soft">
+  <div class="grid h-12 w-12 place-items-center border border-gold/50 text-gold" aria-hidden="true">
+    <svg viewBox="0 0 32 32" class="h-7 w-7" fill="none">
+      <path d={icons[icon]} stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </div>
+  <h3 class="mt-6 font-serif text-2xl leading-tight text-ink">{title}</h3>
+  <p class="mt-4 text-sm leading-7 text-graphite/76">{text}</p>
+</article>
