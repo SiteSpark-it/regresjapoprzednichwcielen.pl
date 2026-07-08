@@ -10,7 +10,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "Czy trzeba wierzyć w reinkarnację, żeby skorzystać z PLR?",
       answer:
-        "Nie. Regresję poprzednich wcieleń można rozumieć duchowo, symbolicznie albo jako pracę z głęboką wyobraźnią. Nie narzucam jednej interpretacji. Sesja ma pomóc uważnie przyjrzeć się doświadczeniu, emocjom i znaczeniom, które pojawiają się w procesie."
+        "Nie. Regresję poprzednich wcieleń można rozumieć duchowo, symbolicznie albo jako pracę z głęboką wyobraźnią. Odpowiedzialne prowadzenie nie narzuca jednej interpretacji. Sesja ma pomóc uważnie przyjrzeć się doświadczeniu, emocjom i znaczeniom, które pojawiają się w procesie."
     },
     {
       question: "Czy regresja poprzednich wcieleń jest terapią?",
