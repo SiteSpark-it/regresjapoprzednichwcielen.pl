@@ -1,4 +1,4 @@
-import type { FaqItem } from "@/content/schema";
+﻿import type { FaqItem } from "@/content/schema";
 
 export const pageFaqs: Record<string, FaqItem[]> = {
   whatIsPlr: [
@@ -44,7 +44,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "Czy PLR i LBL oznaczają to samo?",
       answer:
-        "Nie. PLR skupia się głównie na poprzednich wcieleniach. LBL, czyli Life Between Lives®, odnosi się do pracy z przestrzenią między wcieleniami. Brama Dusz LBL™ jest autorską metodą inspirowaną publikacjami dr. Michaela Newtona, nie oficjalną usługą MNI."
+        "Nie. PLR skupia się głównie na poprzednich wcieleniach. LBL, czyli Life Between Lives, odnosi się do pracy z przestrzenią między wcieleniami. Brama Dusz LBL jest autorską metodą inspirowaną publikacjami dr. Michaela Newtona, nie oficjalną usługą MNI."
     },
     {
       question: "Dlaczego warto szukać polskiego opisu PLR?",
@@ -54,17 +54,17 @@ export const pageFaqs: Record<string, FaqItem[]> = {
   ],
   gate: [
     {
-      question: "Czym Brama Dusz LBL™ różni się od zwykłej sesji PLR?",
+      question: "Czym Brama Dusz LBL różni się od zwykłej sesji PLR?",
       answer:
-        "PLR zwykle koncentruje się na historii poprzedniego życia. Brama Dusz LBL™ może obejmować także symboliczne przejście i pracę z doświadczeniem między wcieleniami. To autorska metoda regresji duchowej, prowadzona z ostrożnym językiem i bez obietnic gotowych odpowiedzi."
+        "PLR zwykle koncentruje się na historii poprzedniego życia. Brama Dusz LBL może obejmować także symboliczne przejście i pracę z doświadczeniem między wcieleniami. To autorska metoda regresji duchowej, prowadzona z ostrożnym językiem i bez obietnic gotowych odpowiedzi."
     },
     {
-      question: "Czy Brama Dusz LBL™ jest oficjalną usługą The Michael Newton Institute?",
+      question: "Czy Brama Dusz LBL jest oficjalną usługą The Michael Newton Institute?",
       answer:
-        "Nie. Brama Dusz LBL™ jest autorską metodą inspirowaną publikacjami dr. Michaela Newtona. Nie jest oficjalną usługą The Michael Newton Institute, a użycie nazwy Life Between Lives® i skrótu LBL ma charakter informacyjny."
+        "Nie. Brama Dusz LBL jest autorską metodą inspirowaną publikacjami dr. Michaela Newtona. Nie jest oficjalną usługą The Michael Newton Institute, a użycie nazwy Life Between Lives i skrótu LBL ma charakter informacyjny."
     },
     {
-      question: "Dla kogo może być Brama Dusz LBL™?",
+      question: "Dla kogo może być Brama Dusz LBL?",
       answer:
         "Dla osób, które interesuje nie tylko historia poprzedniego wcielenia, ale też szerszy sens relacji, przejść, powtarzających się wzorców i duchowej perspektywy. Nadal jest to praca rozwojowa, a nie leczenie ani obietnica konkretnego przeżycia."
     }
@@ -90,7 +90,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "Kim jest Maciej Maślanka w kontekście regresji?",
       answer:
-        "Maciej Maślanka pracuje z regresją duchową, regresją poprzednich wcieleń oraz autorską metodą Brama Dusz LBL™. Ukończył szkolenia z regresji i hipnozy regresyjnej, studiuje psychologię w Warszawie i rozwija się dalej w obszarze pracy inspirowanej LBL."
+        "Maciej Maślanka pracuje z regresją duchową, regresją poprzednich wcieleń oraz autorską metodą Brama Dusz LBL. Ukończył szkolenia z regresji i hipnozy regresyjnej, studiuje psychologię w Warszawie i rozwija się dalej w obszarze pracy inspirowanej LBL."
     },
     {
       question: "Czy sesje są opisywane jako terapia kliniczna?",
@@ -107,7 +107,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "Od którego tekstu w bazie wiedzy najlepiej zacząć?",
       answer:
-        "Jeśli temat jest nowy, najlepiej zacząć od wyjaśnienia, czym jest regresja poprzednich wcieleń, a potem przejść do opisu przebiegu sesji PLR. Dopiero później warto czytać o Brama Dusz LBL™ i regresji między wcieleniami."
+        "Jeśli temat jest nowy, najlepiej zacząć od wyjaśnienia, czym jest regresja poprzednich wcieleń, a potem przejść do opisu przebiegu sesji PLR. Dopiero później warto czytać o Brama Dusz LBL i regresji między wcieleniami."
     },
     {
       question: "Czy baza wiedzy jest pisana tylko pod Google?",

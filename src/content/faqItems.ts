@@ -1,4 +1,4 @@
-export const faqItems = [
+﻿export const faqItems = [
   {
     question: "Czy muszę wierzyć w poprzednie wcielenia, żeby skorzystać z sesji?",
     answer:
@@ -10,9 +10,9 @@ export const faqItems = [
       "Regresja poprzednich wcieleń to sesja rozwojowa i duchowa, w której osoba w stanie relaksu eksploruje obrazy, emocje, symbole i historie odbierane jako poprzednie życie lub znacząca opowieść wewnętrzna. Nie chodzi o sensację, ale o lepsze zrozumienie relacji, wzorców i doświadczeń."
   },
   {
-    question: "Czym różni się PLR od Bramy Dusz LBL™?",
+    question: "Czym różni się PLR od Bramy Dusz LBL?",
     answer:
-      "PLR zwykle skupia się na historii poprzedniego wcielenia: scenach, relacjach, emocjach i ważnych momentach. Brama Dusz LBL™ jest autorską metodą, która może prowadzić dalej: przez przejście, integrację i symboliczne doświadczenie przestrzeni między wcieleniami. Nie jest oficjalną usługą MNI."
+      "PLR zwykle skupia się na historii poprzedniego wcielenia: scenach, relacjach, emocjach i ważnych momentach. Brama Dusz LBL jest autorską metodą, która może prowadzić dalej: przez przejście, integrację i symboliczne doświadczenie przestrzeni między wcieleniami. Nie jest oficjalną usługą MNI."
   },
   {
     question: "Czy sesja online ma sens?",
@@ -80,9 +80,9 @@ export const faqItems = [
       "PLR jest dobrym początkiem, gdy interesuje Cię konkretna historia, relacja, emocja, sen albo symbol kojarzony z poprzednim życiem. Regresja między wcieleniami dotyczy szerszych pytań o sens, kierunek i przestrzeń między wcieleniami. W praktyce warto zaczynać od tego, co jest bliższe Twojej aktualnej intencji."
   },
   {
-    question: "Czy to jest oficjalna sesja Life Between Lives® The Michael Newton Institute?",
+    question: "Czy to jest oficjalna sesja Life Between Lives The Michael Newton Institute?",
     answer:
-      "Nie. Ta strona i metoda Brama Dusz LBL™ nie są oficjalną usługą The Michael Newton Institute. Life Between Lives® może stanowić znak towarowy jego właściciela, a skrót LBL jest używany informacyjnie. Odwołania do dr. Michaela Newtona dotyczą inspiracji publikacjami."
+      "Nie. Ta strona i metoda Brama Dusz LBL nie są oficjalną usługą The Michael Newton Institute. Nazwy Life Between Lives i LBL są używane informacyjnie. Odwołania do dr. Michaela Newtona dotyczą inspiracji publikacjami."
   }
 ];
 
@@ -105,7 +105,7 @@ export const snippetAnswers = [
   {
     question: "Czym różni się PLR od LBL?",
     answer:
-      "PLR skupia się głównie na poprzednim wcieleniu: historii, relacjach, emocjach i kluczowych scenach. LBL odnosi się do pracy z przestrzenią między wcieleniami. Brama Dusz LBL™ jest autorską metodą inspirowaną publikacjami dr. Michaela Newtona, ale nie oficjalną usługą MNI ani obietnicą konkretnego doświadczenia."
+      "PLR skupia się głównie na poprzednim wcieleniu: historii, relacjach, emocjach i kluczowych scenach. LBL odnosi się do pracy z przestrzenią między wcieleniami. Brama Dusz LBL jest autorską metodą inspirowaną publikacjami dr. Michaela Newtona, ale nie oficjalną usługą MNI ani obietnicą konkretnego doświadczenia."
   },
   {
     question: "Czy regresja działa online?",

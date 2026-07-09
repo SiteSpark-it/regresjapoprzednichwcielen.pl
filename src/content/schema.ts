@@ -1,4 +1,4 @@
-import { faqItems } from "@/content/faqItems";
+﻿import { faqItems } from "@/content/faqItems";
 import { siteData } from "@/content/siteData";
 
 export interface BreadcrumbItem {
@@ -32,7 +32,7 @@ export const personSchema = {
     url: siteData.links.booking
   },
   description:
-    "Praktyk regresji duchowej, studiujący psychologię w Warszawie, pracujący z regresją poprzednich wcieleń i autorską metodą Brama Dusz LBL™."
+    "Praktyk regresji duchowej, studiujący psychologię w Warszawie, pracujący z regresją poprzednich wcieleń i autorską metodą Brama Dusz LBL."
 };
 
 export const serviceSchema = {
