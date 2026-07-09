@@ -1,6 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Regresja Poprzednich Wcieleń">
-  <rect width="64" height="64" rx="12" fill="#0b1220"/>
-  <path d="M18 52V27c0-8.3 5.7-15 14-15s14 6.7 14 15v25" fill="none" stroke="#c79a47" stroke-width="3" stroke-linecap="round"/>
-  <path d="M24 52V28c0-4.9 3.1-9 8-9s8 4.1 8 9v24" fill="none" stroke="#dfc083" stroke-width="2" stroke-linecap="round"/>
-  <path d="M16 52h32" stroke="#f8f3ea" stroke-width="3" stroke-linecap="round"/>
+  <rect width="64" height="64" rx="14" fill="#fff1a8"/>
+  <circle cx="32" cy="31" r="20" fill="#ffd35a" opacity=".36"/>
+  <path d="M14 50V28.5C14 18.3 21.4 10 32 10s18 8.3 18 18.5V50" fill="none" stroke="#9a6400" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M21 50V30c0-6.8 4.4-12.4 11-12.4S43 23.2 43 30v20" fill="none" stroke="#b36d20" stroke-width="2.3" stroke-linecap="round"/>
+  <path d="M18 50h28" stroke="#9a6400" stroke-width="3.2" stroke-linecap="round"/>
+  <circle cx="32" cy="31" r="5.5" fill="#9a6400" opacity=".26"/>
+  <path d="M32 23.2v-4.1M32 42.8v-4.1M24.5 31h-4.1M43.6 31h-4.1M26.7 25.7l-2.9-2.9M40.2 39.2l-2.9-2.9M37.3 25.7l2.9-2.9M23.8 39.2l2.9-2.9" stroke="#9a6400" stroke-width="1.6" stroke-linecap="round" opacity=".7"/>
+  <path d="M24 53c2.2-3 4.8-5 8-5s5.8 2 8 5" fill="none" stroke="#9a6400" stroke-width="2" stroke-linecap="round"/>
 </svg>
