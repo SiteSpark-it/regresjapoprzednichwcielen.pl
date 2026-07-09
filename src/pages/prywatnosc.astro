@@ -1,0 +1,94 @@
+---
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { siteData } from "@/content/siteData";
+
+const title = "Prywatność i statystyki — regresjapoprzednichwcielen.pl";
+const description =
+  "Informacja o statystykach, formularzu kontaktowym i możliwości wyłączenia pomiaru na stronie regresjapoprzednichwcielen.pl.";
+const breadcrumbs = [{ label: "Prywatność i statystyki" }];
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} noindex>
+  <main>
+    <section class="bg-vellum pb-20 text-ink">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="container-page max-w-4xl pt-14">
+        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">informacja techniczna</p>
+        <h1 class="mt-4 font-serif text-4xl leading-tight md:text-6xl">Prywatność i statystyki</h1>
+        <p class="mt-7 max-w-3xl text-lg leading-8 text-graphite/76">
+          Strona korzysta z lekkiej, własnej analityki Instytutu Regresji. Służy ona do sprawdzania, które podstrony są czytane, które przyciski prowadzą do kontaktu i czy użytkownicy znajdują najważniejsze informacje.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-warm-white py-20">
+      <div class="container-page grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div class="premium-surface p-6 md:p-8">
+          <h2 class="font-serif text-3xl leading-tight">Co jest mierzone?</h2>
+          <div class="mt-5 space-y-4 text-sm leading-7 text-graphite/76">
+            <p>Mierzone są odsłony, kliknięcia wybranych przycisków, orientacyjny czas aktywności, źródło wejścia, język przeglądarki, rozmiar ekranu oraz przybliżona lokalizacja na podstawie adresu IP.</p>
+            <p>Adres IP nie jest zapisywany w raportach jako pełny identyfikator. Służy technicznie do geolokalizacji, filtrowania ruchu właściciela i ochrony jakości statystyk.</p>
+            <p>Jeżeli wyślesz formularz kontaktowy, treść zgłoszenia jest przekazywana do zabezpieczonego panelu kontaktowego Instytutu Regresji. Dane formularza są podpisywane przez lokalny endpoint i szyfrowane po stronie huba.</p>
+          </div>
+        </div>
+
+        <div class="premium-surface p-6 md:p-8">
+          <h2 class="font-serif text-3xl leading-tight">Wyłączenie pomiaru w tej przeglądarce</h2>
+          <p class="mt-5 text-sm leading-7 text-graphite/76">
+            Możesz wyłączyć pomiar dla tej przeglądarki. Ustawienie zostaje zapisane lokalnie i nie wymaga zakładania konta.
+          </p>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+            <button class="btn-primary" type="button" id="analyticsOptOut">Wyłącz statystyki</button>
+            <button class="btn-secondary" type="button" id="analyticsOptIn">Włącz ponownie</button>
+          </div>
+          <p class="mt-5 text-sm font-semibold text-gold" id="analyticsPrivacyStatus" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-bone py-20">
+      <div class="container-page max-w-4xl">
+        <h2 class="font-serif text-4xl leading-tight">Kontakt w sprawie danych</h2>
+        <p class="mt-5 text-base leading-8 text-graphite/76">
+          W sprawach związanych z formularzem i danymi kontaktowymi możesz napisać na
+          <a class="text-gold underline underline-offset-4" href={siteData.contact.emailHref} data-track="privacy-email">{siteData.contact.email}</a>
+          albo zadzwonić pod
+          <a class="text-gold underline underline-offset-4" href={siteData.contact.phoneHref} data-track="privacy-phone">{siteData.contact.phone}</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script is:inline>
+    (function () {
+      var status = document.getElementById("analyticsPrivacyStatus");
+      var optOut = document.getElementById("analyticsOptOut");
+      var optIn = document.getElementById("analyticsOptIn");
+
+      function setCookie(value) {
+        document.cookie = "ir_analytics_optout=" + value + ";path=/;max-age=31536000;SameSite=Lax";
+      }
+
+      function writeStatus(message) {
+        if (status) status.textContent = message;
+      }
+
+      optOut && optOut.addEventListener("click", function () {
+        try {
+          localStorage.setItem("ir_analytics_optout", "1");
+        } catch (err) {}
+        setCookie("1");
+        writeStatus("Pomiar został wyłączony w tej przeglądarce.");
+      });
+
+      optIn && optIn.addEventListener("click", function () {
+        try {
+          localStorage.removeItem("ir_analytics_optout");
+        } catch (err) {}
+        document.cookie = "ir_analytics_optout=;path=/;max-age=0;SameSite=Lax";
+        writeStatus("Pomiar został ponownie włączony w tej przeglądarce.");
+      });
+    })();
+  </script>
+</BaseLayout>

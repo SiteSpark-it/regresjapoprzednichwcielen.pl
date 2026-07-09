@@ -6,7 +6,7 @@ import { navigation, siteData } from "@/content/siteData";
 <footer class="border-t border-gold-fill/24 bg-vellum text-ink">
   <div class="container-page grid gap-10 py-12 md:grid-cols-[1.1fr_1fr_1.4fr]">
     <div>
-      <a href="/" class="flex items-center gap-3">
+      <a href="/" class="flex items-center gap-3" data-track="footer-logo-home">
         <span class="grid h-12 w-12 place-items-center border border-gold-fill/80 bg-lemon text-gold shadow-[0_12px_26px_rgba(245,181,31,0.2)]" aria-hidden="true">
           <LogoMark class="h-9 w-9" />
         </span>
@@ -19,7 +19,8 @@ import { navigation, siteData } from "@/content/siteData";
     <div>
       <h2 class="font-serif text-xl text-gold">Najważniejsze strony</h2>
       <ul class="mt-5 space-y-3 text-sm text-graphite/72">
-        {navigation.map((item) => <li><a class="hover:text-gold" href={item.href}>{item.label}</a></li>)}
+        {navigation.map((item) => <li><a class="hover:text-gold" href={item.href} data-track={`footer-nav-${item.label}`}>{item.label}</a></li>)}
+        <li><a class="hover:text-gold" href="/prywatnosc/" data-track="footer-privacy">Prywatność i statystyki</a></li>
       </ul>
     </div>
 
@@ -31,21 +32,21 @@ import { navigation, siteData } from "@/content/siteData";
       <div class="mt-5 space-y-2 text-sm text-graphite/72">
         <p>
           Telefon i WhatsApp:
-          <a class="text-gold underline underline-offset-4" href={siteData.contact.phoneHref}>{siteData.contact.phone}</a>
+          <a class="text-gold underline underline-offset-4" href={siteData.contact.phoneHref} data-track="footer-phone">{siteData.contact.phone}</a>
         </p>
         <p>
           Email:
-          <a class="text-gold underline underline-offset-4" href={siteData.contact.emailHref}>{siteData.contact.email}</a>
+          <a class="text-gold underline underline-offset-4" href={siteData.contact.emailHref} data-track="footer-email">{siteData.contact.email}</a>
         </p>
       </div>
       <div class="mt-5 flex flex-wrap gap-3">
-        <a class="btn-primary min-h-11 px-5 py-3 text-sm" href={siteData.cta.url}>
+        <a class="btn-primary min-h-11 px-5 py-3 text-sm" href={siteData.cta.url} data-track="footer-consultation">
           Umów konsultację
         </a>
-        <a class="btn-secondary min-h-11 px-5 py-3 text-sm" href={siteData.contact.emailHref}>
+        <a class="btn-secondary min-h-11 px-5 py-3 text-sm" href={siteData.contact.emailHref} data-track="footer-email-button">
           Email
         </a>
-        <a class="btn-plain min-h-11 px-5 py-3 text-sm" href={siteData.links.personal} rel="noopener noreferrer">
+        <a class="btn-plain min-h-11 px-5 py-3 text-sm" href={siteData.links.personal} rel="noopener noreferrer" data-track="footer-maciejregresja">
           MaciejRegresja.pl
         </a>
       </div>

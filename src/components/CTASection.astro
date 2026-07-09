@@ -25,14 +25,14 @@ const {
         </p>
       </div>
       <div class="grid gap-3">
-        <a class="btn-primary" href={siteData.cta.url}>
+        <a class="btn-primary" href={siteData.cta.url} data-track="cta-section-consultation">
           <span class="relative">Umów konsultację</span>
         </a>
-        <a class="contact-link border border-gold-fill/28 bg-white/70 px-5 py-4" href={siteData.contact.whatsapp} rel="noopener noreferrer">
+        <a class="contact-link border border-gold-fill/28 bg-white/70 px-5 py-4" href={siteData.contact.whatsapp} rel="noopener noreferrer" data-track="cta-section-whatsapp">
           <span class="relative block text-sm font-semibold">WhatsApp / telefon</span>
           <span class="relative mt-1 block text-sm text-gold">{siteData.contact.phone}</span>
         </a>
-        <a class="contact-link border border-gold-fill/28 bg-white/70 px-5 py-4" href={siteData.contact.emailHref}>
+        <a class="contact-link border border-gold-fill/28 bg-white/70 px-5 py-4" href={siteData.contact.emailHref} data-track="cta-section-email">
           <span class="relative block text-sm font-semibold">Email</span>
           <span class="relative mt-1 block text-sm text-gold">{siteData.contact.email}</span>
         </a>

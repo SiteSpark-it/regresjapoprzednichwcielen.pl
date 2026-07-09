@@ -2,6 +2,8 @@ node_modules/
 .astro/
 dist/
 .preview-pid
+public/backend/lead-config.php
+dist/backend/lead-config.php
 
 npm-debug.log*
 yarn-debug.log*

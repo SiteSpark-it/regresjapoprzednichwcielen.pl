@@ -39,10 +39,10 @@ const { title, subtitle, image = "/assets/hero-gateway.webp" } = Astro.props;
         Jeśli temat wraca w Tobie od dłuższego czasu, zacznij od krótkiej konsultacji. Jedna wiadomość wystarczy, żeby sprawdzić najbliższy krok.
       </p>
       <div class="mt-8 grid grid-cols-1 gap-3 min-[380px]:grid-cols-2 sm:flex sm:flex-row">
-        <a class="btn-primary" href={siteData.cta.url}>
+        <a class="btn-primary" href={siteData.cta.url} data-track="hero-consultation">
           Umów konsultację
         </a>
-        <a class="btn-secondary" href={siteData.contact.emailHref}>
+        <a class="btn-secondary" href={siteData.contact.emailHref} data-track="hero-email">
           Napisz email
         </a>
       </div>
@@ -74,15 +74,15 @@ const { title, subtitle, image = "/assets/hero-gateway.webp" } = Astro.props;
         <li class="flex gap-2"><span class="text-gold">03</span> spokojne ustalenie, czy sesja pasuje do tematu</li>
       </ul>
       <div class="mt-7 grid gap-3">
-        <a class="contact-link border border-gold-fill/26 bg-warm-white/72 p-4" href={siteData.contact.whatsapp} rel="noopener noreferrer">
+        <a class="contact-link border border-gold-fill/26 bg-warm-white/72 p-4" href={siteData.contact.whatsapp} rel="noopener noreferrer" data-track="hero-card-whatsapp">
           <span class="relative block text-sm font-semibold text-ink">WhatsApp lub telefon</span>
           <span class="relative mt-1 block text-sm text-gold">{siteData.contact.phone}</span>
         </a>
-        <a class="contact-link border border-gold-fill/26 bg-warm-white/72 p-4" href={siteData.contact.emailHref}>
+        <a class="contact-link border border-gold-fill/26 bg-warm-white/72 p-4" href={siteData.contact.emailHref} data-track="hero-card-email">
           <span class="relative block text-sm font-semibold text-ink">Email</span>
           <span class="relative mt-1 block text-sm text-gold">{siteData.contact.email}</span>
         </a>
-        <a class="btn-primary" href={siteData.cta.url}>
+        <a class="btn-primary" href={siteData.cta.url} data-track="hero-card-consultation">
           <span class="relative">Przejdź do konsultacji</span>
         </a>
       </div>

@@ -42,10 +42,10 @@ const canonicalUrl = `${siteData.url}/baza-wiedzy/${article.slug}/`;
         <h1 class="mt-5 max-w-4xl font-serif text-4xl leading-tight md:text-6xl">{article.h1}</h1>
         <p class="mt-7 max-w-3xl text-lg leading-8 text-warm-white/75">{article.excerpt}</p>
         <div class="mt-9 flex flex-col gap-4 sm:flex-row">
-          <a class="inline-flex justify-center bg-gold-fill px-7 py-4 text-sm font-bold text-ink transition hover:bg-honey" href={siteData.cta.url}>
+          <a class="inline-flex justify-center bg-gold-fill px-7 py-4 text-sm font-bold text-ink transition hover:bg-honey" href={siteData.cta.url} data-track="article-hero-consultation">
             Umów konsultację
           </a>
-          <a class="inline-flex justify-center border border-gold/70 px-7 py-4 text-sm font-bold text-gold-soft transition hover:bg-white/8" href="/baza-wiedzy/">
+          <a class="inline-flex justify-center border border-gold/70 px-7 py-4 text-sm font-bold text-gold-soft transition hover:bg-white/8" href="/baza-wiedzy/" data-track="article-back-knowledge-base">
             Wróć do bazy wiedzy
           </a>
         </div>
@@ -70,9 +70,9 @@ const canonicalUrl = `${siteData.url}/baza-wiedzy/${article.slug}/`;
           <div class="border border-ink/10 bg-white/70 p-6">
             <h2 class="font-serif text-2xl">Dalsze czytanie</h2>
             <ul class="mt-5 space-y-3 text-sm leading-7 text-graphite/76">
-              <li><a class="text-gold underline underline-offset-4" href="/czym-jest-regresja-poprzednich-wcielen/">Czym jest regresja poprzednich wcieleń?</a></li>
-              <li><a class="text-gold underline underline-offset-4" href="/regresja-do-poprzedniego-zycia/">Jak wygląda sesja PLR?</a></li>
-              <li><a class="text-gold underline underline-offset-4" href="/brama-dusz-lbl/">Brama Dusz LBL</a></li>
+              <li><a class="text-gold underline underline-offset-4" href="/czym-jest-regresja-poprzednich-wcielen/" data-track="article-sidebar-what-is-plr">Czym jest regresja poprzednich wcieleń?</a></li>
+              <li><a class="text-gold underline underline-offset-4" href="/regresja-do-poprzedniego-zycia/" data-track="article-sidebar-session-plr">Jak wygląda sesja PLR?</a></li>
+              <li><a class="text-gold underline underline-offset-4" href="/brama-dusz-lbl/" data-track="article-sidebar-brama-dusz-lbl">Brama Dusz LBL</a></li>
             </ul>
           </div>
         </aside>

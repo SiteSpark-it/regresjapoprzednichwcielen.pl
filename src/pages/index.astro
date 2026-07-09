@@ -41,15 +41,15 @@ const sessionSteps = [
               Jeśli jesteś tu pierwszy raz, możesz czytać spokojnie. Jeśli już czujesz, że temat dotyczy Ciebie, przejdź od razu do kontaktu i opisz w jednym zdaniu, z czym przychodzisz.
             </p>
             <div class="mt-7 flex flex-col gap-3 sm:flex-row">
-              <a class="btn-primary" href={siteData.cta.url}>Umów konsultację</a>
-              <a class="btn-secondary" href={siteData.contact.emailHref}>Napisz email</a>
+              <a class="btn-primary" href={siteData.cta.url} data-track="topics-consultation">Umów konsultację</a>
+              <a class="btn-secondary" href={siteData.contact.emailHref} data-track="topics-email">Napisz email</a>
             </div>
           </div>
           <ol class="grid gap-3 sm:grid-cols-2">
             {
               prioritySitelinks.map((item, index) => (
                 <li>
-                  <a class="group grid min-h-full grid-cols-[3rem_1fr] gap-4 border border-ink/10 bg-white/72 p-4 transition hover:border-gold hover:bg-white" href={item.href}>
+                  <a class="group grid min-h-full grid-cols-[3rem_1fr] gap-4 border border-ink/10 bg-white/72 p-4 transition hover:border-gold hover:bg-white" href={item.href} data-track={`important-topic-${item.title}`}>
                     <span class="font-serif text-2xl text-gold">{String(index + 1).padStart(2, "0")}</span>
                     <span class="pt-1 text-sm font-semibold leading-6 text-ink group-hover:text-gold">{item.title}</span>
                   </a>
@@ -90,7 +90,7 @@ const sessionSteps = [
             </article>
           </div>
           <div class="lg:col-start-2">
-            <a class="btn-primary w-full sm:w-auto" href={siteData.cta.url}>Chcę zapytać o sesję</a>
+            <a class="btn-primary w-full sm:w-auto" href={siteData.cta.url} data-track="signal-consultation">Chcę zapytać o sesję</a>
           </div>
         </div>
       </div>
@@ -229,13 +229,13 @@ const sessionSteps = [
           </div>
         </div>
         <div class="mt-10 flex flex-col gap-3 sm:flex-row">
-          <a class="btn-primary" href={siteData.cta.url}>
+          <a class="btn-primary" href={siteData.cta.url} data-track="next-step-consultation">
             Umów konsultację
           </a>
-          <a class="btn-secondary" href={siteData.contact.whatsapp} rel="noopener noreferrer">
+          <a class="btn-secondary" href={siteData.contact.whatsapp} rel="noopener noreferrer" data-track="next-step-whatsapp">
             Napisz na WhatsApp
           </a>
-          <a class="btn-plain" href={siteData.contact.emailHref}>
+          <a class="btn-plain" href={siteData.contact.emailHref} data-track="next-step-email">
             Wyślij email
           </a>
         </div>

@@ -28,8 +28,8 @@ const pageFaq = pageFaqs.contact;
             Jeśli regresja poprzednich wcieleń wraca do Ciebie jako temat, zacznij od krótkiej wiadomości. Możesz zapytać o przebieg sesji, dostępność, formę online albo o to, czy ta praca pasuje do Twojej sytuacji.
           </p>
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a class="btn-primary" href="#formularz">Wyślij krótką wiadomość</a>
-            <a class="btn-secondary" href={siteData.contact.whatsapp} rel="noopener noreferrer">Napisz na WhatsApp</a>
+            <a class="btn-primary" href="#formularz" data-track="contact-hero-scroll-form">Wyślij krótką wiadomość</a>
+            <a class="btn-secondary" href={siteData.contact.whatsapp} rel="noopener noreferrer" data-track="contact-hero-whatsapp">Napisz na WhatsApp</a>
           </div>
         </div>
         <div class="threshold-panel p-6">
@@ -38,11 +38,11 @@ const pageFaq = pageFaqs.contact;
             Nie potrzebujesz długiego opisu. Napisz jedno zdanie o temacie i zostaw najwygodniejszą formę kontaktu.
           </p>
           <div class="mt-6 grid gap-3 text-sm">
-            <a class="contact-link border border-gold-fill/26 bg-warm-white/72 p-4" href={siteData.contact.whatsapp} rel="noopener noreferrer">
+            <a class="contact-link border border-gold-fill/26 bg-warm-white/72 p-4" href={siteData.contact.whatsapp} rel="noopener noreferrer" data-track="contact-card-whatsapp">
               <span class="relative block font-semibold">WhatsApp / telefon</span>
               <span class="relative mt-1 block text-gold">{siteData.contact.phone}</span>
             </a>
-            <a class="contact-link border border-gold-fill/26 bg-warm-white/72 p-4" href={siteData.contact.emailHref}>
+            <a class="contact-link border border-gold-fill/26 bg-warm-white/72 p-4" href={siteData.contact.emailHref} data-track="contact-card-email">
               <span class="relative block font-semibold">Email</span>
               <span class="relative mt-1 block text-gold">{siteData.contact.email}</span>
             </a>
@@ -65,13 +65,13 @@ const pageFaq = pageFaqs.contact;
             <p>Możesz napisać zwyczajnie: „Chcę zapytać o sesję PLR, wraca do mnie temat relacji / snu / lęku”.</p>
           </div>
           <div class="mt-8 flex flex-col gap-4 sm:flex-row">
-            <a class="btn-primary" href="#formularz">
+            <a class="btn-primary" href="#formularz" data-track="contact-content-scroll-form">
               Wypełnij formularz
             </a>
-            <a class="btn-secondary" href={siteData.contact.emailHref}>
+            <a class="btn-secondary" href={siteData.contact.emailHref} data-track="contact-content-email">
               Napisz email
             </a>
-            <a class="btn-plain" href={siteData.links.personal} rel="noopener noreferrer">
+            <a class="btn-plain" href={siteData.links.personal} rel="noopener noreferrer" data-track="contact-content-maciejregresja">
               MaciejRegresja.pl
             </a>
           </div>
@@ -79,26 +79,30 @@ const pageFaq = pageFaqs.contact;
             <div class="border border-ink/10 bg-white/65 p-5">
               <p class="font-semibold text-ink">Telefon i WhatsApp</p>
               <p class="mt-2">
-                <a class="text-gold underline underline-offset-4" href={siteData.contact.phoneHref}>{siteData.contact.phone}</a>
+                <a class="text-gold underline underline-offset-4" href={siteData.contact.phoneHref} data-track="contact-info-phone">{siteData.contact.phone}</a>
               </p>
               <p class="mt-2">
-                <a class="text-gold underline underline-offset-4" href={siteData.contact.whatsapp} rel="noopener noreferrer">Napisz na WhatsApp</a>
+                <a class="text-gold underline underline-offset-4" href={siteData.contact.whatsapp} rel="noopener noreferrer" data-track="contact-info-whatsapp">Napisz na WhatsApp</a>
               </p>
             </div>
             <div class="border border-ink/10 bg-white/65 p-5">
               <p class="font-semibold text-ink">Email</p>
               <p class="mt-2">
-                <a class="text-gold underline underline-offset-4" href={siteData.contact.emailHref}>{siteData.contact.email}</a>
+                <a class="text-gold underline underline-offset-4" href={siteData.contact.emailHref} data-track="contact-info-email">{siteData.contact.email}</a>
               </p>
               <p class="mt-2 text-graphite/70">Możesz wysłać krótkie pytanie bezpośrednio z własnej skrzynki.</p>
             </div>
           </div>
-          <form id="formularz" class="premium-surface mt-10 p-6 md:p-8" action={siteData.contact.emailHref} method="post" enctype="text/plain">
+          <form id="formularz" class="premium-surface mt-10 p-6 md:p-8" action={siteData.contact.emailHref} method="post" enctype="text/plain" data-lead-form data-no-track data-track="contact-lead-form">
             <h2 class="font-serif text-3xl leading-tight text-ink">Formularz kontaktowy</h2>
             <p class="mt-4 text-sm leading-7 text-graphite/74">
               Formularz otworzy wiadomość email do {siteData.contact.email}. W treści możesz zostawić temat, preferowaną formę kontaktu i krótki opis sprawy.
             </p>
             <div class="mt-6 grid gap-4">
+              <label class="sr-only" aria-hidden="true">
+                Strona
+                <input type="text" name="website" tabindex="-1" autocomplete="off" />
+              </label>
               <label class="grid gap-2 text-sm font-semibold text-ink">
                 Imię
                 <input class="border border-gold-fill/30 bg-white px-4 py-3 text-base font-normal outline-none transition focus:border-gold" type="text" name="Imię" autocomplete="name" />
@@ -111,11 +115,11 @@ const pageFaq = pageFaqs.contact;
                 Wiadomość
                 <textarea class="min-h-36 border border-gold-fill/30 bg-white px-4 py-3 text-base font-normal leading-7 outline-none transition focus:border-gold" name="Wiadomość" placeholder="Napisz krótko, o co chcesz zapytać: temat sesji, forma online, dostępność, przygotowanie..." ></textarea>
               </label>
-              <button class="btn-primary" type="submit">
+              <button class="btn-primary" type="submit" data-track="contact-form-submit">
                 Przygotuj wiadomość email
               </button>
               <p class="text-xs leading-6 text-graphite/62">
-                Po kliknięciu otworzy się Twoja aplikacja email z przygotowaną wiadomością do Instytutu Regresji.
+                Po kliknięciu otworzy się Twoja aplikacja email z przygotowaną wiadomością do Instytutu Regresji. Techniczna kopia zgłoszenia jest przekazywana do zabezpieczonego panelu kontaktowego Instytutu, żeby łatwiej wrócić do rozmowy.
               </p>
             </div>
           </form>

@@ -5,7 +5,7 @@ import { navigation, siteData } from "@/content/siteData";
 
 <header class="absolute inset-x-0 top-0 z-30 border-b border-gold-fill/24 bg-warm-white/82 text-ink shadow-[0_12px_36px_rgba(126,82,0,0.08)] backdrop-blur-md">
   <nav class="container-page flex min-h-20 items-center justify-between gap-4" aria-label="Główna nawigacja">
-    <a href="/" class="flex min-w-0 items-center gap-3" aria-label={`${siteData.name} - strona główna`}>
+    <a href="/" class="flex min-w-0 items-center gap-3" aria-label={`${siteData.name} - strona główna`} data-track="header-logo-home">
       <span class="grid h-12 w-12 shrink-0 place-items-center border border-gold-fill/80 bg-lemon text-gold shadow-[0_14px_30px_rgba(245,181,31,0.22)]" aria-hidden="true">
         <LogoMark class="h-9 w-9" />
       </span>
@@ -15,7 +15,7 @@ import { navigation, siteData } from "@/content/siteData";
     <div class="hidden items-center gap-5 xl:flex">
       {
         navigation.map((item) => (
-          <a class="text-xs font-medium uppercase tracking-[0.12em] text-graphite/72 transition hover:text-gold 2xl:text-[0.78rem]" href={item.href}>
+          <a class="text-xs font-medium uppercase tracking-[0.12em] text-graphite/72 transition hover:text-gold 2xl:text-[0.78rem]" href={item.href} data-track={`nav-${item.label}`}>
             {item.label}
           </a>
         ))
@@ -23,12 +23,13 @@ import { navigation, siteData } from "@/content/siteData";
     </div>
 
     <div class="hidden items-center gap-3 xl:flex">
-      <a class="text-xs font-semibold uppercase tracking-[0.12em] text-gold hover:text-ink" href={siteData.contact.emailHref}>
+      <a class="text-xs font-semibold uppercase tracking-[0.12em] text-gold hover:text-ink" href={siteData.contact.emailHref} data-track="header-email">
         Email
       </a>
       <a
         class="btn-primary px-5 py-3 text-sm"
         href={siteData.cta.url}
+        data-track="header-consultation"
       >
         Umów konsultację
       </a>
@@ -42,15 +43,15 @@ import { navigation, siteData } from "@/content/siteData";
         <div class="grid gap-2">
           {
             navigation.map((item) => (
-              <a class="px-2 py-2 text-sm text-graphite/82 hover:text-gold" href={item.href}>
+              <a class="px-2 py-2 text-sm text-graphite/82 hover:text-gold" href={item.href} data-track={`mobile-nav-${item.label}`}>
                 {item.label}
               </a>
             ))
           }
-          <a class="btn-primary mt-2 px-4 py-3 text-sm" href={siteData.cta.url}>
+          <a class="btn-primary mt-2 px-4 py-3 text-sm" href={siteData.cta.url} data-track="mobile-menu-consultation">
             Umów konsultację
           </a>
-          <a class="btn-secondary px-4 py-3 text-sm" href={siteData.contact.emailHref}>
+          <a class="btn-secondary px-4 py-3 text-sm" href={siteData.contact.emailHref} data-track="mobile-menu-email">
             Napisz email
           </a>
         </div>

@@ -1,0 +1,119 @@
+---
+import { siteData } from "@/content/siteData";
+
+const analyticsSite = siteData.domain;
+const analyticsEndpoint = "https://instytutregresji.pl/backend/analytics.php";
+const analyticsConfig = JSON.stringify({
+  site: analyticsSite,
+  endpoint: analyticsEndpoint,
+  heartbeatMs: 15000
+});
+---
+
+<script is:inline set:html={`window.IRHubConfig = ${analyticsConfig};`}></script>
+<script defer src="/assets/ir-hub-track.js?v=1"></script>
+<script is:inline>
+  (function () {
+    var LEAD_ENDPOINT = "/backend/lead.php";
+    var HONEYPOT_NAMES = ["website", "company_website", "url_firmy"];
+
+    function hasOptedOut() {
+      try {
+        if (window.IRAnalyticsOptOut && window.IRAnalyticsOptOut.isOptedOut()) return true;
+        if (localStorage.getItem("ir_analytics_optout") === "1") return true;
+      } catch (err) {}
+      if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return true;
+      return document.cookie.split(";").some(function (part) {
+        return part.trim() === "ir_analytics_optout=1";
+      });
+    }
+
+    function storageValue(storage, key) {
+      try {
+        return storage.getItem(key) || "";
+      } catch (err) {
+        return "";
+      }
+    }
+
+    function currentMetadata() {
+      var data = {
+        type: "form",
+        site: window.IRHubConfig && window.IRHubConfig.site ? window.IRHubConfig.site : location.hostname,
+        sid: storageValue(sessionStorage, "ir_sid"),
+        vid: storageValue(localStorage, "ir_vid"),
+        page: location.pathname || "/",
+        url: location.href,
+        title: document.title || "",
+        ref: document.referrer || "",
+        lang: navigator.language || "",
+        viewport: window.innerWidth + "x" + window.innerHeight,
+        screen: window.screen ? window.screen.width + "x" + window.screen.height : ""
+      };
+      try {
+        data.tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+      } catch (err) {}
+      return data;
+    }
+
+    function fieldValue(field) {
+      if (field.type === "checkbox") return field.checked ? field.value || "tak" : "";
+      if (field.type === "radio") return field.checked ? field.value : undefined;
+      return field.value || "";
+    }
+
+    function collectForm(form) {
+      var values = {};
+      var hasHoneypotValue = false;
+      Array.prototype.forEach.call(form.elements || [], function (field) {
+        if (!field || !field.name || field.disabled) return;
+        var name = field.name.trim();
+        if (!name) return;
+        if (field.type === "password" || field.type === "file") return;
+        var value = fieldValue(field);
+        if (value === undefined) return;
+        if (HONEYPOT_NAMES.indexOf(name) !== -1 && value) hasHoneypotValue = true;
+        if (HONEYPOT_NAMES.indexOf(name) !== -1) return;
+        values[name] = value;
+      });
+
+      if (hasHoneypotValue) return null;
+
+      var payload = currentMetadata();
+      payload.element = form.getAttribute("data-track") || form.id || "contact-form";
+      payload.form_id = form.id || form.getAttribute("name") || "contact-form";
+      payload.form_payload = values;
+      return payload;
+    }
+
+    function sendLead(payload) {
+      if (!payload || hasOptedOut()) return;
+      var body = JSON.stringify(payload);
+      if (navigator.sendBeacon) {
+        try {
+          var blob = new Blob([body], { type: "application/json" });
+          if (navigator.sendBeacon(LEAD_ENDPOINT, blob)) return;
+        } catch (err) {}
+      }
+      try {
+        fetch(LEAD_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: body,
+          credentials: "same-origin",
+          keepalive: true
+        }).catch(function () {});
+      } catch (err) {}
+    }
+
+    document.addEventListener(
+      "submit",
+      function (event) {
+        var form = event.target;
+        if (!form || form.nodeName !== "FORM" || !form.hasAttribute("data-lead-form")) return;
+        sendLead(collectForm(form));
+      },
+      { capture: true }
+    );
+  })();
+</script>

@@ -4,13 +4,13 @@ import { siteData } from "@/content/siteData";
 
 <aside class="fixed inset-x-0 bottom-0 z-40 border-t border-gold-fill/28 bg-warm-white/94 px-3 py-2 shadow-[0_-18px_40px_rgba(126,82,0,0.12)] backdrop-blur-md md:hidden" aria-label="Szybki kontakt">
   <div class="mx-auto grid max-w-md grid-cols-3 gap-2">
-    <a class="btn-secondary min-h-12 px-2 py-3 text-xs" href={siteData.contact.phoneHref}>
+    <a class="btn-secondary min-h-12 px-2 py-3 text-xs" href={siteData.contact.phoneHref} data-track="sticky-phone">
       Zadzwoń
     </a>
-    <a class="btn-secondary min-h-12 px-2 py-3 text-xs" href={siteData.contact.whatsapp} rel="noopener noreferrer">
+    <a class="btn-secondary min-h-12 px-2 py-3 text-xs" href={siteData.contact.whatsapp} rel="noopener noreferrer" data-track="sticky-whatsapp">
       WhatsApp
     </a>
-    <a class="btn-primary min-h-12 px-2 py-3 text-xs" href={siteData.cta.url}>
+    <a class="btn-primary min-h-12 px-2 py-3 text-xs" href={siteData.cta.url} data-track="sticky-consultation">
       Konsultacja
     </a>
   </div>
