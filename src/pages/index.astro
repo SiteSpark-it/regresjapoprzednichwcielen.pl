@@ -38,8 +38,12 @@ const sessionSteps = [
             <h2 id="najwazniejsze-tematy" class="font-serif text-4xl leading-tight md:text-5xl">Najważniejsze tematy</h2>
             <div class="gold-rule mt-5"></div>
             <p class="mt-5 text-base leading-8 text-graphite/76">
-              Jeśli jesteś tu pierwszy raz, potraktuj tę listę jak spokojną ścieżkę. Najpierw zrozum, czym jest PLR, potem zobacz przebieg sesji, a dopiero później zdecyduj, czy chcesz napisać lub umówić rozmowę.
+              Jeśli jesteś tu pierwszy raz, możesz czytać spokojnie. Jeśli już czujesz, że temat dotyczy Ciebie, przejdź od razu do kontaktu i opisz w jednym zdaniu, z czym przychodzisz.
             </p>
+            <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a class="btn-primary" href={siteData.cta.url}>Umów konsultację</a>
+              <a class="btn-secondary" href={siteData.contact.emailHref}>Napisz email</a>
+            </div>
           </div>
           <ol class="grid gap-3 sm:grid-cols-2">
             {
@@ -53,6 +57,41 @@ const sessionSteps = [
               ))
             }
           </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-warm-white py-16" aria-labelledby="kiedy-konsultacja">
+      <div class="container-page">
+        <div class="premium-surface grid gap-10 p-6 md:p-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">sygnał do działania</p>
+            <h2 id="kiedy-konsultacja" class="mt-4 font-serif text-4xl leading-tight md:text-5xl">Kiedy warto napisać już teraz?</h2>
+            <p class="mt-6 text-base leading-8 text-graphite/76">
+              Nie wtedy, gdy masz idealnie ułożoną historię. Wtedy, gdy temat wraca, porusza emocje i czujesz, że samo czytanie kolejnych tekstów już nie wystarcza.
+            </p>
+          </div>
+          <div class="grid gap-3 md:grid-cols-2">
+            <article class="border border-gold-fill/24 bg-white/72 p-5">
+              <h3 class="font-serif text-2xl leading-tight">Wraca ta sama relacja</h3>
+              <p class="mt-3 text-sm leading-7 text-graphite/74">Masz poczucie, że więź, konflikt albo przyciąganie niosą starszy, trudny do nazwania kontekst.</p>
+            </article>
+            <article class="border border-gold-fill/24 bg-white/72 p-5">
+              <h3 class="font-serif text-2xl leading-tight">Powtarza się sen lub obraz</h3>
+              <p class="mt-3 text-sm leading-7 text-graphite/74">Wraca miejsce, epoka, scena albo symbol, który wydaje się ważniejszy niż zwykłe skojarzenie.</p>
+            </article>
+            <article class="border border-gold-fill/24 bg-white/72 p-5">
+              <h3 class="font-serif text-2xl leading-tight">Emocja nie odpuszcza</h3>
+              <p class="mt-3 text-sm leading-7 text-graphite/74">Nie chodzi o diagnozę, tylko o uważne sprawdzenie, jaką historię może nieść wewnętrzne doświadczenie.</p>
+            </article>
+            <article class="border border-gold-fill/24 bg-white/72 p-5">
+              <h3 class="font-serif text-2xl leading-tight">Czujesz gotowość na sesję</h3>
+              <p class="mt-3 text-sm leading-7 text-graphite/74">Wystarczy jedno zdanie w formularzu. Konsultacja pomoże ustalić, czy PLR jest właściwym kierunkiem.</p>
+            </article>
+          </div>
+          <div class="lg:col-start-2">
+            <a class="btn-primary w-full sm:w-auto" href={siteData.cta.url}>Chcę zapytać o sesję</a>
+          </div>
         </div>
       </div>
     </section>
@@ -190,13 +229,13 @@ const sessionSteps = [
           </div>
         </div>
         <div class="mt-10 flex flex-col gap-3 sm:flex-row">
-          <a class="inline-flex justify-center bg-gold-fill px-7 py-4 text-sm font-bold text-ink transition hover:bg-honey" href={siteData.cta.url}>
+          <a class="btn-primary" href={siteData.cta.url}>
             Umów konsultację
           </a>
-          <a class="inline-flex justify-center border border-ink/18 px-7 py-4 text-sm font-bold text-ink transition hover:border-gold hover:text-gold" href={siteData.contact.whatsapp} rel="noopener noreferrer">
+          <a class="btn-secondary" href={siteData.contact.whatsapp} rel="noopener noreferrer">
             Napisz na WhatsApp
           </a>
-          <a class="inline-flex justify-center border border-ink/18 px-7 py-4 text-sm font-bold text-ink transition hover:border-gold hover:text-gold" href={siteData.contact.emailHref}>
+          <a class="btn-plain" href={siteData.contact.emailHref}>
             Wyślij email
           </a>
         </div>
@@ -274,6 +313,6 @@ const sessionSteps = [
     </section>
 
     <FAQ items={faqItems} />
-    <CTASection title="Jeśli czujesz, że to właściwy moment, sprawdź dostępne terminy" text="Nie musisz podejmować decyzji pod wpływem chwili. Zobacz opis sesji, wróć do pytań i umów spotkanie dopiero wtedy, gdy czujesz gotowość." />
+    <CTASection title="Jeśli to Twój temat, nie odkładaj pierwszej rozmowy" text="Najprościej zacząć od krótkiej wiadomości. Opisz jednym zdaniem, co wraca w Twoim doświadczeniu, i wybierz kontakt zwrotny: email, telefon albo WhatsApp." />
   </main>
 </BaseLayout>

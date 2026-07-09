@@ -14,9 +14,9 @@ const { title, text, href } = Astro.props;
       <h3 class="font-serif text-2xl leading-tight text-ink transition group-hover:text-gold">{title}</h3>
       <p class="mt-3 max-w-2xl text-sm leading-7 text-graphite/75">{text}</p>
     </div>
-    <span class="inline-flex items-center gap-2 text-sm font-semibold text-gold">
+    <span class="btn-secondary min-h-11 px-4 py-3 text-sm">
       Czytaj dalej
-      <span aria-hidden="true" class="transition group-hover:translate-x-1">→</span>
+      <span aria-hidden="true" class="ml-2 transition group-hover:translate-x-1">→</span>
     </span>
   </a>
 </article>

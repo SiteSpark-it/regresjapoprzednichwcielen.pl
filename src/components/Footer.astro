@@ -7,7 +7,7 @@ import { navigation, siteData } from "@/content/siteData";
   <div class="container-page grid gap-10 py-12 md:grid-cols-[1.1fr_1fr_1.4fr]">
     <div>
       <a href="/" class="flex items-center gap-3">
-        <span class="grid h-12 w-12 place-items-center border border-gold-fill/70 bg-lemon/80 text-gold shadow-[0_12px_26px_rgba(242,185,47,0.16)]" aria-hidden="true">
+        <span class="grid h-12 w-12 place-items-center border border-gold-fill/80 bg-lemon text-gold shadow-[0_12px_26px_rgba(245,181,31,0.2)]" aria-hidden="true">
           <LogoMark class="h-9 w-9" />
         </span>
         <span class="font-serif text-xl leading-tight text-gold">{siteData.name}</span>
@@ -26,7 +26,7 @@ import { navigation, siteData } from "@/content/siteData";
     <div>
       <h2 class="font-serif text-xl text-gold">Kontakt i konsultacja</h2>
       <p class="mt-5 text-sm leading-7 text-graphite/72">
-        Konsultację możesz rozpocząć na tej stronie: przez email, telefon, WhatsApp albo formularz kontaktowy. Sesje mają charakter rozwojowy i duchowy; decyzję o udziale warto podjąć spokojnie.
+        Konsultację możesz rozpocząć na tej stronie: przez email, telefon, WhatsApp albo formularz kontaktowy. Wystarczy krótka wiadomość z tematem i preferowaną formą kontaktu.
       </p>
       <div class="mt-5 space-y-2 text-sm text-graphite/72">
         <p>
@@ -39,13 +39,13 @@ import { navigation, siteData } from "@/content/siteData";
         </p>
       </div>
       <div class="mt-5 flex flex-wrap gap-3">
-        <a class="border border-gold-fill bg-gold-fill px-5 py-3 text-sm font-semibold text-ink" href={siteData.cta.url}>
-          Umów rozmowę
+        <a class="btn-primary min-h-11 px-5 py-3 text-sm" href={siteData.cta.url}>
+          Umów konsultację
         </a>
-        <a class="border border-gold-fill/28 bg-warm-white/70 px-5 py-3 text-sm font-semibold text-ink" href={siteData.contact.emailHref}>
+        <a class="btn-secondary min-h-11 px-5 py-3 text-sm" href={siteData.contact.emailHref}>
           Email
         </a>
-        <a class="border border-gold-fill/28 bg-warm-white/70 px-5 py-3 text-sm font-semibold text-ink" href={siteData.links.personal} rel="noopener noreferrer">
+        <a class="btn-plain min-h-11 px-5 py-3 text-sm" href={siteData.links.personal} rel="noopener noreferrer">
           MaciejRegresja.pl
         </a>
       </div>

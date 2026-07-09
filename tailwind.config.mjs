@@ -4,17 +4,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: "#20170b",
+        ink: "#1e1608",
         night: "#4a3008",
-        graphite: "#463626",
-        "warm-white": "#fffaf0",
-        bone: "#f7e8c6",
-        vellum: "#fff6dc",
-        gold: "#9a6400",
-        "gold-fill": "#f2b92f",
-        "gold-soft": "#ffe39a",
-        honey: "#ffd35a",
-        lemon: "#fff1a8",
+        graphite: "#4b3925",
+        "warm-white": "#fffdf4",
+        bone: "#ffefc7",
+        vellum: "#fff8df",
+        gold: "#9c5f00",
+        "gold-fill": "#f5b51f",
+        "gold-soft": "#ffe594",
+        honey: "#ffc928",
+        lemon: "#fff2a8",
         copper: "#b36d20",
         sage: "#9aa88f",
         mist: "#d8c9aa"
@@ -24,7 +24,8 @@ export default {
         sans: ["Inter", "Segoe UI", "Roboto", "Arial", "sans-serif"]
       },
       boxShadow: {
-        soft: "0 24px 70px rgba(126, 82, 0, 0.14)"
+        soft: "0 24px 70px rgba(126, 82, 0, 0.14)",
+        glow: "0 24px 60px rgba(245, 181, 31, 0.32)"
       }
     }
   },

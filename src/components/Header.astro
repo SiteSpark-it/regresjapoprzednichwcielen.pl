@@ -3,10 +3,10 @@ import LogoMark from "@/components/LogoMark.astro";
 import { navigation, siteData } from "@/content/siteData";
 ---
 
-<header class="absolute inset-x-0 top-0 z-30 border-b border-gold-fill/18 bg-warm-white/72 text-ink backdrop-blur-md">
+<header class="absolute inset-x-0 top-0 z-30 border-b border-gold-fill/24 bg-warm-white/82 text-ink shadow-[0_12px_36px_rgba(126,82,0,0.08)] backdrop-blur-md">
   <nav class="container-page flex min-h-20 items-center justify-between gap-4" aria-label="Główna nawigacja">
     <a href="/" class="flex min-w-0 items-center gap-3" aria-label={`${siteData.name} - strona główna`}>
-      <span class="grid h-12 w-12 shrink-0 place-items-center border border-gold-fill/70 bg-lemon/80 text-gold shadow-[0_12px_26px_rgba(242,185,47,0.18)]" aria-hidden="true">
+      <span class="grid h-12 w-12 shrink-0 place-items-center border border-gold-fill/80 bg-lemon text-gold shadow-[0_14px_30px_rgba(245,181,31,0.22)]" aria-hidden="true">
         <LogoMark class="h-9 w-9" />
       </span>
       <span class="max-w-48 text-sm font-semibold leading-tight tracking-wide">{siteData.name}</span>
@@ -27,18 +27,18 @@ import { navigation, siteData } from "@/content/siteData";
         Email
       </a>
       <a
-        class="border border-gold-fill/70 bg-lemon/60 px-5 py-3 text-sm font-semibold text-gold transition hover:bg-gold-fill hover:text-ink"
+        class="btn-primary px-5 py-3 text-sm"
         href={siteData.cta.url}
       >
-        Umów rozmowę
+        Umów konsultację
       </a>
     </div>
 
     <details class="relative xl:hidden">
-      <summary class="list-none border border-gold-fill/36 bg-warm-white/75 px-4 py-3 text-sm font-semibold text-ink marker:hidden">
+      <summary class="list-none border border-gold-fill/42 bg-warm-white/85 px-4 py-3 text-sm font-semibold text-ink shadow-[0_10px_24px_rgba(126,82,0,0.1)] marker:hidden">
         Menu
       </summary>
-      <div class="absolute right-0 mt-3 w-72 max-w-[calc(100vw-2rem)] border border-gold-fill/24 bg-warm-white p-4 shadow-soft">
+      <div class="absolute right-0 mt-3 w-72 max-w-[calc(100vw-2rem)] border border-gold-fill/30 bg-warm-white p-4 shadow-soft">
         <div class="grid gap-2">
           {
             navigation.map((item) => (
@@ -47,10 +47,10 @@ import { navigation, siteData } from "@/content/siteData";
               </a>
             ))
           }
-          <a class="mt-2 bg-gold-fill px-4 py-3 text-center text-sm font-bold text-ink" href={siteData.cta.url}>
-            Umów rozmowę
+          <a class="btn-primary mt-2 px-4 py-3 text-sm" href={siteData.cta.url}>
+            Umów konsultację
           </a>
-          <a class="border border-gold-fill/28 px-4 py-3 text-center text-sm font-semibold text-ink" href={siteData.contact.emailHref}>
+          <a class="btn-secondary px-4 py-3 text-sm" href={siteData.contact.emailHref}>
             Napisz email
           </a>
         </div>

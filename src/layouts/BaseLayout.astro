@@ -3,6 +3,7 @@ import "@/styles/global.css";
 import SEO from "@/components/SEO.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import StickyContactBar from "@/components/StickyContactBar.astro";
 import type { BreadcrumbItem } from "@/content/schema";
 
 interface Props {
@@ -43,5 +44,6 @@ const { title, description, canonical, ogTitle, ogDescription, ogImage, schema, 
     <Header />
     <slot />
     <Footer />
+    <StickyContactBar />
   </body>
 </html>
