@@ -2,10 +2,10 @@
 import { navigation, siteData } from "@/content/siteData";
 ---
 
-<header class="absolute inset-x-0 top-0 z-30 border-b border-white/10 bg-ink/28 text-warm-white backdrop-blur-md">
+<header class="absolute inset-x-0 top-0 z-30 border-b border-gold-fill/18 bg-warm-white/72 text-ink backdrop-blur-md">
   <nav class="container-page flex min-h-20 items-center justify-between gap-4" aria-label="Główna nawigacja">
     <a href="/" class="flex min-w-0 items-center gap-3" aria-label={`${siteData.name} - strona główna`}>
-      <span class="grid h-11 w-11 shrink-0 place-items-center border border-gold-fill/70 text-gold-soft" aria-hidden="true">
+      <span class="grid h-11 w-11 shrink-0 place-items-center border border-gold-fill/70 bg-lemon/70 text-gold" aria-hidden="true">
         <svg viewBox="0 0 32 32" class="h-7 w-7" fill="none">
           <path d="M8 27V13a8 8 0 0 1 16 0v14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
           <path d="M12 27V14a4 4 0 0 1 8 0v13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
@@ -18,7 +18,7 @@ import { navigation, siteData } from "@/content/siteData";
     <div class="hidden items-center gap-5 xl:flex">
       {
         navigation.map((item) => (
-          <a class="text-xs font-medium uppercase tracking-[0.12em] text-warm-white/76 transition hover:text-gold-soft 2xl:text-[0.78rem]" href={item.href}>
+          <a class="text-xs font-medium uppercase tracking-[0.12em] text-graphite/72 transition hover:text-gold 2xl:text-[0.78rem]" href={item.href}>
             {item.label}
           </a>
         ))
@@ -26,11 +26,11 @@ import { navigation, siteData } from "@/content/siteData";
     </div>
 
     <div class="hidden items-center gap-3 xl:flex">
-      <a class="text-xs font-semibold uppercase tracking-[0.12em] text-gold-soft hover:text-warm-white" href={siteData.contact.emailHref}>
+      <a class="text-xs font-semibold uppercase tracking-[0.12em] text-gold hover:text-ink" href={siteData.contact.emailHref}>
         Email
       </a>
       <a
-        class="border border-gold-fill/70 px-5 py-3 text-sm font-semibold text-gold-soft transition hover:bg-gold-fill hover:text-ink"
+        class="border border-gold-fill/70 bg-lemon/60 px-5 py-3 text-sm font-semibold text-gold transition hover:bg-gold-fill hover:text-ink"
         href={siteData.cta.url}
         rel="noopener noreferrer"
       >
@@ -39,14 +39,14 @@ import { navigation, siteData } from "@/content/siteData";
     </div>
 
     <details class="relative xl:hidden">
-      <summary class="list-none border border-white/20 px-4 py-3 text-sm font-semibold text-warm-white marker:hidden">
+      <summary class="list-none border border-gold-fill/36 bg-warm-white/75 px-4 py-3 text-sm font-semibold text-ink marker:hidden">
         Menu
       </summary>
-      <div class="absolute right-0 mt-3 w-72 max-w-[calc(100vw-2rem)] border border-white/10 bg-ink p-4 shadow-soft">
+      <div class="absolute right-0 mt-3 w-72 max-w-[calc(100vw-2rem)] border border-gold-fill/24 bg-warm-white p-4 shadow-soft">
         <div class="grid gap-2">
           {
             navigation.map((item) => (
-              <a class="px-2 py-2 text-sm text-warm-white/82 hover:text-gold-soft" href={item.href}>
+              <a class="px-2 py-2 text-sm text-graphite/82 hover:text-gold" href={item.href}>
                 {item.label}
               </a>
             ))
@@ -54,7 +54,7 @@ import { navigation, siteData } from "@/content/siteData";
           <a class="mt-2 bg-gold-fill px-4 py-3 text-center text-sm font-bold text-ink" href={siteData.cta.url} rel="noopener noreferrer">
             Umów rozmowę
           </a>
-          <a class="border border-white/15 px-4 py-3 text-center text-sm font-semibold text-warm-white" href={siteData.contact.emailHref}>
+          <a class="border border-gold-fill/28 px-4 py-3 text-center text-sm font-semibold text-ink" href={siteData.contact.emailHref}>
             Napisz email
           </a>
         </div>

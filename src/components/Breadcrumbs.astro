@@ -11,15 +11,15 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<nav class="container-page pt-32 text-sm text-warm-white/70" aria-label="Okruszki">
+<nav class="container-page pt-32 text-sm text-graphite/68" aria-label="Okruszki">
   <ol class="flex flex-wrap items-center gap-2">
-    <li><a class="hover:text-gold-soft" href="/">Strona główna</a></li>
+    <li><a class="hover:text-gold" href="/">Strona główna</a></li>
     {
       items.map((item) => (
         <>
           <li aria-hidden="true">/</li>
           <li>
-            {item.href ? <a class="hover:text-gold-soft" href={item.href}>{item.label}</a> : <span aria-current="page">{item.label}</span>}
+            {item.href ? <a class="hover:text-gold" href={item.href}>{item.label}</a> : <span aria-current="page">{item.label}</span>}
           </li>
         </>
       ))

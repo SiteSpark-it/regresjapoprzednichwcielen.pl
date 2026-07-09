@@ -4,8 +4,8 @@
 
 :root {
   color-scheme: light;
-  --page-bg: #f8f1e7;
-  --ink: #07111f;
+  --page-bg: #fff6dc;
+  --ink: #20170b;
 }
 
 html {
@@ -17,8 +17,9 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at 12% 0%, rgba(194, 147, 67, 0.12), transparent 30rem),
-    linear-gradient(180deg, #fbf7ef 0%, var(--page-bg) 42%, #eee2d2 100%);
+    radial-gradient(circle at 12% 0%, rgba(255, 211, 90, 0.42), transparent 31rem),
+    radial-gradient(circle at 88% 12%, rgba(255, 241, 168, 0.62), transparent 26rem),
+    linear-gradient(180deg, #fffdf5 0%, var(--page-bg) 46%, #f7e8c6 100%);
   color: var(--ink);
   font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
   text-rendering: optimizeLegibility;
@@ -43,7 +44,7 @@ img {
 }
 
 :focus-visible {
-  outline: 3px solid #dfc083;
+  outline: 3px solid #f2b92f;
   outline-offset: 4px;
 }
 
@@ -72,20 +73,20 @@ summary:focus-visible {
 .gold-rule {
   width: 56px;
   height: 2px;
-  background: #80591e;
+  background: #f2b92f;
 }
 
 .soft-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(194, 147, 67, 0.65), transparent);
+  background: linear-gradient(90deg, transparent, rgba(242, 185, 47, 0.72), transparent);
 }
 
 .threshold-panel {
   background:
-    linear-gradient(145deg, rgba(248, 241, 231, 0.08), rgba(248, 241, 231, 0.015)),
-    rgba(7, 17, 31, 0.76);
-  border: 1px solid rgba(223, 191, 123, 0.38);
-  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.28);
+    linear-gradient(145deg, rgba(255, 250, 240, 0.94), rgba(255, 227, 154, 0.72)),
+    rgba(255, 250, 240, 0.86);
+  border: 1px solid rgba(242, 185, 47, 0.52);
+  box-shadow: 0 32px 90px rgba(126, 82, 0, 0.18);
   backdrop-filter: blur(12px);
 }
 
@@ -98,7 +99,7 @@ summary:focus-visible {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(223, 191, 123, 0.14), transparent 70%);
+  background: linear-gradient(90deg, rgba(255, 211, 90, 0.28), transparent 70%);
   opacity: 0;
   transition: opacity 160ms ease;
 }

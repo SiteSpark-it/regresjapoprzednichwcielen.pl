@@ -83,24 +83,24 @@ const sessionSteps = [
       </div>
     </section>
 
-    <section class="relative overflow-hidden bg-ink py-20 text-warm-white" aria-labelledby="krotkie-odpowiedzi">
-      <div class="absolute inset-y-0 left-1/2 hidden w-px bg-gold-soft/18 lg:block"></div>
+    <section class="relative overflow-hidden bg-lemon py-20 text-ink" aria-labelledby="krotkie-odpowiedzi">
+      <div class="absolute inset-y-0 left-1/2 hidden w-px bg-gold-fill/24 lg:block"></div>
       <div class="container-page">
         <div class="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <div class="lg:sticky lg:top-8">
-            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold-soft">krótkie odpowiedzi</p>
+            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">krótkie odpowiedzi</p>
             <h2 id="krotkie-odpowiedzi" class="mt-4 font-serif text-4xl leading-tight md:text-5xl">Zanim wejdziesz głębiej</h2>
             <div class="gold-rule mt-5"></div>
-            <p class="mt-5 text-base leading-8 text-warm-white/72">
+            <p class="mt-5 text-base leading-8 text-graphite/74">
               Te odpowiedzi są krótkie celowo. Mają dać orientację bez patosu i bez wymuszania wiary w jeden sposób rozumienia doświadczenia.
             </p>
           </div>
           <div class="grid gap-4">
           {
             snippetAnswers.map((item) => (
-              <article class="border-l border-gold-soft/40 bg-white/[0.045] p-6">
-                <h3 class="font-serif text-2xl leading-tight text-gold-soft">{item.question}</h3>
-                <p class="mt-4 text-sm leading-7 text-warm-white/76">{item.answer}</p>
+              <article class="border-l border-gold-fill/54 bg-warm-white/72 p-6 shadow-[0_14px_34px_rgba(126,82,0,0.06)]">
+                <h3 class="font-serif text-2xl leading-tight text-gold">{item.question}</h3>
+                <p class="mt-4 text-sm leading-7 text-graphite/76">{item.answer}</p>
               </article>
             ))
           }
@@ -140,12 +140,12 @@ const sessionSteps = [
       </div>
     </section>
 
-    <section class="bg-ink py-20 text-warm-white" id="tematy">
+    <section class="bg-vellum py-20 text-ink" id="tematy">
       <div class="container-page">
         <div class="max-w-3xl">
           <h2 class="font-serif text-4xl leading-tight md:text-5xl">Jakie tematy można eksplorować?</h2>
           <div class="gold-rule mt-5"></div>
-          <p class="mt-5 text-base leading-8 text-warm-white/72">
+          <p class="mt-5 text-base leading-8 text-graphite/74">
             Regresja do poprzedniego życia bywa pomocna wtedy, gdy wraca pytanie: dlaczego ta relacja, emocja albo symbol są dla mnie tak silne?
           </p>
         </div>
@@ -190,7 +190,7 @@ const sessionSteps = [
           </div>
         </div>
         <div class="mt-10 flex flex-col gap-3 sm:flex-row">
-          <a class="inline-flex justify-center bg-gold-fill px-7 py-4 text-sm font-bold text-ink transition hover:bg-gold-soft" href={siteData.cta.url} rel="noopener noreferrer">
+          <a class="inline-flex justify-center bg-gold-fill px-7 py-4 text-sm font-bold text-ink transition hover:bg-honey" href={siteData.cta.url} rel="noopener noreferrer">
             Sprawdź terminy sesji
           </a>
           <a class="inline-flex justify-center border border-ink/18 px-7 py-4 text-sm font-bold text-ink transition hover:border-gold hover:text-gold" href={siteData.contact.whatsapp} rel="noopener noreferrer">
