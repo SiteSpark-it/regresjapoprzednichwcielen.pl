@@ -6,9 +6,9 @@
   organization: "Instytut Regresji",
   tagline: "Regresja poprzednich wcieleń prowadzona spokojnie, z szacunkiem do emocji, symboli i historii wewnętrznej.",
   cta: {
-    label: "Sprawdź terminy sesji",
+    label: "Umów konsultację",
     secondaryLabel: "Zobacz, jak wygląda sesja",
-    url: "https://instytutregresji.pl"
+    url: "/kontakt/"
   },
   contact: {
     phone: "+48 455 448 119",

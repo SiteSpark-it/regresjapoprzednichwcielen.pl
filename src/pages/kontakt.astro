@@ -10,7 +10,7 @@ import { siteData } from "@/content/siteData";
 
 const title = "Kontakt i zapisy — sesja regresji poprzednich wcieleń";
 const description =
-  "Kontakt i zapisy na sesję regresji poprzednich wcieleń. Główne miejsce zapisów: Instytut Regresji. Informacje o prowadzącym: MaciejRegresja.pl.";
+  "Kontakt i konsultacja w sprawie sesji regresji poprzednich wcieleń. Napisz email, zadzwoń lub wyślij wiadomość przez formularz na stronie.";
 const breadcrumbs = [{ label: "Kontakt i zapisy" }];
 const pageFaq = pageFaqs.contact;
 ---
@@ -23,9 +23,9 @@ const pageFaq = pageFaqs.contact;
       <div class="container-page relative grid gap-10 pt-14 lg:grid-cols-[1fr_380px] lg:items-end">
         <div>
           <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">rozmowa przed sesją</p>
-          <h1 class="mt-4 max-w-4xl font-serif text-4xl leading-tight md:text-6xl">Kontakt i zapisy na sesję</h1>
+          <h1 class="mt-4 max-w-4xl font-serif text-4xl leading-tight md:text-6xl">Kontakt i konsultacja przed sesją</h1>
           <p class="mt-7 max-w-3xl text-lg leading-8 text-graphite/76">
-            Główne zapisy na sesje regresji poprzednich wcieleń prowadzi Instytut Regresji. Możesz napisać krótko, zapytać o terminy albo sprawdzić informacje o prowadzącym na MaciejRegresja.pl.
+            Tu możesz zacząć spokojnie: napisać krótko, zapytać o przebieg sesji, dostępność, formę online albo o to, czy regresja poprzednich wcieleń pasuje do Twojego tematu.
           </p>
         </div>
         <div class="threshold-panel p-6">
@@ -47,15 +47,15 @@ const pageFaq = pageFaqs.contact;
     <section class="bg-vellum py-20">
       <div class="container-page grid gap-12 lg:grid-cols-[1fr_0.9fr]">
         <div>
-          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">zapisy</p>
-          <h2 class="font-serif text-4xl leading-tight md:text-5xl">Sprawdź terminy</h2>
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">na tej stronie</p>
+          <h2 class="font-serif text-4xl leading-tight md:text-5xl">Umów konsultację lub zapytaj o sesję</h2>
           <div class="gold-rule mt-5"></div>
           <p class="mt-7 max-w-2xl text-base leading-8 text-graphite/78">
-            Jeśli po przeczytaniu strony czujesz, że ta forma pracy jest dla Ciebie, przejdź do zapisów. Tam znajdziesz aktualną formę kontaktu, dostępność i informacje organizacyjne.
+            Jeśli po przeczytaniu strony czujesz, że ta forma pracy może być dla Ciebie, nie musisz od razu podejmować decyzji o sesji. Możesz najpierw wysłać pytanie, opisać temat jednym lub dwoma zdaniami albo poprosić o kontakt zwrotny.
           </p>
           <div class="mt-8 flex flex-col gap-4 sm:flex-row">
-            <a class="inline-flex justify-center bg-gold-fill px-7 py-4 text-sm font-bold text-ink transition hover:bg-honey" href={siteData.cta.url} rel="noopener noreferrer">
-              Przejdź do zapisów
+            <a class="inline-flex justify-center bg-gold-fill px-7 py-4 text-sm font-bold text-ink transition hover:bg-honey" href="#formularz">
+              Wypełnij formularz
             </a>
             <a class="inline-flex justify-center border border-ink/20 px-7 py-4 text-sm font-bold text-ink transition hover:border-gold hover:text-gold" href={siteData.contact.emailHref}>
               Napisz email
@@ -79,11 +79,32 @@ const pageFaq = pageFaqs.contact;
               <p class="mt-2">
                 <a class="text-gold underline underline-offset-4" href={siteData.contact.emailHref}>{siteData.contact.email}</a>
               </p>
-              <p class="mt-2">
-                <a class="text-gold underline underline-offset-4" href={siteData.links.booking} rel="noopener noreferrer">instytutregresji.pl</a>
-              </p>
+              <p class="mt-2 text-graphite/70">Możesz wysłać krótkie pytanie bezpośrednio z własnej skrzynki.</p>
             </div>
           </div>
+          <form id="formularz" class="mt-10 border border-gold-fill/30 bg-warm-white/80 p-6 shadow-soft" action={siteData.contact.emailHref} method="post" enctype="text/plain">
+            <h2 class="font-serif text-3xl leading-tight text-ink">Formularz kontaktowy</h2>
+            <p class="mt-4 text-sm leading-7 text-graphite/74">
+              Formularz otworzy wiadomość email do {siteData.contact.email}. W treści możesz zostawić temat, preferowaną formę kontaktu i krótki opis sprawy.
+            </p>
+            <div class="mt-6 grid gap-4">
+              <label class="grid gap-2 text-sm font-semibold text-ink">
+                Imię
+                <input class="border border-gold-fill/30 bg-white px-4 py-3 text-base font-normal outline-none transition focus:border-gold" type="text" name="Imię" autocomplete="name" />
+              </label>
+              <label class="grid gap-2 text-sm font-semibold text-ink">
+                Email lub telefon zwrotny
+                <input class="border border-gold-fill/30 bg-white px-4 py-3 text-base font-normal outline-none transition focus:border-gold" type="text" name="Kontakt zwrotny" autocomplete="email" />
+              </label>
+              <label class="grid gap-2 text-sm font-semibold text-ink">
+                Wiadomość
+                <textarea class="min-h-36 border border-gold-fill/30 bg-white px-4 py-3 text-base font-normal leading-7 outline-none transition focus:border-gold" name="Wiadomość" placeholder="Napisz krótko, o co chcesz zapytać: temat sesji, forma online, dostępność, przygotowanie..." ></textarea>
+              </label>
+              <button class="inline-flex justify-center bg-gold-fill px-7 py-4 text-sm font-bold text-ink transition hover:bg-honey" type="submit">
+                Przygotuj wiadomość email
+              </button>
+            </div>
+          </form>
         </div>
         <div class="space-y-6">
           <DisclaimerBox />
@@ -97,6 +118,6 @@ const pageFaq = pageFaqs.contact;
       </div>
     </section>
     <FAQ items={pageFaq} />
-    <CTASection title="Gotowy sprawdzić dostępne terminy?" text="Najbezpieczniej zacząć od informacji organizacyjnych w Instytucie Regresji. Przejdź dalej wtedy, gdy czujesz spokojną gotowość do sesji." />
+    <CTASection title="Możesz zacząć od jednej spokojnej wiadomości" text="Napisz, z jakim tematem przychodzisz albo o co chcesz zapytać. Kontakt na tej stronie wystarczy, żeby rozpocząć rozmowę bez przekierowania na zewnętrzny formularz." />
   </main>
 </BaseLayout>

@@ -15,7 +15,7 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: siteData.organization,
-  url: siteData.links.booking,
+  url: siteData.url,
   telephone: siteData.contact.phone,
   email: siteData.contact.email,
   sameAs: [siteData.links.personal]
@@ -29,7 +29,7 @@ export const personSchema = {
   worksFor: {
     "@type": "Organization",
     name: siteData.organization,
-    url: siteData.links.booking
+    url: siteData.url
   },
   description:
     "Praktyk regresji duchowej, studiujący psychologię w Warszawie, pracujący z regresją poprzednich wcieleń i autorską metodą Brama Dusz LBL."
@@ -42,7 +42,7 @@ export const serviceSchema = {
   serviceType: "Sesja rozwojowa i duchowa PLR",
   url: siteData.url,
   description:
-    "Regresja poprzednich wcieleń jako spokojna praca z obrazami, emocjami, symbolami i historiami duszy. Zapisy prowadzi Instytut Regresji.",
+    "Regresja poprzednich wcieleń jako spokojna praca z obrazami, emocjami, symbolami i historiami duszy. Kontakt i konsultacja są dostępne na tej stronie.",
   areaServed: {
     "@type": "Country",
     name: "Polska"
@@ -54,13 +54,13 @@ export const serviceSchema = {
     worksFor: {
       "@type": "Organization",
       name: siteData.organization,
-      url: siteData.links.booking
+      url: siteData.url
     }
   },
   availableChannel: [
     {
       "@type": "ServiceChannel",
-      serviceUrl: siteData.links.booking,
+      serviceUrl: new URL(siteData.cta.url, siteData.url).toString(),
       servicePhone: {
         "@type": "ContactPoint",
         telephone: siteData.contact.phone,
@@ -69,7 +69,7 @@ export const serviceSchema = {
       },
       serviceLocation: {
         "@type": "VirtualLocation",
-        url: siteData.links.booking
+        url: new URL(siteData.cta.url, siteData.url).toString()
       }
     }
   ]
@@ -130,7 +130,7 @@ export function articleSchema({
     publisher: {
       "@type": "Organization",
       name: siteData.organization,
-      url: siteData.links.booking
+      url: siteData.url
     },
     mainEntityOfPage: url
   };

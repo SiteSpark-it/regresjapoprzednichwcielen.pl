@@ -120,7 +120,7 @@ export const snippetAnswers = [
   {
     question: "Ile kosztuje sesja regresji poprzednich wcieleń?",
     answer:
-      "Aktualne warunki, terminy i forma zapisów są podawane w Instytucie Regresji, który jest głównym miejscem kontaktu. Ta strona skupia się na edukacyjnym opisie PLR: czym jest sesja, jak się przygotować i czym różni się od regresji między wcieleniami oraz gdzie znaleźć zapisy."
+      "Kontakt w sprawie sesji jest dostępny na tej stronie: przez email, telefon, WhatsApp i formularz kontaktowy. Strona opisuje także PLR edukacyjnie: czym jest sesja, jak się przygotować i czym różni się od regresji między wcieleniami."
   },
   {
     question: "Jak przygotować się do sesji regresji?",

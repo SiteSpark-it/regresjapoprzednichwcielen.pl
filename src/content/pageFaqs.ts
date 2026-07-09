@@ -100,7 +100,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "Gdzie można zapisać się na sesję?",
       answer:
-        "Główne miejsce zapisów to Instytut Regresji. Strona MaciejRegresja.pl służy jako osobisty kontekst pracy prowadzącego, natomiast aktualne terminy i informacje organizacyjne warto sprawdzać bezpośrednio przez Instytut Regresji."
+        "Kontakt w sprawie sesji jest dostępny bezpośrednio na tej stronie: przez email, telefon, WhatsApp i formularz. Strona MaciejRegresja.pl służy jako osobisty kontekst pracy prowadzącego."
     }
   ],
   knowledge: [
@@ -122,9 +122,9 @@ export const pageFaqs: Record<string, FaqItem[]> = {
   ],
   contact: [
     {
-      question: "Gdzie odbywają się zapisy na sesję regresji poprzednich wcieleń?",
+      question: "Jak rozpocząć kontakt w sprawie sesji regresji poprzednich wcieleń?",
       answer:
-        "Główne zapisy prowadzi Instytut Regresji. Na tej stronie znajdziesz kontekst metody, opis sesji i linki kierujące do miejsca, w którym można sprawdzić aktualne terminy oraz informacje organizacyjne."
+        "Kontakt i wstępna konsultacja są dostępne na tej stronie. Możesz wysłać wiadomość, zadzwonić, napisać na WhatsApp albo użyć formularza kontaktowego, żeby zapytać o przebieg sesji i dostępność."
     },
     {
       question: "Czy przed zapisem muszę wiedzieć, jaki temat wybrać?",
@@ -134,7 +134,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "Czy mogę najpierw przeczytać więcej o prowadzącym?",
       answer:
-        "Tak. Jeśli strona mówi o prowadzącym, kieruje również do MaciejRegresja.pl. Tam można poznać szerszy osobisty kontekst pracy, natomiast zapisy i informacje organizacyjne pozostają po stronie Instytutu Regresji."
+        "Tak. Jeśli strona mówi o prowadzącym, kieruje również do MaciejRegresja.pl. Tam można poznać szerszy osobisty kontekst pracy, natomiast rozpoczęcie kontaktu w sprawie sesji odbywa się na tej stronie."
     }
   ]
 };
