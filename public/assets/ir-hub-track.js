@@ -76,7 +76,9 @@
   function send(data) {
     try {
       var body = JSON.stringify(base(data));
-      if (navigator.sendBeacon) {
+      var targetOrigin = new URL(ENDPOINT, location.href).origin;
+      var isCrossOrigin = targetOrigin !== location.origin;
+      if (navigator.sendBeacon && !isCrossOrigin) {
         navigator.sendBeacon(ENDPOINT, new Blob([body], { type: "application/json" }));
       } else {
         fetch(ENDPOINT, {
@@ -84,7 +86,8 @@
           headers: { "Content-Type": "application/json" },
           body: body,
           keepalive: true,
-          mode: ENDPOINT.indexOf("http") === 0 ? "cors" : "same-origin"
+          mode: isCrossOrigin ? "cors" : "same-origin",
+          credentials: isCrossOrigin ? "omit" : "same-origin"
         }).catch(function () {});
       }
     } catch (err) {}
