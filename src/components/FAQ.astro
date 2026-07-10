@@ -11,12 +11,12 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<section class="bg-warm-white py-20" id="faq">
+<section class="bg-warm-white py-14 md:py-20" id="faq">
   <div class="container-page">
     <div class="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
       <div class="lg:sticky lg:top-8">
         <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">pytania przed decyzją</p>
-        <h2 class="mt-4 font-serif text-4xl leading-tight md:text-5xl">FAQ</h2>
+        <h2 class="mt-4 font-serif text-3xl leading-tight sm:text-4xl md:text-5xl">FAQ</h2>
         <div class="gold-rule mt-5"></div>
         <p class="mt-5 text-base leading-8 text-graphite/72">
         Odpowiedzi na najczęstsze pytania dotyczące regresji poprzednich wcieleń, przygotowania i przebiegu sesji.
@@ -25,8 +25,8 @@ const { items } = Astro.props;
     <div class="divide-y divide-ink/10 border-y border-ink/10">
       {
         items.map((item) => (
-          <details class="group py-6">
-            <summary class="flex cursor-pointer list-none items-start justify-between gap-6 font-serif text-2xl leading-tight text-ink">
+          <details class="group py-5 md:py-6">
+            <summary class="flex cursor-pointer list-none items-start justify-between gap-4 font-serif text-xl leading-tight text-ink sm:text-2xl md:gap-6">
               <span>{item.question}</span>
               <span class="mt-1 text-gold transition group-open:rotate-45" aria-hidden="true">+</span>
             </summary>

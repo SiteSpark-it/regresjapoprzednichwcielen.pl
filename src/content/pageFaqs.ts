@@ -1,4 +1,4 @@
-﻿import type { FaqItem } from "@/content/schema";
+import type { FaqItem } from "@/content/schema";
 
 export const pageFaqs: Record<string, FaqItem[]> = {
   whatIsPlr: [
@@ -100,7 +100,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "Gdzie można zapisać się na sesję?",
       answer:
-        "Kontakt w sprawie sesji jest dostępny bezpośrednio na tej stronie: przez email, telefon, WhatsApp i formularz. Strona MaciejRegresja.pl służy jako osobisty kontekst pracy prowadzącego."
+        "Kontakt w sprawie sesji jest dostępny bezpośrednio na tej stronie: przez email, telefon, WhatsApp i formularz. Główne miejsce informacji organizacyjnych i zapisów to InstytutRegresji.pl."
     }
   ],
   knowledge: [
@@ -110,14 +110,14 @@ export const pageFaqs: Record<string, FaqItem[]> = {
         "Jeśli temat jest nowy, najlepiej zacząć od wyjaśnienia, czym jest regresja poprzednich wcieleń, a potem przejść do opisu przebiegu sesji PLR. Dopiero później warto czytać o Brama Dusz LBL i regresji między wcieleniami."
     },
     {
-      question: "Czy baza wiedzy jest pisana tylko pod Google?",
+      question: "Czy teksty pomagają przygotować się do sesji?",
       answer:
-        "Nie. Jej celem jest uporządkowanie pytań, które realnie pojawiają się przed sesją: wiary w reinkarnację, bezpieczeństwa, przebiegu pracy, różnicy między PLR i LBL oraz granic odpowiedzialnego języka. SEO ma pomagać znaleźć treść, nie zastępować jej sensu."
+        "Tak. Teksty porządkują pytania, które często pojawiają się przed pierwszą sesją: czy trzeba wierzyć w reinkarnację, jak wygląda prowadzenie, czym różni się PLR od pracy między wcieleniami i jak rozumieć doświadczenie bez presji jednej interpretacji."
     },
     {
-      question: "Czy w bazie wiedzy będą pełne artykuły blogowe?",
+      question: "Czy baza wiedzy zawiera pełne artykuły?",
       answer:
-        "Tak, baza wiedzy jest przygotowana jako miejsce na dalsze artykuły. Najpierw pokazuje najważniejsze tematy i ścieżkę czytania, a później można rozwijać ją o teksty dotyczące snów, relacji, symboli, integracji i przygotowania do sesji online."
+        "Tak. Baza wiedzy zawiera osobne teksty o sceptycznym podejściu do PLR, symbolach, snach, relacjach, integracji po sesji i przygotowaniu do pracy online. Można czytać je po kolei albo wybrać temat najbliższy własnemu doświadczeniu."
     }
   ],
   contact: [
@@ -132,9 +132,9 @@ export const pageFaqs: Record<string, FaqItem[]> = {
         "Nie. Wystarczy ogólne poczucie tematu: relacja, sen, emocja, wzorzec, lęk albo pytanie o kierunek. Intencję można doprecyzować spokojnie przed sesją, bez presji tworzenia gotowej opowieści."
     },
     {
-      question: "Czy mogę najpierw przeczytać więcej o prowadzącym?",
+      question: "Czy mogę najpierw zapytać o właściwą formę sesji?",
       answer:
-        "Tak. Jeśli strona mówi o prowadzącym, kieruje również do MaciejRegresja.pl. Tam można poznać szerszy osobisty kontekst pracy, natomiast rozpoczęcie kontaktu w sprawie sesji odbywa się na tej stronie."
+        "Tak. Nie trzeba od razu wiedzieć, czy lepsza będzie sesja PLR, Brama Dusz LBL czy spokojna rozmowa wstępna. Możesz opisać temat jednym zdaniem, a dalszy kierunek można doprecyzować przez kontakt na tej stronie lub w Instytucie Regresji."
     }
   ]
 };

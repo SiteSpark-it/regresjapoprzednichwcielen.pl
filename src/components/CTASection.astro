@@ -12,19 +12,19 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative overflow-hidden bg-lemon py-20 text-ink">
+<section class="relative overflow-hidden bg-lemon py-14 text-ink md:py-16 lg:py-20">
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(245,181,31,0.4),transparent_22rem),linear-gradient(135deg,rgba(255,253,244,0.62),rgba(255,201,40,0.18))]"></div>
   <div class="container-page relative">
-    <div class="premium-surface grid gap-10 p-6 md:p-10 lg:grid-cols-[1fr_420px] lg:items-center">
+    <div class="premium-surface grid gap-8 p-5 sm:p-6 md:p-9 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-center xl:grid-cols-[minmax(0,1fr)_390px]">
       <div>
         <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">kontakt i konsultacja</p>
-        <h2 class="text-balance mt-4 max-w-3xl font-serif text-4xl leading-tight md:text-5xl">{title}</h2>
+        <h2 class="text-balance mt-4 max-w-3xl font-serif text-3xl leading-tight sm:text-4xl md:text-5xl">{title}</h2>
         <p class="mt-6 max-w-2xl text-base leading-8 text-graphite/74">{text}</p>
         <p class="mt-5 max-w-xl text-sm font-semibold leading-7 text-ink/82">
           Najkrótsza ścieżka: kliknij konsultację, napisz jedno zdanie i wybierz najwygodniejszą formę kontaktu.
         </p>
       </div>
-      <div class="grid gap-3">
+      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
         <a class="btn-primary" href={siteData.cta.url} data-track="cta-section-consultation">
           <span class="relative">Umów konsultację</span>
         </a>

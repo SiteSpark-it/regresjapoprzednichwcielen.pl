@@ -10,7 +10,7 @@ interface Props {
 const { title, subtitle, image = "/assets/hero-gateway.webp" } = Astro.props;
 ---
 
-<section class="relative isolate overflow-hidden bg-vellum text-ink lg:min-h-[720px]">
+<section class="relative isolate overflow-hidden bg-vellum text-ink lg:min-h-[650px]">
   <img
     class="absolute inset-0 h-full w-full object-cover"
     src={image}
@@ -27,14 +27,14 @@ const { title, subtitle, image = "/assets/hero-gateway.webp" } = Astro.props;
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_67%_42%,rgba(255,201,40,0.44),transparent_25rem)]"></div>
   <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-vellum to-transparent"></div>
 
-  <div class="container-page relative grid items-center gap-8 pb-12 pt-24 lg:min-h-[720px] lg:grid-cols-[minmax(0,1fr)_380px] lg:gap-10 lg:pb-0 lg:pt-28">
-    <div class="max-w-4xl py-10 md:py-16 lg:py-16">
+  <div class="container-wide relative grid items-center gap-8 pb-10 pt-24 md:pb-14 lg:min-h-[650px] lg:pb-8 lg:pt-24 xl:grid-cols-[minmax(0,1fr)_370px] xl:gap-9">
+    <div class="max-w-3xl py-8 md:py-12 lg:py-10">
       <div class="mb-6 flex items-center gap-4 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-gold sm:text-xs">
         <span class="h-px w-10 bg-gold-fill sm:w-14"></span>
         spokojna praca z historią wewnętrzną
       </div>
-      <h1 class="text-balance max-w-4xl font-serif text-4xl leading-[1.04] text-ink sm:text-5xl md:text-6xl lg:text-7xl">{title}</h1>
-      <p class="mt-7 max-w-2xl text-lg leading-8 text-graphite/82 md:text-xl">{subtitle}</p>
+      <h1 class="text-balance max-w-3xl font-serif text-[2.55rem] leading-[1.04] text-ink sm:text-5xl md:text-[3.55rem] lg:text-[3.85rem] xl:text-[4.35rem]">{title}</h1>
+      <p class="mt-6 max-w-2xl text-base leading-8 text-graphite/82 md:text-lg lg:text-[1.15rem]">{subtitle}</p>
       <p class="mt-5 max-w-xl border-l-2 border-gold-fill pl-4 text-base font-semibold leading-7 text-ink/86">
         Jeśli temat wraca w Tobie od dłuższego czasu, zacznij od krótkiej konsultacji. Jedna wiadomość wystarczy, żeby sprawdzić najbliższy krok.
       </p>
@@ -62,9 +62,9 @@ const { title, subtitle, image = "/assets/hero-gateway.webp" } = Astro.props;
       </dl>
     </div>
 
-    <aside class="threshold-panel p-5 md:p-6" aria-label="Kontakt w sprawie sesji">
+    <aside class="threshold-panel hidden p-5 md:p-6 xl:block xl:self-center" aria-label="Kontakt w sprawie sesji">
       <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">najprostszy krok</p>
-      <h2 class="mt-4 font-serif text-3xl leading-tight text-ink">Napisz krótko. Resztę doprecyzujesz w rozmowie.</h2>
+      <h2 class="mt-4 font-serif text-2xl leading-tight text-ink md:text-3xl">Napisz krótko. Resztę doprecyzujesz w rozmowie.</h2>
       <p class="mt-4 text-sm leading-7 text-graphite/72">
         Nie musisz opisywać całej historii. Wystarczy temat: relacja, sen, emocja, powracający wzorzec albo pytanie o sens sesji.
       </p>
@@ -73,7 +73,7 @@ const { title, subtitle, image = "/assets/hero-gateway.webp" } = Astro.props;
         <li class="flex gap-2"><span class="text-gold">02</span> telefon, WhatsApp, email albo formularz</li>
         <li class="flex gap-2"><span class="text-gold">03</span> spokojne ustalenie, czy sesja pasuje do tematu</li>
       </ul>
-      <div class="mt-7 grid gap-3">
+      <div class="mt-6 grid gap-3">
         <a class="contact-link border border-gold-fill/26 bg-warm-white/72 p-4" href={siteData.contact.whatsapp} rel="noopener noreferrer" data-track="hero-card-whatsapp">
           <span class="relative block text-sm font-semibold text-ink">WhatsApp lub telefon</span>
           <span class="relative mt-1 block text-sm text-gold">{siteData.contact.phone}</span>

@@ -1,4 +1,4 @@
-﻿---
+---
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import CTASection from "@/components/CTASection.astro";
 import DisclaimerBox from "@/components/DisclaimerBox.astro";
@@ -17,17 +17,17 @@ const pageFaq = pageFaqs.gate;
 
 <BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, articleSchema({ title, description, url: `${siteData.url}/brama-dusz-lbl/` }), createFaqSchema(pageFaq)]}>
   <main>
-    <section class="bg-ink pb-20 text-warm-white">
+    <section class="subpage-hero pb-20 text-ink">
       <Breadcrumbs items={breadcrumbs} />
       <div class="container-page pt-14">
-        <h1 class="max-w-4xl font-serif text-4xl leading-tight md:text-6xl">Brama Dusz LBL</h1>
-        <p class="mt-7 max-w-3xl text-lg leading-8 text-warm-white/75">
+        <h1 class="max-w-4xl font-serif text-[2.5rem] leading-tight sm:text-5xl md:text-[3.5rem]">Brama Dusz LBL</h1>
+        <p class="mt-7 max-w-3xl text-lg leading-8 text-graphite/78">
           Autorska metoda regresji duchowej, która łączy pracę z poprzednimi wcieleniami, symboliczne przejście i integrację doświadczeń między wcieleniami.
         </p>
       </div>
     </section>
 
-    <section class="bg-warm-white py-20">
+    <section class="bg-warm-white py-14 md:py-20">
       <div class="container-page grid gap-12 lg:grid-cols-[minmax(0,1fr)_330px]">
         <article class="prose-site max-w-3xl text-base leading-8 text-graphite/80">
           <h2 class="text-4xl">Czym jest ta metoda?</h2>
@@ -43,9 +43,28 @@ const pageFaq = pageFaqs.gate;
             Brama jest tu symbolem przejścia. W sesji nie chodzi o wymuszanie wielkich wizji, lecz o łagodne przejście przez historię, emocję i sens, który może pojawić się między jednym doświadczeniem a drugim. To obraz porządkujący pracę, nie obietnica konkretnego przeżycia.
           </p>
 
+          <h2 class="text-4xl">Jak może wyglądać taka sesja?</h2>
+          <p>
+            W praktyce praca może rozpocząć się od poprzedniego wcielenia: sceny, relacji, momentu decyzji albo doświadczenia, które ma znaczenie dla obecnego życia. Dopiero kiedy historia jest wystarczająco jasna, można przejść do warstwy symbolicznej: zakończenia, przejścia, spotkania z sensem doświadczenia albo szerszej perspektywy duszy.
+          </p>
+          <p>
+            To przejście nie powinno być wymuszane. Jeżeli osoba pozostaje przy jednym obrazie lub jednej emocji, to również może być wartościowa sesja. Brama Dusz LBL nie jest obietnicą określonej „mapy świata duchowego”. Jest strukturą, która pomaga bezpiecznie poruszać się między historią, symbolem i integracją.
+          </p>
+
+          <h2 class="text-4xl">Co odróżnia odpowiedzialną pracę od kiczu?</h2>
+          <p>
+            Odpowiedzialna praca nie robi z prowadzącego autorytetu od cudzej duszy. Nie mówi uczestnikowi, kim „na pewno” był, jaka jest jego misja ani co musi zrobić. Zamiast tego pomaga zadawać lepsze pytania: co ta scena pokazuje o moich relacjach, czego uczy mnie ten wzorzec, gdzie tracę sprawczość, co potrzebuje domknięcia?
+          </p>
+          <p>
+            Właśnie dlatego ważna jest integracja. Doświadczenie duchowe ma sens wtedy, gdy po sesji pomaga żyć bardziej trzeźwo: lepiej stawiać granice, rozumieć emocje, spokojniej patrzeć na relacje i nie oddawać odpowiedzialności żadnej gotowej historii.
+          </p>
+
           <h2 class="text-4xl">Dla kogo może być ta praca?</h2>
           <p>
             Dla osób, które znają już temat regresji poprzednich wcieleń albo czują, że samo pytanie o jedno poprzednie życie nie wyczerpuje ich doświadczenia. Brama Dusz LBL może być kierunkiem dla pytań o sens, relacje duszy, powtarzające się lekcje i spokojną integrację.
+          </p>
+          <p>
+            Może być też dobrym kierunkiem dla osób, które nie szukają sensacji, tylko głębszego porządku. Jeśli ktoś przychodzi po „dowód”, zwykle warto wrócić do prostszej intencji. Jeśli przychodzi z pytaniem o relację, stratę, powtarzający się sen, poczucie misji albo trudną emocję, wtedy praca ma bardziej konkretny punkt zaczepienia.
           </p>
         </article>
         <aside class="space-y-6">

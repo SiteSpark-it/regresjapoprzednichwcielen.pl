@@ -23,17 +23,17 @@ const pageFaq = pageFaqs.session;
 
 <BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, articleSchema({ title, description, url: `${siteData.url}/regresja-do-poprzedniego-zycia/` }), createFaqSchema(pageFaq)]}>
   <main>
-    <section class="bg-ink pb-20 text-warm-white">
+    <section class="subpage-hero pb-20 text-ink">
       <Breadcrumbs items={breadcrumbs} />
       <div class="container-page pt-14">
-        <h1 class="max-w-4xl font-serif text-4xl leading-tight md:text-6xl">Regresja do poprzedniego życia — jak wygląda sesja?</h1>
-        <p class="mt-7 max-w-3xl text-lg leading-8 text-warm-white/75">
+        <h1 class="max-w-4xl font-serif text-[2.5rem] leading-tight sm:text-5xl md:text-[3.5rem]">Regresja do poprzedniego życia — jak wygląda sesja?</h1>
+        <p class="mt-7 max-w-3xl text-lg leading-8 text-graphite/78">
           Sesja PLR nie jest pokazem niezwykłych historii. To spokojna praca z tym, co pojawia się w relaksie: obrazem, emocją, symbolem albo poczuciem znaczenia.
         </p>
       </div>
     </section>
 
-    <section class="bg-warm-white py-20">
+    <section class="bg-warm-white py-14 md:py-20">
       <div class="container-page grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
         <div>
           <h2 class="font-serif text-4xl leading-tight">Przebieg pracy</h2>
@@ -56,7 +56,7 @@ const pageFaq = pageFaqs.session;
       </div>
     </section>
 
-    <section class="bg-bone py-20">
+    <section class="bg-bone py-14 md:py-20">
       <div class="container-page grid gap-12 lg:grid-cols-2">
         <article class="prose-site text-base leading-8 text-graphite/80">
           <h2 class="text-4xl">Jak przygotować się do sesji?</h2>
@@ -66,18 +66,41 @@ const pageFaq = pageFaqs.session;
           <p>
             Pomaga prosta intencja. Nie musi być idealna. Może brzmieć: „chcę lepiej zrozumieć tę relację”, „chcę zobaczyć źródło tego wzorca” albo „chcę spokojnie przyjrzeć się temu snowi”.
           </p>
+
+          <h2 class="text-4xl">Jak wygląda rozmowa przed wejściem w regresję?</h2>
+          <p>
+            Rozmowa wstępna jest po to, żeby nie wchodzić w proces chaotycznie. Ustala się temat, poziom gotowości, granice i to, czego nie chcemy robić. Jeśli ktoś przychodzi z silnym napięciem, prowadzenie powinno najpierw pomóc wrócić do stabilności, a dopiero potem do eksploracji.
+          </p>
+          <p>
+            W tej części można powiedzieć wprost, czego się obawiasz: że nic nie zobaczysz, że „wymyślisz” historię, że emocje będą zbyt mocne albo że nie wiesz, czy wierzysz w poprzednie wcielenia. To normalne pytania. Dobra sesja nie wymaga udawania pewności.
+          </p>
+
+          <h2 class="text-4xl">Co robi prowadzący w trakcie sesji?</h2>
+          <p>
+            Prowadzący nie powinien dopowiadać historii za uczestnika. Jego zadaniem jest utrzymać strukturę, zadawać proste pytania, pilnować tempa i pomagać odróżniać to, co faktycznie pojawia się w doświadczeniu, od pośpiesznej interpretacji. To subtelna praca: mniej efektowna niż sceniczne wyobrażenia o hipnozie, ale dużo bezpieczniejsza.
+          </p>
+          <p>
+            Jeżeli pojawia się mocna emocja, nie trzeba przez nią przechodzić na siłę. Można ją zauważyć, nazwać, sprawdzić, czego dotyczy, a potem wrócić do spokojnego kontaktu. Sesja nie polega na udowadnianiu odwagi, tylko na rozsądnej pracy z wewnętrznym materiałem.
+          </p>
+
           <h2 class="text-4xl">Co po sesji?</h2>
           <p>
             Po regresji warto dać sobie czas. Niektóre obrazy układają się od razu, inne potrzebują kilku dni. Integracja polega na spokojnym zapisaniu doświadczenia, zauważeniu emocji i sprawdzeniu, co naprawdę jest przydatne w obecnym życiu.
           </p>
+          <p>
+            Dobrze jest wrócić do trzech pytań: co było najważniejszą sceną, jaka emocja najmocniej została w ciele i jaki jeden praktyczny wniosek mogę zabrać do codzienności. Taki sposób pracy chroni przed nadinterpretacją i pomaga zamienić sesję w realne zrozumienie, a nie tylko niezwykłe wspomnienie.
+          </p>
         </article>
         <div class="space-y-6">
           <DisclaimerBox />
-          <div class="border border-gold/30 bg-ink p-8 text-warm-white">
+          <div class="border border-gold/30 bg-lemon p-8 text-ink">
             <h2 class="font-serif text-3xl leading-tight">Sesja online i stacjonarnie</h2>
-            <p class="mt-5 text-sm leading-7 text-warm-white/72">
+            <p class="mt-5 text-sm leading-7 text-graphite/76">
               Kontakt w sprawie sesji jest dostępny na tej stronie. Sesje mogą odbywać się online; forma stacjonarna zależy od dostępnych terminów i ustaleń organizacyjnych.
             </p>
+            <a class="btn-primary mt-6" href={siteData.links.booking} rel="noopener noreferrer" data-track="session-instytut-link">
+              Przejdź do Instytutu Regresji
+            </a>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-﻿---
+---
 import ArticleCard from "@/components/ArticleCard.astro";
 import CTASection from "@/components/CTASection.astro";
 import DisclaimerBox from "@/components/DisclaimerBox.astro";
@@ -96,10 +96,10 @@ const sessionSteps = [
       </div>
     </section>
 
-    <section class="bg-warm-white py-20" id="czym-jest">
+    <section class="bg-warm-white py-14 md:py-20" id="czym-jest">
       <div class="container-page grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <div>
-          <h2 class="font-serif text-4xl leading-tight md:text-5xl">Czym jest regresja poprzednich wcieleń?</h2>
+          <h2 class="font-serif text-3xl leading-tight sm:text-4xl md:text-5xl">Czym jest regresja poprzednich wcieleń?</h2>
           <div class="gold-rule mt-5"></div>
           <div class="mt-7 space-y-5 text-base leading-8 text-graphite/78">
             <p>
@@ -113,8 +113,8 @@ const sessionSteps = [
             </p>
           </div>
         </div>
-        <div class="border border-gold/30 bg-bone p-8 shadow-soft">
-          <h3 class="font-serif text-3xl leading-tight text-ink">Nie musisz niczego udowadniać.</h3>
+        <div class="border border-gold/30 bg-bone p-6 shadow-soft md:p-8">
+          <h3 class="font-serif text-2xl leading-tight text-ink md:text-3xl">Nie musisz niczego udowadniać.</h3>
           <p class="mt-5 text-base leading-8 text-graphite/78">
             Możesz potraktować sesję duchowo, symbolicznie albo psychologiczno-duchowo. Ważne jest to, co dana historia porusza w Tobie i jak można ją później spokojnie zintegrować z codziennym życiem.
           </p>
@@ -122,13 +122,59 @@ const sessionSteps = [
       </div>
     </section>
 
-    <section class="relative overflow-hidden bg-lemon py-20 text-ink" aria-labelledby="krotkie-odpowiedzi">
+    <section class="bg-vellum py-14 md:py-20" aria-labelledby="jak-rozpoznac-temat">
+      <div class="container-page">
+        <div class="max-w-3xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">zanim podejmiesz decyzję</p>
+          <h2 id="jak-rozpoznac-temat" class="mt-4 font-serif text-3xl leading-tight sm:text-4xl md:text-5xl">Po czym poznać, że to może być dobry temat do regresji?</h2>
+          <div class="gold-rule mt-5"></div>
+          <p class="mt-5 text-base leading-8 text-graphite/76">
+            Najczęściej nie zaczyna się od pewności. Zaczyna się od powracającego wrażenia: „to jest większe niż zwykłe wspomnienie”, „ta relacja porusza mnie za mocno”, „ten sen wraca od lat”, „czuję coś, czego nie umiem logicznie wyjaśnić”.
+          </p>
+        </div>
+        <div class="mt-10 grid gap-5 lg:grid-cols-3">
+          <article class="border border-gold/30 bg-white/72 p-6">
+            <h3 class="font-serif text-2xl leading-tight">Gdy wraca ta sama emocja</h3>
+            <p class="mt-4 text-sm leading-7 text-graphite/76">
+              Lęk, smutek, poczucie winy albo tęsknota czasem pojawiają się mocniej, niż wynikałoby to z obecnej sytuacji. Sesja może pomóc sprawdzić, czy za emocją stoi symboliczna historia, obraz albo dawny wzorzec.
+            </p>
+          </article>
+          <article class="border border-gold/30 bg-white/72 p-6">
+            <h3 class="font-serif text-2xl leading-tight">Gdy relacja wydaje się „starsza”</h3>
+            <p class="mt-4 text-sm leading-7 text-graphite/76">
+              Nie chodzi o romantyzowanie trudnych więzi. Chodzi o spokojne zobaczenie, czy przyciąganie, konflikt, zależność albo poczucie długu niosą głębszy wzorzec, który warto zrozumieć bez oddawania własnych granic.
+            </p>
+          </article>
+          <article class="border border-gold/30 bg-white/72 p-6">
+            <h3 class="font-serif text-2xl leading-tight">Gdy sen lub symbol nie odpuszcza</h3>
+            <p class="mt-4 text-sm leading-7 text-graphite/76">
+              Powtarzający się obraz, miejsce, epoka, postać albo scena mogą być punktem wejścia do sesji. Nie trzeba od razu uznawać ich za dowód. Wystarczy zobaczyć, co poruszają i dokąd prowadzą.
+            </p>
+          </article>
+        </div>
+        <div class="mt-10 grid gap-6 border-l-2 border-gold-fill bg-warm-white/72 p-6 md:grid-cols-[0.9fr_1.1fr] md:p-8">
+          <div>
+            <h3 class="font-serif text-3xl leading-tight">Nie musisz przychodzić z gotową historią.</h3>
+          </div>
+          <div class="space-y-4 text-base leading-8 text-graphite/76">
+            <p>
+              Wystarczy jedno zdanie: „wraca do mnie temat relacji”, „mam powtarzający się sen”, „czuję lęk bez jasnej przyczyny”, „chcę zrozumieć, czy PLR jest dla mnie”. Dobra konsultacja pomaga doprecyzować temat, zamiast wymagać od Ciebie gotowej narracji.
+            </p>
+            <p>
+              Właśnie dlatego kontakt jest dostępny tutaj: przez formularz, email, telefon i WhatsApp. Jeśli temat jest żywy, nie trzeba czytać kolejnych dziesięciu stron, żeby zrobić pierwszy, spokojny krok.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative overflow-hidden bg-lemon py-14 text-ink md:py-20" aria-labelledby="krotkie-odpowiedzi">
       <div class="absolute inset-y-0 left-1/2 hidden w-px bg-gold-fill/24 lg:block"></div>
       <div class="container-page">
         <div class="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <div class="lg:sticky lg:top-8">
             <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">krótkie odpowiedzi</p>
-            <h2 id="krotkie-odpowiedzi" class="mt-4 font-serif text-4xl leading-tight md:text-5xl">Zanim wejdziesz głębiej</h2>
+            <h2 id="krotkie-odpowiedzi" class="mt-4 font-serif text-3xl leading-tight sm:text-4xl md:text-5xl">Zanim wejdziesz głębiej</h2>
             <div class="gold-rule mt-5"></div>
             <p class="mt-5 text-base leading-8 text-graphite/74">
               Te odpowiedzi są krótkie celowo. Mają dać orientację bez patosu i bez wymuszania wiary w jeden sposób rozumienia doświadczenia.
@@ -148,12 +194,12 @@ const sessionSteps = [
       </div>
     </section>
 
-    <section class="bg-warm-white py-20" id="sesja">
+    <section class="bg-warm-white py-14 md:py-20" id="sesja">
       <div class="container-page">
         <div class="grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
           <div>
             <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">przebieg pracy</p>
-            <h2 class="mt-4 font-serif text-4xl leading-tight md:text-5xl">Jak wygląda sesja PLR?</h2>
+            <h2 class="mt-4 font-serif text-3xl leading-tight sm:text-4xl md:text-5xl">Jak wygląda sesja PLR?</h2>
             <div class="gold-rule mt-5"></div>
             <p class="mt-5 text-base leading-8 text-graphite/75">
               Sesja ma prostą strukturę, ale nie jest mechanicznym scenariuszem. Prowadzenie dostosowuje się do osoby, tempa i tego, co pojawia się w doświadczeniu.
@@ -179,16 +225,16 @@ const sessionSteps = [
       </div>
     </section>
 
-    <section class="bg-vellum py-20 text-ink" id="tematy">
+    <section class="bg-vellum py-14 text-ink md:py-20" id="tematy">
       <div class="container-page">
         <div class="max-w-3xl">
-          <h2 class="font-serif text-4xl leading-tight md:text-5xl">Jakie tematy można eksplorować?</h2>
+          <h2 class="font-serif text-3xl leading-tight sm:text-4xl md:text-5xl">Jakie tematy można eksplorować?</h2>
           <div class="gold-rule mt-5"></div>
           <p class="mt-5 text-base leading-8 text-graphite/74">
             Regresja do poprzedniego życia bywa pomocna wtedy, gdy wraca pytanie: dlaczego ta relacja, emocja albo symbol są dla mnie tak silne?
           </p>
         </div>
-        <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-10 grid gap-4 md:grid-cols-2 lg:mt-12 lg:grid-cols-3 lg:gap-5">
           <ServiceCard title="Relacje i więzi" icon="relations" text="Silne przyciąganie, powtarzające się role, dawne zobowiązania albo poczucie, że dana relacja niesie starszą historię." />
           <ServiceCard title="Lęki i napięcia" icon="heart" text="Emocje, które pojawiają się bez oczywistej przyczyny i proszą raczej o uważność niż szybką etykietę." />
           <ServiceCard title="Wzorce i schematy" icon="cycle" text="Decyzje, reakcje i wewnętrzne role, które wracają mimo prób zmiany na poziomie samej analizy." />
@@ -199,12 +245,12 @@ const sessionSteps = [
       </div>
     </section>
 
-    <section class="bg-vellum py-20" aria-labelledby="dalej">
+    <section class="bg-vellum py-14 md:py-20" aria-labelledby="dalej">
       <div class="container-page">
         <div class="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
           <div>
             <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">jak przejść dalej</p>
-            <h2 id="dalej" class="mt-4 font-serif text-4xl leading-tight md:text-5xl">Od ciekawości do rozmowy</h2>
+            <h2 id="dalej" class="mt-4 font-serif text-3xl leading-tight sm:text-4xl md:text-5xl">Od ciekawości do rozmowy</h2>
             <div class="gold-rule mt-5"></div>
             <p class="mt-5 text-base leading-8 text-graphite/76">
               Ta strona nie ma popychać do decyzji. Ma pomóc nazwać temat i zobaczyć, czy rozmowa o sesji ma sens. Jeśli coś w opisie jest bliskie Twojemu doświadczeniu, możesz napisać krótko i zwyczajnie.
@@ -242,10 +288,10 @@ const sessionSteps = [
       </div>
     </section>
 
-    <section class="bg-bone py-20">
+    <section class="bg-bone py-14 md:py-20">
       <div class="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
         <div>
-          <h2 class="font-serif text-4xl leading-tight md:text-5xl">PLR a Brama Dusz LBL</h2>
+          <h2 class="font-serif text-3xl leading-tight sm:text-4xl md:text-5xl">PLR a Brama Dusz LBL</h2>
           <div class="gold-rule mt-5"></div>
           <div class="mt-7 space-y-5 text-base leading-8 text-graphite/78">
             <p>
@@ -263,16 +309,16 @@ const sessionSteps = [
       </div>
     </section>
 
-    <section class="bg-warm-white py-20">
+    <section class="bg-warm-white py-14 md:py-20">
       <div class="container-page grid gap-12 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
         <div class="relative border-l border-gold/50 bg-white/72 p-8 shadow-[0_18px_55px_rgba(7,17,31,0.08)]">
           <span class="absolute -left-px top-8 h-20 w-px bg-gold-fill"></span>
-          <p class="font-serif text-3xl leading-tight text-ink">„Największą wartością nie była obietnica niezwykłego efektu, tylko spokojne prowadzenie, granice i przestrzeń na własne znaczenie doświadczenia.”</p>
+          <p class="font-serif text-2xl leading-tight text-ink md:text-3xl">„Największą wartością nie była obietnica niezwykłego efektu, tylko spokojne prowadzenie, granice i przestrzeń na własne znaczenie doświadczenia.”</p>
           <p class="mt-6 text-sm leading-7 text-graphite/70">perspektywa osoby korzystającej z sesji</p>
         </div>
         <div>
           <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">rekomendowany prowadzący</p>
-          <h2 class="mt-4 font-serif text-4xl leading-tight md:text-5xl">Maciej Maślanka i Instytut Regresji</h2>
+          <h2 class="mt-4 font-serif text-3xl leading-tight sm:text-4xl md:text-5xl">Maciej Maślanka i Instytut Regresji</h2>
           <div class="gold-rule mt-5"></div>
           <div class="mt-7 space-y-5 text-base leading-8 text-graphite/78">
             <p>
@@ -282,18 +328,18 @@ const sessionSteps = [
               Maciej pracuje z regresją duchową i regresją poprzednich wcieleń, ukończył szkolenia z regresji i hipnozy regresyjnej, studiuje psychologię w Warszawie i rozwija autorską metodę Brama Dusz LBL. W opisie jego pracy ważne są spokój, granice, brak tonu guru i odpowiedzialne rozróżnienie między sesją rozwojową a terapią kliniczną.
             </p>
             <p>
-              Kontakt w sprawie sesji jest dostępny na tej stronie: przez email, telefon, WhatsApp i formularz. Szerszy kontekst pracy Macieja znajdziesz na <a class="text-gold underline underline-offset-4" href={siteData.links.personal} rel="noopener noreferrer">maciejregresja.pl</a>.
+              Kontakt w sprawie sesji jest dostępny na tej stronie: przez email, telefon, WhatsApp i formularz. Główne miejsce informacji organizacyjnych i zapisów to <a class="text-gold underline underline-offset-4" href={siteData.links.booking} rel="noopener noreferrer">Instytut Regresji</a>.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="bg-bone py-20">
+    <section class="bg-bone py-14 md:py-20">
       <div class="container-page">
         <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <h2 class="font-serif text-4xl leading-tight md:text-5xl">Baza wiedzy</h2>
+            <h2 class="font-serif text-3xl leading-tight sm:text-4xl md:text-5xl">Baza wiedzy</h2>
             <div class="gold-rule mt-5"></div>
             <p class="mt-5 text-base leading-8 text-graphite/75">
               Te teksty odpowiadają na różne intencje: od pierwszego pytania „czy to dla mnie?” po różnicę między poprzednim wcieleniem a pracą między wcieleniami.

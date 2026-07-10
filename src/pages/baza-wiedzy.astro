@@ -1,4 +1,4 @@
-﻿---
+---
 import ArticleCard from "@/components/ArticleCard.astro";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import CTASection from "@/components/CTASection.astro";
@@ -27,17 +27,17 @@ const pageFaq = pageFaqs.knowledge;
 
 <BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, articleSchema({ title, description, url: `${siteData.url}/baza-wiedzy/` }), createFaqSchema(pageFaq)]}>
   <main>
-    <section class="bg-ink pb-20 text-warm-white">
+    <section class="subpage-hero pb-20 text-ink">
       <Breadcrumbs items={breadcrumbs} />
       <div class="container-page pt-14">
-        <h1 class="max-w-4xl font-serif text-4xl leading-tight md:text-6xl">Baza wiedzy o regresji poprzednich wcieleń</h1>
-        <p class="mt-7 max-w-3xl text-lg leading-8 text-warm-white/75">
+        <h1 class="max-w-4xl font-serif text-[2.5rem] leading-tight sm:text-5xl md:text-[3.5rem]">Baza wiedzy o regresji poprzednich wcieleń</h1>
+        <p class="mt-7 max-w-3xl text-lg leading-8 text-graphite/78">
           Zebrane w jednym miejscu teksty dla osób, które chcą zrozumieć PLR, regresję między wcieleniami i metodę Brama Dusz LBL bez sztucznego języka.
         </p>
       </div>
     </section>
 
-    <section class="bg-warm-white py-20">
+    <section class="bg-warm-white py-14 md:py-20">
       <div class="container-page grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
         <div>
           <h2 class="font-serif text-4xl leading-tight">Od czego zacząć?</h2>
@@ -52,7 +52,7 @@ const pageFaq = pageFaqs.knowledge;
       </div>
     </section>
 
-    <section class="bg-bone py-20">
+    <section class="bg-bone py-14 md:py-20">
       <div class="container-page">
         <h2 class="font-serif text-4xl leading-tight md:text-5xl">Artykuły pogłębiające temat</h2>
         <div class="gold-rule mt-5"></div>

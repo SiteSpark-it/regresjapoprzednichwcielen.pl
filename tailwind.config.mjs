@@ -4,13 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: "#1e1608",
-        night: "#4a3008",
-        graphite: "#4b3925",
+        ink: "#19150c",
+        night: "#2d2718",
+        graphite: "#4d4434",
         "warm-white": "#fffdf4",
         bone: "#ffefc7",
         vellum: "#fff8df",
-        gold: "#9c5f00",
+        gold: "#a56f00",
         "gold-fill": "#f5b51f",
         "gold-soft": "#ffe594",
         honey: "#ffc928",

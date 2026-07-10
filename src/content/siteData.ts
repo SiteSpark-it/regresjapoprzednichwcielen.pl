@@ -1,4 +1,4 @@
-﻿export const siteData = {
+export const siteData = {
   name: "Regresja Poprzednich Wcieleń",
   domain: "regresjapoprzednichwcielen.pl",
   url: "https://regresjapoprzednichwcielen.pl",
@@ -20,7 +20,7 @@
   links: {
     home: "/",
     booking: "https://instytutregresji.pl",
-    personal: "https://maciejregresja.pl",
+    personal: "https://instytutregresji.pl",
     betweenLives: "https://regresjamiedzywcieleniami.pl",
     spiritualRegression: "https://regresjaduchowa.pl",
     rzeszow: "https://regresjarzeszow.pl",

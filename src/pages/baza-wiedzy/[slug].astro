@@ -1,4 +1,4 @@
-﻿---
+---
 import ArticleCard from "@/components/ArticleCard.astro";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import CTASection from "@/components/CTASection.astro";
@@ -35,12 +35,12 @@ const canonicalUrl = `${siteData.url}/baza-wiedzy/${article.slug}/`;
   schema={[serviceSchema, articleSchema({ title: article.title, description: article.description, url: canonicalUrl }), createFaqSchema(article.faq)]}
 >
   <main>
-    <section class="bg-ink pb-20 text-warm-white">
+    <section class="subpage-hero pb-20 text-ink">
       <Breadcrumbs items={breadcrumbs} />
       <div class="container-page pt-14">
         <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold-soft">{article.readingTime}</p>
-        <h1 class="mt-5 max-w-4xl font-serif text-4xl leading-tight md:text-6xl">{article.h1}</h1>
-        <p class="mt-7 max-w-3xl text-lg leading-8 text-warm-white/75">{article.excerpt}</p>
+        <h1 class="mt-5 max-w-4xl font-serif text-[2.5rem] leading-tight sm:text-5xl md:text-[3.5rem]">{article.h1}</h1>
+        <p class="mt-7 max-w-3xl text-lg leading-8 text-graphite/78">{article.excerpt}</p>
         <div class="mt-9 flex flex-col gap-4 sm:flex-row">
           <a class="inline-flex justify-center bg-gold-fill px-7 py-4 text-sm font-bold text-ink transition hover:bg-honey" href={siteData.cta.url} data-track="article-hero-consultation">
             Umów konsultację
@@ -52,7 +52,7 @@ const canonicalUrl = `${siteData.url}/baza-wiedzy/${article.slug}/`;
       </div>
     </section>
 
-    <article class="bg-warm-white py-20">
+    <article class="bg-warm-white py-14 md:py-20">
       <div class="container-page grid gap-12 lg:grid-cols-[minmax(0,1fr)_330px]">
         <div class="prose-site max-w-3xl text-base leading-8 text-graphite/80">
           {
@@ -79,7 +79,7 @@ const canonicalUrl = `${siteData.url}/baza-wiedzy/${article.slug}/`;
       </div>
     </article>
 
-    <section class="bg-bone py-20">
+    <section class="bg-bone py-14 md:py-20">
       <div class="container-page">
         <div class="max-w-3xl">
           <h2 class="font-serif text-4xl leading-tight md:text-5xl">Powiązane tematy</h2>

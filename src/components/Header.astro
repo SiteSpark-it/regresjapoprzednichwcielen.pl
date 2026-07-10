@@ -4,18 +4,18 @@ import { navigation, siteData } from "@/content/siteData";
 ---
 
 <header class="absolute inset-x-0 top-0 z-30 border-b border-gold-fill/24 bg-warm-white/82 text-ink shadow-[0_12px_36px_rgba(126,82,0,0.08)] backdrop-blur-md">
-  <nav class="container-page flex min-h-20 items-center justify-between gap-4" aria-label="Główna nawigacja">
+  <nav class="container-wide flex min-h-[4.5rem] items-center justify-between gap-4" aria-label="Główna nawigacja">
     <a href="/" class="flex min-w-0 items-center gap-3" aria-label={`${siteData.name} - strona główna`} data-track="header-logo-home">
-      <span class="grid h-12 w-12 shrink-0 place-items-center border border-gold-fill/80 bg-lemon text-gold shadow-[0_14px_30px_rgba(245,181,31,0.22)]" aria-hidden="true">
-        <LogoMark class="h-9 w-9" />
+      <span class="grid h-11 w-11 shrink-0 place-items-center border border-gold-fill/80 bg-lemon text-gold shadow-[0_14px_30px_rgba(245,181,31,0.22)] sm:h-12 sm:w-12" aria-hidden="true">
+        <LogoMark class="h-8 w-8 sm:h-9 sm:w-9" />
       </span>
-      <span class="max-w-48 text-sm font-semibold leading-tight tracking-wide">{siteData.name}</span>
+      <span class="max-w-[11rem] text-[0.82rem] font-semibold leading-tight tracking-wide sm:max-w-48 sm:text-sm">{siteData.name}</span>
     </a>
 
-    <div class="hidden items-center gap-5 xl:flex">
+    <div class="hidden items-center gap-4 xl:flex 2xl:gap-5">
       {
         navigation.map((item) => (
-          <a class="text-xs font-medium uppercase tracking-[0.12em] text-graphite/72 transition hover:text-gold 2xl:text-[0.78rem]" href={item.href} data-track={`nav-${item.label}`}>
+          <a class="text-[0.7rem] font-medium uppercase tracking-[0.1em] text-graphite/72 transition hover:text-gold 2xl:text-[0.76rem]" href={item.href} data-track={`nav-${item.label}`}>
             {item.label}
           </a>
         ))
@@ -27,7 +27,7 @@ import { navigation, siteData } from "@/content/siteData";
         Email
       </a>
       <a
-        class="btn-primary px-5 py-3 text-sm"
+        class="btn-primary min-h-11 px-4 py-3 text-sm"
         href={siteData.cta.url}
         data-track="header-consultation"
       >
@@ -39,7 +39,7 @@ import { navigation, siteData } from "@/content/siteData";
       <summary class="list-none border border-gold-fill/42 bg-warm-white/85 px-4 py-3 text-sm font-semibold text-ink shadow-[0_10px_24px_rgba(126,82,0,0.1)] marker:hidden">
         Menu
       </summary>
-      <div class="absolute right-0 mt-3 w-72 max-w-[calc(100vw-2rem)] border border-gold-fill/30 bg-warm-white p-4 shadow-soft">
+      <div class="absolute right-0 mt-3 w-72 max-w-[calc(100vw-1.25rem)] border border-gold-fill/30 bg-warm-white p-4 shadow-soft">
         <div class="grid gap-2">
           {
             navigation.map((item) => (

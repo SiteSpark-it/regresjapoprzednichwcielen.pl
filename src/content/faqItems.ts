@@ -1,4 +1,4 @@
-﻿export const faqItems = [
+export const faqItems = [
   {
     question: "Czy muszę wierzyć w poprzednie wcielenia, żeby skorzystać z sesji?",
     answer:

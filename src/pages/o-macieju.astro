@@ -1,4 +1,4 @@
-﻿---
+---
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import CTASection from "@/components/CTASection.astro";
 import DisclaimerBox from "@/components/DisclaimerBox.astro";
@@ -17,17 +17,17 @@ const pageFaq = pageFaqs.author;
 
 <BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, personSchema, createFaqSchema(pageFaq)]}>
   <main>
-    <section class="bg-ink pb-20 text-warm-white">
+    <section class="subpage-hero pb-20 text-ink">
       <Breadcrumbs items={breadcrumbs} />
       <div class="container-page pt-14">
-        <h1 class="max-w-4xl font-serif text-4xl leading-tight md:text-6xl">Maciej Maślanka</h1>
-        <p class="mt-7 max-w-3xl text-lg leading-8 text-warm-white/75">
+        <h1 class="max-w-4xl font-serif text-[2.5rem] leading-tight sm:text-5xl md:text-[3.5rem]">Maciej Maślanka</h1>
+        <p class="mt-7 max-w-3xl text-lg leading-8 text-graphite/78">
           Informacje o prowadzącym polecanym przez tę stronę: regresja duchowa, regresja poprzednich wcieleń i autorska metoda Brama Dusz LBL.
         </p>
       </div>
     </section>
 
-    <section class="bg-warm-white py-20">
+    <section class="bg-warm-white py-14 md:py-20">
       <div class="container-page grid gap-12 lg:grid-cols-[minmax(0,1fr)_330px]">
         <article class="prose-site max-w-3xl text-base leading-8 text-graphite/80">
           <h2 class="text-4xl">Dlaczego warto poznać jego pracę?</h2>
@@ -42,10 +42,21 @@ const pageFaq = pageFaqs.author;
           <p>
             W opisie jego pracy ważne jest to, że o duszy, symbolach, snach i przewodnictwie można mówić spokojnie. Bez obietnic, bez presji i bez udawania, że prowadzący wie więcej o czyimś życiu niż sama osoba uczestnicząca w sesji. Dobra sesja powinna dawać strukturę, pytania i przestrzeń, a nie gotową doktrynę.
           </p>
+          <p>
+            To podejście jest ważne szczególnie w regresji poprzednich wcieleń, gdzie łatwo popaść w efektowny język. Odpowiedzialne prowadzenie nie polega na tym, żeby zachwycić uczestnika wizją, tylko żeby pomóc mu zostać blisko własnego doświadczenia. Jeśli pojawia się obraz, warto zapytać, co niesie. Jeśli pojawia się emocja, warto sprawdzić, czego dotyczy. Jeśli pojawia się cisza, też można z nią pracować.
+          </p>
+
+          <h2 class="text-4xl">Co buduje zaufanie w takiej pracy?</h2>
+          <p>
+            Zaufanie buduje jasny język, brak obietnic leczenia, gotowość do zatrzymania procesu i szacunek do granic osoby. Ważne jest również rozróżnienie między sesją rozwojową a psychoterapią kliniczną. Regresja może być głęboka, ale nie powinna zastępować opieki specjalistycznej tam, gdzie jest ona potrzebna.
+          </p>
+          <p>
+            Dobra konsultacja przed sesją nie musi być długa, ale powinna odpowiedzieć na podstawowe pytania: czy temat nadaje się do takiej pracy, jak przygotować się do spotkania, czy lepsza będzie sesja PLR, czy szersza praca duchowa, oraz jak zadbać o spokojny powrót po doświadczeniu.
+          </p>
 
           <h2 class="text-4xl">Gdzie zapisać się na sesję?</h2>
           <p>
-            Kontakt w sprawie sesji jest dostępny na tej stronie przez email, telefon, WhatsApp i formularz kontaktowy. Więcej o pracy Macieja można przeczytać również na <a class="text-gold underline underline-offset-4" href={siteData.links.personal} rel="noopener noreferrer">maciejregresja.pl</a>.
+            Kontakt w sprawie sesji jest dostępny na tej stronie przez email, telefon, WhatsApp i formularz kontaktowy. Główne miejsce informacji organizacyjnych i zapisów to <a class="text-gold underline underline-offset-4" href={siteData.links.booking} rel="noopener noreferrer">Instytut Regresji</a>.
           </p>
         </article>
         <aside>

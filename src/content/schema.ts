@@ -1,4 +1,4 @@
-﻿import { faqItems } from "@/content/faqItems";
+import { faqItems } from "@/content/faqItems";
 import { siteData } from "@/content/siteData";
 
 export interface BreadcrumbItem {

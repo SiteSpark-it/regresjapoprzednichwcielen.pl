@@ -2,7 +2,7 @@
 import { siteData } from "@/content/siteData";
 ---
 
-<aside class="fixed inset-x-0 bottom-0 z-40 border-t border-gold-fill/28 bg-warm-white/94 px-3 py-2 shadow-[0_-18px_40px_rgba(126,82,0,0.12)] backdrop-blur-md md:hidden" aria-label="Szybki kontakt">
+<aside class="fixed inset-x-0 bottom-0 z-40 border-t border-gold-fill/28 bg-warm-white/94 px-3 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 shadow-[0_-18px_40px_rgba(126,82,0,0.12)] backdrop-blur-md md:hidden" aria-label="Szybki kontakt">
   <div class="mx-auto grid max-w-md grid-cols-3 gap-2">
     <a class="btn-secondary min-h-12 px-2 py-3 text-xs" href={siteData.contact.phoneHref} data-track="sticky-phone">
       Zadzwoń
