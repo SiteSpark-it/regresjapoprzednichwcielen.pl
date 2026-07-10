@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 header('Content-Type: application/json; charset=utf-8');
 
-const RPPW_SETUP_TOKEN_HASH = '4743dbaed400f30e1a3b139e74c1e9067bae1b5aed7c80f2d48cd9aaade514c1';
+const RPPW_SETUP_TOKEN_HASH = 'bd4f1307973edda170316932037e85975aaf99a3078cf886e713db86cb65d73c';
 const RPPW_SITE = 'regresjapoprzednichwcielen.pl';
 
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
