@@ -14,6 +14,11 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     respond(['error' => 'method_not_allowed'], 405);
 }
 
+$contentType = strtolower((string)($_SERVER['CONTENT_TYPE'] ?? ''));
+$browserForm = strpos($contentType, 'application/x-www-form-urlencoded') !== false
+    || strpos($contentType, 'multipart/form-data') !== false;
+$GLOBALS['browser_form'] = $browserForm;
+
 $config = lead_config();
 $ip = client_ip();
 
@@ -21,14 +26,33 @@ if ($ip !== '' && in_array($ip, $config['excluded_ips'] ?? [], true)) {
     respond(['ok' => true, 'ignored' => 'excluded_ip'], 202);
 }
 
-$rawBody = file_get_contents('php://input') ?: '';
-if (strlen($rawBody) > 20000) {
-    respond(['error' => 'payload_too_large'], 413);
-}
+$input = [];
+if ($browserForm) {
+    if (trim((string)($_POST['website'] ?? '')) !== '') {
+        respond(['ok' => true], 202);
+    }
 
-$input = json_decode($rawBody, true);
-if (!is_array($input)) {
-    respond(['error' => 'invalid_json'], 400);
+    $formPayload = $_POST;
+    unset($formPayload['website']);
+    $input = [
+        'page' => '/kontakt/',
+        'url' => 'https://regresjapoprzednichwcielen.pl/kontakt/',
+        'title' => 'Kontakt i konsultacja przed sesją',
+        'lang' => 'pl-PL',
+        'element' => 'contact-lead-form-noscript',
+        'form_id' => 'formularz',
+        'form_payload' => $formPayload,
+    ];
+} else {
+    $rawBody = file_get_contents('php://input') ?: '';
+    if (strlen($rawBody) > 20000) {
+        respond(['error' => 'payload_too_large'], 413);
+    }
+
+    $input = json_decode($rawBody, true);
+    if (!is_array($input)) {
+        respond(['error' => 'invalid_json'], 400);
+    }
 }
 
 $ingestKey = (string)($config['ingest_key'] ?? '');
@@ -39,6 +63,9 @@ if ($ingestKey === '' || strpos($ingestKey, 'CHANGE_ME') !== false) {
 $formPayload = clean_assoc($input['form_payload'] ?? []);
 if (!$formPayload) {
     respond(['error' => 'empty_form_payload'], 422);
+}
+if (empty($formPayload['Kontakt zwrotny']) || empty($formPayload['Wiadomość'])) {
+    respond(['error' => 'required_fields_missing'], 422);
 }
 
 $forward = [
@@ -88,6 +115,13 @@ function lead_config(): array {
 }
 
 function respond(array $payload, int $status = 200): void {
+    if (!empty($GLOBALS['browser_form'])) {
+        $target = $status >= 200 && $status < 300
+            ? '/kontakt/?wyslano=1#formularz'
+            : '/kontakt/?blad=1#formularz';
+        header('Location: ' . $target, true, 303);
+        exit;
+    }
     http_response_code($status);
     echo json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     exit;
