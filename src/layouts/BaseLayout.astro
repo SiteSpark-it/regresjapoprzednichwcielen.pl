@@ -17,9 +17,12 @@ interface Props {
   schema?: unknown[];
   breadcrumbs?: BreadcrumbItem[];
   noindex?: boolean;
+  ogType?: "website" | "article";
+  publishedAt?: string;
+  updatedAt?: string;
 }
 
-const { title, description, canonical, ogTitle, ogDescription, ogImage, schema, breadcrumbs, noindex } = Astro.props;
+const { title, description, canonical, ogTitle, ogDescription, ogImage, schema, breadcrumbs, noindex, ogType, publishedAt, updatedAt } = Astro.props;
 ---
 
 <!doctype html>
@@ -39,11 +42,17 @@ const { title, description, canonical, ogTitle, ogDescription, ogImage, schema, 
       schema={schema}
       breadcrumbs={breadcrumbs}
       noindex={noindex}
+      ogType={ogType}
+      publishedAt={publishedAt}
+      updatedAt={updatedAt}
     />
   </head>
   <body>
+    <a class="skip-link" href="#tresc-glowna">Przejdź do treści</a>
     <Header />
-    <slot />
+    <div id="tresc-glowna">
+      <slot />
+    </div>
     <Footer />
     <StickyContactBar />
     <AnalyticsScripts />

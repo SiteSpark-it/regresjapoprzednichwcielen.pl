@@ -62,7 +62,7 @@ export const faqItems = [
   {
     question: "Ile kosztuje regresja poprzednich wcieleń?",
     answer:
-      "Aktualne informacje organizacyjne, dostępność i warunki zapisów najlepiej sprawdzić bezpośrednio w Instytucie Regresji. Ta strona wyjaśnia sens i przebieg pracy PLR, a główne miejsce zapisów prowadzi osobny serwis. Przed decyzją warto spokojnie przeczytać opis sesji i FAQ."
+      "Aktualną cenę, dostępność i warunki spotkania otrzymasz po wysłaniu krótkiego pytania przez formularz na tej stronie, email, telefon albo WhatsApp. Wiadomość nie jest rezerwacją i nie zobowiązuje do sesji. Przed decyzją możesz najpierw doprecyzować formę online lub stacjonarną oraz przewidywany czas spotkania."
   },
   {
     question: "Czy regresja poprzednich wcieleń jest bezpieczna?",
@@ -78,6 +78,26 @@ export const faqItems = [
     question: "Kiedy wybrać PLR, a kiedy regresję między wcieleniami?",
     answer:
       "PLR jest dobrym początkiem, gdy interesuje Cię konkretna historia, relacja, emocja, sen albo symbol kojarzony z poprzednim życiem. Regresja między wcieleniami dotyczy szerszych pytań o sens, kierunek i przestrzeń między wcieleniami. W praktyce warto zaczynać od tego, co jest bliższe Twojej aktualnej intencji."
+  },
+  {
+    question: "Czy mogę przerwać sesję w dowolnym momencie?",
+    answer:
+      "Tak. Zgoda na udział nie oznacza zgody na każdy etap procesu. Możesz poprosić o wolniejsze tempo, pominąć pytanie, zrobić przerwę albo zakończyć sesję. Odpowiedzialne prowadzenie respektuje taką decyzję bez nacisku i pomaga spokojnie wrócić do pełnej orientacji w ciele oraz otoczeniu."
+  },
+  {
+    question: "Jak wybrać osobę prowadzącą regresję?",
+    answer:
+      "Zapytaj o konkretne szkolenia, przebieg spotkania, sposób pracy z sugestią i trudną emocją oraz sytuacje, w których sesja jest odradzana. Dobry prowadzący jasno opisuje granice kompetencji, nie obiecuje leczenia, nie narzuca interpretacji i pozwala najpierw odbyć spokojną konsultację bez zobowiązania."
+  },
+  {
+    question: "Czy wysłanie formularza oznacza rezerwację terminu?",
+    answer:
+      "Nie. Formularz służy do rozpoczęcia rozmowy. Możesz opisać temat, zapytać o cenę, dostępność, formę online lub stacjonarną i dopiero po otrzymaniu odpowiedzi zdecydować, czy chcesz przejść dalej. Dane są wykorzystywane do obsługi tego kontaktu zgodnie z informacją o prywatności."
+  },
+  {
+    question: "Czy regresja jest odpowiednia w czasie silnego kryzysu?",
+    answer:
+      "Sesja duchowa nie zastępuje interwencji kryzysowej, leczenia ani psychoterapii klinicznej. Przy silnej destabilizacji, braku snu, wpływie substancji albo trudnościach wymagających opieki specjalistycznej regresję lepiej odłożyć. W konsultacji warto opisać aktualną sytuację i w razie wątpliwości skorzystać z właściwej pomocy."
   },
   {
     question: "Czy to jest oficjalna sesja Life Between Lives The Michael Newton Institute?",

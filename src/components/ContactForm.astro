@@ -1,0 +1,194 @@
+---
+import { siteData } from "@/content/siteData";
+
+interface Props {
+  compact?: boolean;
+  heading?: string;
+  intro?: string;
+  formId?: string;
+}
+
+const {
+  compact = false,
+  heading = "Napisz, z czym przychodzisz",
+  intro = "Nie musisz opisywać całej historii. Kilka zdań wystarczy, żeby wrócić do Ciebie z informacją o konsultacji i najbliższym kroku.",
+  formId = "formularz"
+} = Astro.props;
+---
+
+<form
+  id={formId}
+  class:list={["premium-surface", compact ? "p-5 sm:p-6" : "p-5 sm:p-6 md:p-8"]}
+  action="/backend/lead.php"
+  method="post"
+  data-contact-form
+  data-email-href={siteData.contact.emailHref}
+  data-email={siteData.contact.email}
+  data-phone-href={siteData.contact.phoneHref}
+  data-phone={siteData.contact.phone}
+  data-no-track
+  data-track="contact-lead-form"
+>
+  <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold">bez zobowiązania</p>
+      <h2 class:list={["mt-3 font-serif leading-tight text-ink", compact ? "text-2xl sm:text-3xl" : "text-3xl sm:text-4xl"]}>{heading}</h2>
+    </div>
+    <span class="shrink-0 text-xs leading-6 text-graphite/78">pola z * są wymagane</span>
+  </div>
+  <p class="mt-4 max-w-2xl text-sm leading-7 text-graphite/74">{intro}</p>
+
+  <input type="hidden" name="Formularz" value="Konsultacja PLR" />
+  <label class="absolute -left-[9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+    Strona internetowa
+    <input type="text" name="website" tabindex="-1" autocomplete="off" />
+  </label>
+
+  <div class:list={["mt-6 grid gap-4", !compact && "sm:grid-cols-2"]}>
+    <label class="grid gap-2 text-sm font-semibold text-ink">
+      Imię *
+      <input class="form-field" type="text" name="Imię" autocomplete="name" required maxlength="80" />
+    </label>
+    <label class="grid gap-2 text-sm font-semibold text-ink">
+      Email lub telefon *
+      <input class="form-field" type="text" name="Kontakt zwrotny" autocomplete="email" inputmode="email" required maxlength="160" />
+    </label>
+    <label class="grid gap-2 text-sm font-semibold text-ink">
+      Główny temat
+      <select class="form-field" name="Temat">
+        <option value="Pierwsza konsultacja">Pierwsza konsultacja</option>
+        <option value="Relacja lub powtarzający się wzorzec">Relacja lub powtarzający się wzorzec</option>
+        <option value="Sen, obraz albo déjà vu">Sen, obraz albo déjà vu</option>
+        <option value="Lęk lub trudna emocja">Lęk lub trudna emocja</option>
+        <option value="Brama Dusz LBL">Brama Dusz LBL</option>
+        <option value="Pytanie organizacyjne">Pytanie organizacyjne</option>
+      </select>
+    </label>
+    <label class="grid gap-2 text-sm font-semibold text-ink">
+      Najwygodniejszy kontakt
+      <select class="form-field" name="Preferowany kontakt">
+        <option value="Email">Email</option>
+        <option value="Telefon">Telefon</option>
+        <option value="WhatsApp">WhatsApp</option>
+      </select>
+    </label>
+  </div>
+
+  <label class="mt-4 grid gap-2 text-sm font-semibold text-ink">
+    Krótka wiadomość *
+    <textarea
+      class="form-field min-h-36 resize-y leading-7"
+      name="Wiadomość"
+      required
+      maxlength="1800"
+      placeholder="Na przykład: od dłuższego czasu wraca do mnie ten sam sen i chcę sprawdzić, czy sesja PLR będzie dobrym kierunkiem."
+    ></textarea>
+  </label>
+
+  <label class="mt-4 flex items-start gap-3 text-xs leading-6 text-graphite/78">
+    <input class="mt-1 h-5 w-5 shrink-0 accent-gold" type="checkbox" name="Zgoda na kontakt" value="tak" required />
+    <span>
+      Zgadzam się na kontakt w sprawie tego zgłoszenia. Dane zostaną wykorzystane wyłącznie do obsługi wiadomości zgodnie z
+      <a class="text-gold underline underline-offset-4" href="/prywatnosc/">informacją o prywatności</a>.
+    </span>
+  </label>
+
+  <div class="mt-6 grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
+    <button class="btn-primary" type="submit" data-submit-button>
+      Wyślij pytanie o konsultację
+    </button>
+    <a class="text-center text-sm font-semibold text-gold underline underline-offset-4" href={siteData.contact.emailHref} data-track="form-email-alternative">
+      lub napisz email
+    </a>
+  </div>
+
+  <p class="mt-4 text-xs leading-6 text-graphite/78">
+    Wysłanie wiadomości nie oznacza rezerwacji terminu. Najpierw można spokojnie ustalić, czy sesja pasuje do Twojego tematu.
+  </p>
+  <div class="mt-4 hidden border px-4 py-3 text-sm leading-6" role="status" aria-live="polite" data-form-status></div>
+</form>
+
+<script>
+  function storageValue(storage: Storage, key: string) {
+    try {
+      return storage.getItem(key) || "";
+    } catch {
+      return "";
+    }
+  }
+
+  document.querySelectorAll<HTMLFormElement>("[data-contact-form]").forEach((form) => {
+    const initialStatus = form.querySelector<HTMLElement>("[data-form-status]");
+    const query = new URLSearchParams(window.location.search);
+    if (initialStatus && query.get("wyslano") === "1") {
+      initialStatus.className = "mt-4 border border-[#72936f]/45 bg-[#edf7e9] px-4 py-3 text-sm leading-6 text-ink";
+      initialStatus.textContent = "Dziękujemy. Wiadomość została wysłana. Odpowiedź przyjdzie wybraną przez Ciebie drogą kontaktu.";
+    } else if (initialStatus && query.get("blad") === "1") {
+      initialStatus.className = "mt-4 border border-[#a34b32]/35 bg-[#fff0e9] px-4 py-3 text-sm leading-6 text-ink";
+      initialStatus.textContent = "Nie udało się wysłać formularza. Skorzystaj z emaila, telefonu albo WhatsApp podanych obok formularza.";
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const status = form.querySelector<HTMLElement>("[data-form-status]");
+      const button = form.querySelector<HTMLButtonElement>("[data-submit-button]");
+      const values = Object.fromEntries(new FormData(form).entries());
+
+      if (values.website) return;
+
+      const payload = {
+        type: "form",
+        site: window.location.hostname,
+        sid: storageValue(sessionStorage, "ir_sid"),
+        vid: storageValue(localStorage, "ir_vid"),
+        page: window.location.pathname || "/kontakt/",
+        url: window.location.href,
+        title: document.title,
+        ref: document.referrer,
+        lang: navigator.language,
+        viewport: `${window.innerWidth}x${window.innerHeight}`,
+        screen: window.screen ? `${window.screen.width}x${window.screen.height}` : "",
+        element: form.dataset.track || "contact-lead-form",
+        form_id: form.id || "formularz",
+        form_payload: values
+      };
+
+      if (button) {
+        button.disabled = true;
+        button.textContent = "Wysyłanie...";
+      }
+      if (status) {
+        status.className = "mt-4 border border-gold-fill/35 bg-lemon/45 px-4 py-3 text-sm leading-6 text-ink";
+        status.textContent = "Wysyłamy wiadomość. Zostań chwilę na tej stronie.";
+      }
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+          credentials: "same-origin"
+        });
+
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        form.reset();
+        if (status) {
+          status.className = "mt-4 border border-[#72936f]/45 bg-[#edf7e9] px-4 py-3 text-sm leading-6 text-ink";
+          status.textContent = "Dziękujemy. Wiadomość została wysłana. Odpowiedź przyjdzie wybraną przez Ciebie drogą kontaktu.";
+        }
+      } catch {
+        if (status) {
+          status.className = "mt-4 border border-[#a34b32]/35 bg-[#fff0e9] px-4 py-3 text-sm leading-6 text-ink";
+          status.innerHTML = `Nie udało się wysłać formularza. Napisz na <a class="font-semibold underline" href="${form.dataset.emailHref}">${form.dataset.email}</a> albo zadzwoń pod <a class="font-semibold underline" href="${form.dataset.phoneHref}">${form.dataset.phone}</a>.`;
+        }
+      } finally {
+        if (button) {
+          button.disabled = false;
+          button.textContent = "Wyślij pytanie o konsultację";
+        }
+      }
+    });
+  });
+</script>

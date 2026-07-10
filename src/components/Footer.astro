@@ -1,6 +1,6 @@
 ---
 import LogoMark from "@/components/LogoMark.astro";
-import { navigation, siteData } from "@/content/siteData";
+import { footerNavigation, siteData } from "@/content/siteData";
 ---
 
 <footer class="border-t border-gold-fill/24 bg-vellum text-ink">
@@ -13,13 +13,14 @@ import { navigation, siteData } from "@/content/siteData";
         <span class="font-serif text-xl leading-tight text-gold">{siteData.name}</span>
       </a>
       <p class="mt-5 max-w-sm text-sm leading-7 text-graphite/72">{siteData.tagline}</p>
-      <p class="mt-5 text-sm text-graphite/62">{siteData.domain}</p>
+      <p class="mt-4 max-w-sm text-xs leading-6 text-graphite/78">{siteData.editorialPerspective}</p>
+      <p class="mt-5 text-sm text-graphite/78">{siteData.domain}</p>
     </div>
 
     <div>
       <h2 class="font-serif text-xl text-gold">Najważniejsze strony</h2>
       <ul class="mt-5 space-y-3 text-sm text-graphite/72">
-        {navigation.map((item) => <li><a class="hover:text-gold" href={item.href} data-track={`footer-nav-${item.label}`}>{item.label}</a></li>)}
+        {footerNavigation.map((item) => <li><a class="hover:text-gold" href={item.href} data-track={`footer-nav-${item.label}`}>{item.label}</a></li>)}
         <li><a class="hover:text-gold" href="/prywatnosc/" data-track="footer-privacy">Prywatność i statystyki</a></li>
       </ul>
     </div>
@@ -41,7 +42,7 @@ import { navigation, siteData } from "@/content/siteData";
       </div>
       <div class="mt-5 flex flex-wrap gap-3">
         <a class="btn-primary min-h-11 px-5 py-3 text-sm" href={siteData.cta.url} data-track="footer-consultation">
-          Umów konsultację
+          {siteData.cta.label}
         </a>
         <a class="btn-secondary min-h-11 px-5 py-3 text-sm" href={siteData.contact.emailHref} data-track="footer-email-button">
           Email
@@ -50,11 +51,11 @@ import { navigation, siteData } from "@/content/siteData";
           Instytut Regresji
         </a>
       </div>
-      <p class="mt-6 text-xs leading-6 text-graphite/58">{siteData.disclaimer}</p>
-      <p class="mt-2 text-xs leading-6 text-graphite/62">{siteData.disclaimerNote}</p>
+      <p class="mt-6 text-xs leading-6 text-graphite/78">{siteData.disclaimer}</p>
+      <p class="mt-2 text-xs leading-6 text-graphite/78">{siteData.disclaimerNote}</p>
     </div>
   </div>
   <div class="border-t border-gold-fill/18 py-5">
-    <p class="container-page text-xs text-graphite/55">© {new Date().getFullYear()} {siteData.organization}. Wszelkie prawa zastrzeżone.</p>
+    <p class="container-page text-xs text-graphite/78">© {new Date().getFullYear()} {siteData.organization}. Wszelkie prawa zastrzeżone.</p>
   </div>
 </footer>

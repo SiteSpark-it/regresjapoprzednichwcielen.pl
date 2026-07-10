@@ -15,7 +15,7 @@ const breadcrumbs = [{ label: "Brama Dusz LBL" }];
 const pageFaq = pageFaqs.gate;
 ---
 
-<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, articleSchema({ title, description, url: `${siteData.url}/brama-dusz-lbl/` }), createFaqSchema(pageFaq)]}>
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} ogType="article" publishedAt="2026-07-08" updatedAt="2026-07-10" schema={[serviceSchema, articleSchema({ title, description, url: `${siteData.url}/brama-dusz-lbl/`, publishedAt: "2026-07-08", updatedAt: "2026-07-10" }), createFaqSchema(pageFaq)]}>
   <main>
     <section class="subpage-hero pb-20 text-ink">
       <Breadcrumbs items={breadcrumbs} />

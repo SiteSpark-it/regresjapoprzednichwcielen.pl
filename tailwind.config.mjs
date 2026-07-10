@@ -6,11 +6,11 @@ export default {
       colors: {
         ink: "#19150c",
         night: "#2d2718",
-        graphite: "#4d4434",
+        graphite: "#3e372b",
         "warm-white": "#fffdf4",
         bone: "#ffefc7",
         vellum: "#fff8df",
-        gold: "#a56f00",
+        gold: "#835700",
         "gold-fill": "#f5b51f",
         "gold-soft": "#ffe594",
         honey: "#ffc928",

@@ -83,7 +83,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "Czy regresja między wcieleniami daje gotowe odpowiedzi?",
       answer:
-        "Nie obiecuję gotowych odpowiedzi ani potwierdzenia konkretnej wizji duchowej. Sesja może pomóc uporządkować obrazy, emocje i znaczenia, ale jej wartość zależy od spokojnej integracji oraz od tego, co realnie wspiera obecne życie."
+        "Sesja nie obiecuje gotowych odpowiedzi ani potwierdzenia konkretnej wizji duchowej. Może pomóc uporządkować obrazy, emocje i znaczenia, ale jej wartość zależy od spokojnej integracji oraz od tego, co realnie wspiera obecne życie."
     }
   ],
   author: [
@@ -118,6 +118,23 @@ export const pageFaqs: Record<string, FaqItem[]> = {
       question: "Czy baza wiedzy zawiera pełne artykuły?",
       answer:
         "Tak. Baza wiedzy zawiera osobne teksty o sceptycznym podejściu do PLR, symbolach, snach, relacjach, integracji po sesji i przygotowaniu do pracy online. Można czytać je po kolei albo wybrać temat najbliższy własnemu doświadczeniu."
+    }
+  ],
+  editorial: [
+    {
+      question: "Kto przygotowuje treści w tym serwisie?",
+      answer:
+        "Treści przygotowuje redakcja serwisu z perspektywy osoby, która zna regresję także jako uczestniczka sesji. Strona nie udaje osobistego bloga Macieja Maślanki. Informacje o nim są wyraźnie oznaczoną rekomendacją prowadzącego, a nie wypowiedzią pisaną w jego imieniu."
+    },
+    {
+      question: "Czy serwis przedstawia regresję jako leczenie?",
+      answer:
+        "Nie. Regresja jest tutaj opisywana jako sesja rozwojowa i duchowa oraz praca z doświadczeniem wewnętrznym. Treści nie zastępują diagnozy, leczenia, psychoterapii klinicznej ani konsultacji medycznej. Przy trudnościach wymagających specjalistycznej pomocy pierwszeństwo ma odpowiednia opieka."
+    },
+    {
+      question: "Dlaczego serwis poleca Macieja Maślankę?",
+      answer:
+        "Rekomendacja wynika z doświadczenia sposobu prowadzenia: spokojnego języka, szacunku dla granic i braku tonu guru. Serwis opisuje jego kwalifikacje ostrożnie oraz nie sugeruje oficjalnej certyfikacji The Michael Newton Institute. Decyzję o konsultacji każdy podejmuje samodzielnie."
     }
   ],
   contact: [

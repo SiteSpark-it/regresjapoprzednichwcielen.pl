@@ -9,14 +9,14 @@ import { articleSchema, createFaqSchema, serviceSchema } from "@/content/schema"
 import { pageFaqs } from "@/content/pageFaqs";
 import { siteData } from "@/content/siteData";
 
-const title = "Czym jest regresja poprzednich wcieleń? Spokojne wyjaśnienie PLR";
+const title = "Czym jest regresja poprzednich wcieleń? Wyjaśnienie PLR";
 const description =
   "Czym jest regresja poprzednich wcieleń, czy trzeba wierzyć w reinkarnację i jak rozumieć obrazy z sesji PLR bez sensacji i obietnic.";
 const breadcrumbs = [{ label: "Czym jest regresja poprzednich wcieleń?" }];
 const pageFaq = pageFaqs.whatIsPlr;
 ---
 
-<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, articleSchema({ title, description, url: `${siteData.url}/czym-jest-regresja-poprzednich-wcielen/` }), createFaqSchema(pageFaq)]}>
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} ogType="article" publishedAt="2026-07-08" updatedAt="2026-07-10" schema={[serviceSchema, articleSchema({ title, description, url: `${siteData.url}/czym-jest-regresja-poprzednich-wcielen/`, publishedAt: "2026-07-08", updatedAt: "2026-07-10" }), createFaqSchema(pageFaq)]}>
   <main>
     <section class="subpage-hero pb-20 text-ink">
       <Breadcrumbs items={breadcrumbs} />
@@ -71,7 +71,7 @@ const pageFaq = pageFaqs.whatIsPlr;
             Regresja poprzednich wcieleń nie jest diagnozą, leczeniem ani psychoterapią kliniczną. Jeśli jesteś w kryzysie psychicznym, po silnej traumie albo w aktywnym leczeniu psychiatrycznym, decyzję o takiej pracy warto skonsultować z odpowiednim specjalistą.
           </p>
           <p>
-            Odpowiedzialny język jest ważny. Nie obiecuję konkretnego efektu ani pewności co do natury każdego obrazu. Proponuję przestrzeń, w której można przyjrzeć się doświadczeniu i później spokojnie je zintegrować.
+            Odpowiedzialny język jest ważny. Sesja nie obiecuje konkretnego efektu ani pewności co do natury każdego obrazu. Tworzy przestrzeń, w której można przyjrzeć się doświadczeniu i później spokojnie je zintegrować.
           </p>
         </div>
         <aside class="space-y-6">
@@ -113,6 +113,6 @@ const pageFaq = pageFaqs.whatIsPlr;
     </section>
 
     <FAQ items={pageFaq} />
-    <CTASection title="Chcesz zobaczyć, czy PLR jest dla Ciebie?" text="Przeczytaj spokojnie opis sesji, a jeśli poczujesz gotowość, przejdź do zapisów w Instytucie Regresji." />
+    <CTASection title="Chcesz zobaczyć, czy PLR jest dla Ciebie?" text="Napisz przez formularz na tej stronie i opisz temat w kilku zdaniach. Najpierw możesz spokojnie wyjaśnić wątpliwości, bez rezerwowania sesji." />
   </main>
 </BaseLayout>

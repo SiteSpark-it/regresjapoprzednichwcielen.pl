@@ -5,6 +5,7 @@
  */
 (function () {
   var config = window.IRHubConfig || {};
+  if (/^(localhost|127\.0\.0\.1|::1)$/.test(location.hostname)) return;
   var ENDPOINT = config.endpoint || "/backend/analytics.php";
   var SITE = (config.site || location.hostname || "regresjapoprzednichwcielen.pl").replace(/^www\./, "");
   var HEARTBEAT_MS = Math.max(8000, Number(config.heartbeatMs || 15000));

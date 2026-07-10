@@ -4,7 +4,7 @@ import CTASection from "@/components/CTASection.astro";
 import DisclaimerBox from "@/components/DisclaimerBox.astro";
 import FAQ from "@/components/FAQ.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { createFaqSchema, personSchema, serviceSchema } from "@/content/schema";
+import { createFaqSchema, organizationSchema, personSchema, profilePageSchema, serviceSchema } from "@/content/schema";
 import { pageFaqs } from "@/content/pageFaqs";
 import { siteData } from "@/content/siteData";
 
@@ -15,7 +15,7 @@ const breadcrumbs = [{ label: "O Macieju" }];
 const pageFaq = pageFaqs.author;
 ---
 
-<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, personSchema, createFaqSchema(pageFaq)]}>
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[organizationSchema, personSchema, profilePageSchema, serviceSchema, createFaqSchema(pageFaq)]}>
   <main>
     <section class="subpage-hero pb-20 text-ink">
       <Breadcrumbs items={breadcrumbs} />
@@ -56,7 +56,7 @@ const pageFaq = pageFaqs.author;
 
           <h2 class="text-4xl">Gdzie zapisać się na sesję?</h2>
           <p>
-            Kontakt w sprawie sesji jest dostępny na tej stronie przez email, telefon, WhatsApp i formularz kontaktowy. Główne miejsce informacji organizacyjnych i zapisów to <a class="text-gold underline underline-offset-4" href={siteData.links.booking} rel="noopener noreferrer">Instytut Regresji</a>.
+            Kontakt w sprawie sesji jest dostępny bezpośrednio na tej stronie przez email, telefon, WhatsApp i formularz kontaktowy. Szerszy opis działalności prowadzącego znajduje się również w serwisie <a class="text-gold underline underline-offset-4" href={siteData.links.booking} rel="noopener noreferrer">Instytutu Regresji</a>.
           </p>
         </article>
         <aside>

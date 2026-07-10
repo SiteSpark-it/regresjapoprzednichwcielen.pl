@@ -6,7 +6,7 @@ import DisclaimerBox from "@/components/DisclaimerBox.astro";
 import FAQ from "@/components/FAQ.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getKnowledgeArticle, knowledgeArticles } from "@/content/articles";
-import { articleSchema, createFaqSchema, serviceSchema } from "@/content/schema";
+import { articleSchema, createFaqSchema } from "@/content/schema";
 import { siteData } from "@/content/siteData";
 
 export function getStaticPaths() {
@@ -25,6 +25,14 @@ const relatedArticles = article.related
   .map((slug: string) => getKnowledgeArticle(slug))
   .filter(Boolean);
 const canonicalUrl = `${siteData.url}/baza-wiedzy/${article.slug}/`;
+const headingId = (heading: string) =>
+  heading
+    .toLocaleLowerCase("pl")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/ł/g, "l")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 ---
 
 <BaseLayout
@@ -32,20 +40,27 @@ const canonicalUrl = `${siteData.url}/baza-wiedzy/${article.slug}/`;
   description={article.description}
   canonical={canonicalUrl}
   breadcrumbs={breadcrumbs}
-  schema={[serviceSchema, articleSchema({ title: article.title, description: article.description, url: canonicalUrl }), createFaqSchema(article.faq)]}
+  ogType="article"
+  publishedAt={article.publishedAt}
+  updatedAt={article.updatedAt}
+  schema={[articleSchema({ title: article.title, description: article.description, url: canonicalUrl, publishedAt: article.publishedAt, updatedAt: article.updatedAt }), createFaqSchema(article.faq)]}
 >
   <main>
     <section class="subpage-hero pb-20 text-ink">
       <Breadcrumbs items={breadcrumbs} />
       <div class="container-page pt-14">
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold-soft">{article.readingTime}</p>
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{article.category} · {article.readingTime}</p>
         <h1 class="mt-5 max-w-4xl font-serif text-[2.5rem] leading-tight sm:text-5xl md:text-[3.5rem]">{article.h1}</h1>
         <p class="mt-7 max-w-3xl text-lg leading-8 text-graphite/78">{article.excerpt}</p>
+        <div class="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs leading-6 text-graphite/78">
+          <span>Opracowanie: <a class="text-gold underline underline-offset-4" href="/o-serwisie/">{siteData.author}</a></span>
+          <span>Aktualizacja: <time datetime={article.updatedAt}>{article.updatedAt}</time></span>
+        </div>
         <div class="mt-9 flex flex-col gap-4 sm:flex-row">
-          <a class="inline-flex justify-center bg-gold-fill px-7 py-4 text-sm font-bold text-ink transition hover:bg-honey" href={siteData.cta.url} data-track="article-hero-consultation">
-            Umów konsultację
+          <a class="btn-primary" href={siteData.cta.url} data-track="article-hero-consultation">
+            Zapytaj o konsultację
           </a>
-          <a class="inline-flex justify-center border border-gold/70 px-7 py-4 text-sm font-bold text-gold-soft transition hover:bg-white/8" href="/baza-wiedzy/" data-track="article-back-knowledge-base">
+          <a class="btn-secondary" href="/baza-wiedzy/" data-track="article-back-knowledge-base">
             Wróć do bazy wiedzy
           </a>
         </div>
@@ -55,17 +70,41 @@ const canonicalUrl = `${siteData.url}/baza-wiedzy/${article.slug}/`;
     <article class="bg-warm-white py-14 md:py-20">
       <div class="container-page grid gap-12 lg:grid-cols-[minmax(0,1fr)_330px]">
         <div class="prose-site max-w-3xl text-base leading-8 text-graphite/80">
+          <section class="mb-12 border-l-2 border-gold-fill bg-lemon/35 p-6 md:p-8" aria-labelledby="krotka-odpowiedz">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold">krótka odpowiedź</p>
+            <h2 id="krotka-odpowiedz" class="mt-3 text-3xl">Odpowiedź w skrócie</h2>
+            <p class="text-base leading-8 text-graphite/82">{article.quickAnswer}</p>
+          </section>
+
+          <section class="mb-12 border-y border-ink/10 py-7" aria-labelledby="najwazniejsze-wnioski">
+            <h2 id="najwazniejsze-wnioski" class="mt-0 text-3xl">Najważniejsze wnioski</h2>
+            <ul class="mt-5 grid gap-3">
+              {article.takeaways.map((takeaway) => <li class="flex gap-3"><span class="font-semibold text-gold" aria-hidden="true">✓</span><span>{takeaway}</span></li>)}
+            </ul>
+          </section>
+
           {
             article.sections.map((section) => (
               <section class="mb-12">
-                <h2 class="text-4xl">{section.heading}</h2>
+                <h2 id={headingId(section.heading)} class="scroll-mt-28 text-4xl">{section.heading}</h2>
                 {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
               </section>
             ))
           }
+
+          <aside class="border border-gold-fill/24 bg-vellum p-6 text-sm leading-7" aria-label="O materiale">
+            <p class="font-semibold text-ink">Jak powstał ten materiał?</p>
+            <p class="mt-2">{siteData.editorialPerspective} Tekst ma charakter informacyjny i nie zastępuje indywidualnej konsultacji ani pomocy specjalistycznej.</p>
+          </aside>
         </div>
 
-        <aside class="space-y-6">
+        <aside class="space-y-6 lg:sticky lg:top-24 lg:self-start">
+          <nav class="border border-ink/10 bg-white/70 p-6" aria-label="Spis treści artykułu">
+            <h2 class="font-serif text-2xl">W tym artykule</h2>
+            <ol class="mt-5 space-y-3 text-sm leading-6 text-graphite/76">
+              {article.sections.map((section, index) => <li><a class="hover:text-gold" href={`#${headingId(section.heading)}`}>{index + 1}. {section.heading}</a></li>)}
+            </ol>
+          </nav>
           <DisclaimerBox compact />
           <div class="border border-ink/10 bg-white/70 p-6">
             <h2 class="font-serif text-2xl">Dalsze czytanie</h2>
@@ -73,6 +112,8 @@ const canonicalUrl = `${siteData.url}/baza-wiedzy/${article.slug}/`;
               <li><a class="text-gold underline underline-offset-4" href="/czym-jest-regresja-poprzednich-wcielen/" data-track="article-sidebar-what-is-plr">Czym jest regresja poprzednich wcieleń?</a></li>
               <li><a class="text-gold underline underline-offset-4" href="/regresja-do-poprzedniego-zycia/" data-track="article-sidebar-session-plr">Jak wygląda sesja PLR?</a></li>
               <li><a class="text-gold underline underline-offset-4" href="/brama-dusz-lbl/" data-track="article-sidebar-brama-dusz-lbl">Brama Dusz LBL</a></li>
+              <li><a class="text-gold underline underline-offset-4" href="/faq/" data-track="article-sidebar-faq">Pytania przed sesją</a></li>
+              <li><a class="text-gold underline underline-offset-4" href="/kontakt/" data-track="article-sidebar-contact">Kontakt i konsultacja</a></li>
             </ul>
           </div>
         </aside>
@@ -91,7 +132,7 @@ const canonicalUrl = `${siteData.url}/baza-wiedzy/${article.slug}/`;
         <div class="mt-8">
           {
             relatedArticles.map((related) => (
-              <ArticleCard title={related.title} text={related.excerpt} href={`/baza-wiedzy/${related.slug}/`} />
+              <ArticleCard title={related.h1} text={related.excerpt} href={`/baza-wiedzy/${related.slug}/`} meta={`${related.category} · ${related.readingTime}`} />
             ))
           }
         </div>
@@ -99,6 +140,6 @@ const canonicalUrl = `${siteData.url}/baza-wiedzy/${article.slug}/`;
     </section>
 
     <FAQ items={article.faq} />
-    <CTASection title="Chcesz przejść od czytania do pracy z własnym tematem?" text="Sprawdź dostępne terminy w Instytucie Regresji i wybierz sesję dopiero wtedy, gdy czujesz spokojną gotowość." />
+    <CTASection title="Chcesz sprawdzić, czy ten kierunek pasuje do Twojego tematu?" text="Napisz kilka zdań przez formularz na tej stronie. Konsultacja służy doprecyzowaniu pytań i nie zobowiązuje do rezerwacji sesji." />
   </main>
 </BaseLayout>

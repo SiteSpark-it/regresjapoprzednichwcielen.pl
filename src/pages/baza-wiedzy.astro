@@ -5,13 +5,13 @@ import CTASection from "@/components/CTASection.astro";
 import FAQ from "@/components/FAQ.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { knowledgeArticles } from "@/content/articles";
-import { articleSchema, createFaqSchema, serviceSchema } from "@/content/schema";
+import { createFaqSchema, itemListSchema, webPageSchema } from "@/content/schema";
 import { pageFaqs } from "@/content/pageFaqs";
 import { siteData } from "@/content/siteData";
 
 const title = "Baza wiedzy o regresji poprzednich wcieleń i PLR";
 const description =
-  "Baza wiedzy o regresji poprzednich wcieleń, PLR, regresji między wcieleniami, Brama Dusz LBL i przygotowaniu do sesji.";
+  "Rzetelna baza wiedzy o regresji poprzednich wcieleń: PLR, hipnoza regresyjna, bezpieczeństwo, przygotowanie, sny, relacje i integracja.";
 const breadcrumbs = [{ label: "Baza wiedzy" }];
 const topics = [
   ["Czym jest regresja poprzednich wcieleń?", "Podstawy PLR, podejście duchowe i symboliczne oraz granice odpowiedzialnego języka.", "/czym-jest-regresja-poprzednich-wcielen/"],
@@ -23,16 +23,23 @@ const topics = [
   ["FAQ", "Najczęstsze pytania przed pierwszą sesją regresji poprzednich wcieleń.", "/faq/"]
 ];
 const pageFaq = pageFaqs.knowledge;
+const categories = ["Podstawy PLR", "Doświadczenie i znaczenie", "Relacje i wzorce", "Przygotowanie do sesji"] as const;
+const articleListSchema = itemListSchema(
+  knowledgeArticles.map((article) => ({
+    name: article.h1,
+    url: `${siteData.url}/baza-wiedzy/${article.slug}/`
+  }))
+);
 ---
 
-<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, articleSchema({ title, description, url: `${siteData.url}/baza-wiedzy/` }), createFaqSchema(pageFaq)]}>
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[webPageSchema({ name: title, description, url: `${siteData.url}/baza-wiedzy/`, type: "CollectionPage" }), articleListSchema, createFaqSchema(pageFaq)]}>
   <main>
     <section class="subpage-hero pb-20 text-ink">
       <Breadcrumbs items={breadcrumbs} />
       <div class="container-page pt-14">
         <h1 class="max-w-4xl font-serif text-[2.5rem] leading-tight sm:text-5xl md:text-[3.5rem]">Baza wiedzy o regresji poprzednich wcieleń</h1>
         <p class="mt-7 max-w-3xl text-lg leading-8 text-graphite/78">
-          Zebrane w jednym miejscu teksty dla osób, które chcą zrozumieć PLR, regresję między wcieleniami i metodę Brama Dusz LBL bez sztucznego języka.
+          Konkretne teksty dla osób, które chcą zrozumieć PLR, hipnozę regresyjną, regresję między wcieleniami i metodę Brama Dusz LBL bez sensacji, kiczu i nacisku na jedną interpretację.
         </p>
       </div>
     </section>
@@ -52,24 +59,32 @@ const pageFaq = pageFaqs.knowledge;
       </div>
     </section>
 
-    <section class="bg-bone py-14 md:py-20">
+    <section class="bg-bone py-14 md:py-20" aria-labelledby="artykuly-poglebiajace">
       <div class="container-page">
-        <h2 class="font-serif text-4xl leading-tight md:text-5xl">Artykuły pogłębiające temat</h2>
+        <h2 id="artykuly-poglebiajace" class="font-serif text-4xl leading-tight md:text-5xl">Artykuły pogłębiające temat</h2>
         <div class="gold-rule mt-5"></div>
         <p class="mt-5 max-w-3xl text-base leading-8 text-graphite/76">
           Te teksty rozwijają pytania, które często pojawiają się przed pierwszą sesją: sceptycyzm, sny, relacje, symbole, sesja online i integracja po doświadczeniu.
         </p>
-        <div class="mt-8">
-          {
-            knowledgeArticles.map((article) => (
-              <ArticleCard title={article.title} text={article.excerpt} href={`/baza-wiedzy/${article.slug}/`} />
-            ))
-          }
+        <div class="mt-10 grid gap-12">
+          {categories.map((category) => (
+            <section aria-labelledby={`kategoria-${category.toLocaleLowerCase("pl").replace(/\s+/g, "-")}`}>
+              <div class="flex flex-col gap-2 border-b border-gold-fill/26 pb-4 sm:flex-row sm:items-end sm:justify-between">
+                <h3 id={`kategoria-${category.toLocaleLowerCase("pl").replace(/\s+/g, "-")}`} class="font-serif text-3xl leading-tight">{category}</h3>
+                <p class="text-sm text-graphite/78">{knowledgeArticles.filter((article) => article.category === category).length} materiały</p>
+              </div>
+              <div>
+                {knowledgeArticles.filter((article) => article.category === category).map((article) => (
+                  <ArticleCard title={article.h1} text={article.excerpt} href={`/baza-wiedzy/${article.slug}/`} meta={article.readingTime} />
+                ))}
+              </div>
+            </section>
+          ))}
         </div>
       </div>
     </section>
 
     <FAQ items={pageFaq} />
-    <CTASection title="Masz swój temat do pracy?" text="Przeczytaj materiały, a gdy poczujesz gotowość, sprawdź terminy sesji w Instytucie Regresji." />
+    <CTASection title="Masz własny temat i nie wiesz, od czego zacząć?" text="Napisz przez formularz na tej stronie. Krótka konsultacja pomoże odróżnić ciekawość od tematu, który rzeczywiście nadaje się do spokojnej pracy regresyjnej." />
   </main>
 </BaseLayout>

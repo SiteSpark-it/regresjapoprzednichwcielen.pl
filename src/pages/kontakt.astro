@@ -1,10 +1,11 @@
 ---
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import CTASection from "@/components/CTASection.astro";
+import ContactForm from "@/components/ContactForm.astro";
 import DisclaimerBox from "@/components/DisclaimerBox.astro";
 import FAQ from "@/components/FAQ.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { createFaqSchema, serviceSchema } from "@/content/schema";
+import { createFaqSchema, serviceSchema, webPageSchema } from "@/content/schema";
 import { pageFaqs } from "@/content/pageFaqs";
 import { siteData } from "@/content/siteData";
 
@@ -15,7 +16,7 @@ const breadcrumbs = [{ label: "Kontakt i zapisy" }];
 const pageFaq = pageFaqs.contact;
 ---
 
-<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, createFaqSchema(pageFaq)]}>
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[webPageSchema({ name: title, description, url: `${siteData.url}/kontakt/`, type: "ContactPage" }), serviceSchema, createFaqSchema(pageFaq)]}>
   <main>
     <section class="relative overflow-hidden bg-vellum pb-20 text-ink">
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_72%_18%,rgba(255,211,90,0.42),transparent_24rem)]"></div>
@@ -71,8 +72,8 @@ const pageFaq = pageFaqs.contact;
             <a class="btn-secondary" href={siteData.contact.emailHref} data-track="contact-content-email">
               Napisz email
             </a>
-            <a class="btn-plain" href={siteData.links.booking} rel="noopener noreferrer" data-track="contact-content-instytutregresji">
-              Instytut Regresji
+            <a class="btn-plain" href={siteData.contact.phoneHref} data-track="contact-content-phone">
+              Zadzwoń: {siteData.contact.phone}
             </a>
           </div>
           <div class="mt-10 grid gap-4 text-sm text-graphite/76 sm:grid-cols-2">
@@ -90,39 +91,12 @@ const pageFaq = pageFaqs.contact;
               <p class="mt-2">
                 <a class="text-gold underline underline-offset-4" href={siteData.contact.emailHref} data-track="contact-info-email">{siteData.contact.email}</a>
               </p>
-              <p class="mt-2 text-graphite/70">Możesz wysłać krótkie pytanie bezpośrednio z własnej skrzynki.</p>
+              <p class="mt-2 text-graphite/78">Możesz wysłać krótkie pytanie bezpośrednio z własnej skrzynki.</p>
             </div>
           </div>
-          <form id="formularz" class="premium-surface mt-10 p-5 sm:p-6 md:p-8" action={siteData.contact.emailHref} method="post" enctype="text/plain" data-lead-form data-no-track data-track="contact-lead-form">
-            <h2 class="font-serif text-3xl leading-tight text-ink">Formularz kontaktowy</h2>
-            <p class="mt-4 text-sm leading-7 text-graphite/74">
-              Formularz otworzy wiadomość email do {siteData.contact.email}. W treści możesz zostawić temat, preferowaną formę kontaktu i krótki opis sprawy.
-            </p>
-            <div class="mt-6 grid gap-4">
-              <label class="sr-only" aria-hidden="true">
-                Strona
-                <input type="text" name="website" tabindex="-1" autocomplete="off" />
-              </label>
-              <label class="grid gap-2 text-sm font-semibold text-ink">
-                Imię
-                <input class="border border-gold-fill/30 bg-white px-4 py-3 text-base font-normal outline-none transition focus:border-gold" type="text" name="Imię" autocomplete="name" />
-              </label>
-              <label class="grid gap-2 text-sm font-semibold text-ink">
-                Email lub telefon zwrotny
-                <input class="border border-gold-fill/30 bg-white px-4 py-3 text-base font-normal outline-none transition focus:border-gold" type="text" name="Kontakt zwrotny" autocomplete="email" />
-              </label>
-              <label class="grid gap-2 text-sm font-semibold text-ink">
-                Wiadomość
-                <textarea class="min-h-36 border border-gold-fill/30 bg-white px-4 py-3 text-base font-normal leading-7 outline-none transition focus:border-gold" name="Wiadomość" placeholder="Napisz krótko, o co chcesz zapytać: temat sesji, forma online, dostępność, przygotowanie..." ></textarea>
-              </label>
-              <button class="btn-primary" type="submit" data-track="contact-form-submit">
-                Przygotuj wiadomość email
-              </button>
-              <p class="text-xs leading-6 text-graphite/62">
-                Po kliknięciu otworzy się Twoja aplikacja email z przygotowaną wiadomością do Instytutu Regresji. Techniczna kopia zgłoszenia jest przekazywana do zabezpieczonego panelu kontaktowego Instytutu, żeby łatwiej wrócić do rozmowy.
-              </p>
-            </div>
-          </form>
+          <div class="mt-10">
+            <ContactForm />
+          </div>
         </div>
         <div class="space-y-6">
           <DisclaimerBox />

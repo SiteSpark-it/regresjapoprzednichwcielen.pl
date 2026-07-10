@@ -21,7 +21,7 @@ const phases = [
 const pageFaq = pageFaqs.session;
 ---
 
-<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, articleSchema({ title, description, url: `${siteData.url}/regresja-do-poprzedniego-zycia/` }), createFaqSchema(pageFaq)]}>
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} ogType="article" publishedAt="2026-07-08" updatedAt="2026-07-10" schema={[serviceSchema, articleSchema({ title, description, url: `${siteData.url}/regresja-do-poprzedniego-zycia/`, publishedAt: "2026-07-08", updatedAt: "2026-07-10" }), createFaqSchema(pageFaq)]}>
   <main>
     <section class="subpage-hero pb-20 text-ink">
       <Breadcrumbs items={breadcrumbs} />
@@ -107,6 +107,6 @@ const pageFaq = pageFaqs.session;
     </section>
 
     <FAQ items={pageFaq} />
-    <CTASection title="Umów sesję PLR bez pośpiechu" text="Jeśli opis procesu jest dla Ciebie zrozumiały i czujesz gotowość, sprawdź terminy w Instytucie Regresji." />
+    <CTASection title="Zapytaj o sesję PLR bez pośpiechu" text="Jeśli opis procesu jest dla Ciebie zrozumiały, napisz przez formularz na tej stronie. Konsultacja pozwoli omówić warunki i dopasowanie sesji do tematu." />
   </main>
 </BaseLayout>

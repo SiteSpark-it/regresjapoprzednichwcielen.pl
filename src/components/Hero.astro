@@ -40,7 +40,7 @@ const { title, subtitle, image = "/assets/hero-gateway.webp" } = Astro.props;
       </p>
       <div class="mt-8 grid grid-cols-1 gap-3 min-[380px]:grid-cols-2 sm:flex sm:flex-row">
         <a class="btn-primary" href={siteData.cta.url} data-track="hero-consultation">
-          Umów konsultację
+          {siteData.cta.label}
         </a>
         <a class="btn-secondary" href={siteData.contact.emailHref} data-track="hero-email">
           Napisz email
@@ -83,10 +83,10 @@ const { title, subtitle, image = "/assets/hero-gateway.webp" } = Astro.props;
           <span class="relative mt-1 block text-sm text-gold">{siteData.contact.email}</span>
         </a>
         <a class="btn-primary" href={siteData.cta.url} data-track="hero-card-consultation">
-          <span class="relative">Przejdź do konsultacji</span>
+          <span class="relative">Zapytaj o konsultację</span>
         </a>
       </div>
-      <p class="mt-5 text-xs leading-6 text-graphite/58">
+      <p class="mt-5 text-xs leading-6 text-graphite/78">
         Sesja ma charakter rozwojowy i duchowy. Nie zastępuje diagnozy, leczenia ani psychoterapii klinicznej.
       </p>
     </aside>

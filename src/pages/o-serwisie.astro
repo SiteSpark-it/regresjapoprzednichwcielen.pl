@@ -1,0 +1,87 @@
+---
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import CTASection from "@/components/CTASection.astro";
+import DisclaimerBox from "@/components/DisclaimerBox.astro";
+import FAQ from "@/components/FAQ.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { createFaqSchema, webPageSchema } from "@/content/schema";
+import { pageFaqs } from "@/content/pageFaqs";
+import { siteData } from "@/content/siteData";
+
+const title = "O serwisie — rzetelnie o regresji poprzednich wcieleń";
+const description =
+  "Poznaj zasady redakcyjne serwisu o regresji poprzednich wcieleń: perspektywa uczestniczki, odpowiedzialny język i sposób rekomendacji prowadzącego.";
+const breadcrumbs = [{ label: "O serwisie" }];
+const pageFaq = pageFaqs.editorial;
+const canonicalUrl = `${siteData.url}/o-serwisie/`;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  breadcrumbs={breadcrumbs}
+  schema={[webPageSchema({ name: title, description, url: canonicalUrl, type: "AboutPage" }), createFaqSchema(pageFaq)]}
+>
+  <main>
+    <section class="subpage-hero pb-20 text-ink">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="container-page pt-14">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">kim jesteśmy i dlaczego piszemy</p>
+        <h1 class="mt-5 max-w-4xl font-serif text-[2.5rem] leading-tight sm:text-5xl md:text-[3.5rem]">O serwisie Regresja Poprzednich Wcieleń</h1>
+        <p class="mt-7 max-w-3xl text-lg leading-8 text-graphite/78">
+          To niezależny serwis edukacyjny tworzony z perspektywy osoby, która zna regresję nie tylko z opisów, lecz także jako uczestniczka sesji. Powstał po to, by o PLR mówić spokojnie, konkretnie i bez budowania atmosfery tajemnej wiedzy.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-warm-white py-14 md:py-20">
+      <div class="container-page grid gap-12 lg:grid-cols-[minmax(0,1fr)_330px] lg:items-start">
+        <article class="prose-site max-w-3xl text-base leading-8 text-graphite/80">
+          <h2 class="text-4xl">Dlaczego powstała ta strona?</h2>
+          <p>
+            Osoba szukająca informacji o poprzednich wcieleniach szybko trafia na dwa skrajne języki. Jeden odrzuca całe doświadczenie bez rozmowy. Drugi obiecuje pewność, uzdrowienie i niezwykłe odpowiedzi. Pomiędzy nimi jest miejsce na dojrzałą ciekawość: można potraktować obrazy duchowo, symbolicznie albo psychologiczno-duchowo i nadal zachować krytyczne myślenie.
+          </p>
+          <p>
+            Celem serwisu jest wyjaśnienie, czym jest regresja poprzednich wcieleń, jak wygląda sesja, czego można oczekiwać i gdzie przebiegają granice tej pracy. Teksty mają zostawiać czytelnika z większą orientacją, a nie z poczuciem, że musi natychmiast kupić spotkanie.
+          </p>
+
+          <h2 class="text-4xl">Perspektywa uczestniczki, nie ukryty głos prowadzącego</h2>
+          <p>
+            Strona nie jest osobistym blogiem Macieja Maślanki i nie wypowiada się w pierwszej osobie w jego imieniu. Rekomenduje go jako prowadzącego na podstawie doświadczenia sposobu pracy: spokojnego kontaktu, szacunku dla granic, uważnego prowadzenia i braku tonu guru.
+          </p>
+          <p>
+            Informacje o jego kwalifikacjach są formułowane ostrożnie. Maciej pracuje z regresją duchową i poprzednich wcieleń, ukończył szkolenia z regresji oraz hipnozy regresyjnej, studiuje psychologię w Warszawie i rozwija autorską metodę Brama Dusz LBL. Serwis nie przedstawia go jako psychoterapeuty ani oficjalnego facylitatora The Michael Newton Institute.
+          </p>
+
+          <h2 class="text-4xl">Zasady redakcyjne</h2>
+          <p>
+            Każdy tekst ma odpowiadać na realne pytanie: jak przygotować się do sesji, czy trzeba wierzyć w reinkarnację, jak rozumieć obrazy, kiedy zachować ostrożność i jak wybrać prowadzącego. Frazy wyszukiwane w Google są używane tylko wtedy, gdy pomagają nazwać temat. Nie tworzymy osobnych stron będących tym samym tekstem pod zmienioną nazwą miasta lub usługi.
+          </p>
+          <p>
+            Unikamy gwarancji, diagnozowania i języka medycznego. Odróżniamy doświadczenie wewnętrzne od faktu historycznego, a sesję duchową od opieki zdrowotnej. Gdy temat wymaga specjalistycznego wsparcia, regresja nie powinna go zastępować.
+          </p>
+
+          <h2 class="text-4xl">Jak korzystać z materiałów?</h2>
+          <p>
+            Jeśli dopiero poznajesz temat, zacznij od strony <a class="text-gold underline underline-offset-4" href="/czym-jest-regresja-poprzednich-wcielen/">czym jest regresja poprzednich wcieleń</a>, a potem przeczytaj <a class="text-gold underline underline-offset-4" href="/regresja-do-poprzedniego-zycia/">opis przebiegu sesji PLR</a>. W bazie wiedzy znajdziesz osobne materiały o sceptycyzmie, hipnozie, snach, relacjach, bezpieczeństwie i integracji.
+          </p>
+          <p>
+            Kontakt jest dostępny bezpośrednio na tej stronie. Formularz rozpoczyna rozmowę i nie oznacza rezerwacji. Można najpierw zapytać o warunki, cenę, dostępność i dopasowanie metody do własnego tematu.
+          </p>
+        </article>
+        <aside class="space-y-6 lg:sticky lg:top-24">
+          <DisclaimerBox compact />
+          <div class="border border-gold-fill/28 bg-lemon/35 p-6">
+            <h2 class="font-serif text-2xl leading-tight">Masz uwagę do treści?</h2>
+            <p class="mt-4 text-sm leading-7 text-graphite/74">
+              Jeśli widzisz niejasność albo fragment wymagający korekty, napisz na <a class="text-gold underline underline-offset-4" href={siteData.contact.emailHref}>{siteData.contact.email}</a>.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <FAQ items={pageFaq} title="Pytania o serwis i sposób redakcji" />
+    <CTASection title="Chcesz porozmawiać o własnym temacie?" text="Przejdź do kontaktu i opisz go w kilku zdaniach. Najpierw możesz spokojnie sprawdzić, czy regresja jest odpowiednim kierunkiem." />
+  </main>
+</BaseLayout>

@@ -2,11 +2,14 @@ export const siteData = {
   name: "Regresja Poprzednich Wcieleń",
   domain: "regresjapoprzednichwcielen.pl",
   url: "https://regresjapoprzednichwcielen.pl",
-  author: "Maciej Maślanka",
+  author: "Redakcja Regresja Poprzednich Wcieleń",
+  editorialPerspective: "Materiał edukacyjny opracowany z perspektywy osoby, która zna sesję regresji także od strony uczestniczki.",
+  practitioner: "Maciej Maślanka",
   organization: "Instytut Regresji",
+  organizationUrl: "https://instytutregresji.pl",
   tagline: "Regresja poprzednich wcieleń prowadzona spokojnie, z szacunkiem do emocji, symboli i historii wewnętrznej.",
   cta: {
-    label: "Umów konsultację",
+    label: "Zapytaj o konsultację",
     secondaryLabel: "Zobacz, jak wygląda sesja",
     url: "/kontakt/"
   },
@@ -40,12 +43,18 @@ export const siteData = {
 
 export const navigation = [
   { label: "Czym jest PLR", href: "/czym-jest-regresja-poprzednich-wcielen/" },
-  { label: "Sesja PLR", href: "/regresja-do-poprzedniego-zycia/" },
-  { label: "PLR po polsku", href: "/past-life-regression-po-polsku/" },
+  { label: "Przebieg sesji", href: "/regresja-do-poprzedniego-zycia/" },
   { label: "Brama Dusz LBL", href: "/brama-dusz-lbl/" },
-  { label: "Między wcieleniami", href: "/regresja-miedzy-wcieleniami/" },
   { label: "Baza wiedzy", href: "/baza-wiedzy/" },
-  { label: "O Macieju", href: "/o-macieju/" },
+  { label: "FAQ", href: "/faq/" },
+  { label: "O prowadzącym", href: "/o-macieju/" }
+];
+
+export const footerNavigation = [
+  ...navigation,
+  { label: "Past life regression po polsku", href: "/past-life-regression-po-polsku/" },
+  { label: "Regresja między wcieleniami", href: "/regresja-miedzy-wcieleniami/" },
+  { label: "O serwisie", href: "/o-serwisie/" },
   { label: "Kontakt", href: "/kontakt/" }
 ];
 

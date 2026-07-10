@@ -6,9 +6,15 @@ interface FaqItem {
 
 interface Props {
   items: FaqItem[];
+  title?: string;
+  intro?: string;
 }
 
-const { items } = Astro.props;
+const {
+  items,
+  title = "Pytania związane z tym tematem",
+  intro = "Krótkie, konkretne odpowiedzi pomagające przygotować się do sesji i świadomie ocenić tę formę pracy."
+} = Astro.props;
 ---
 
 <section class="bg-warm-white py-14 md:py-20" id="faq">
@@ -16,10 +22,10 @@ const { items } = Astro.props;
     <div class="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
       <div class="lg:sticky lg:top-8">
         <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">pytania przed decyzją</p>
-        <h2 class="mt-4 font-serif text-3xl leading-tight sm:text-4xl md:text-5xl">FAQ</h2>
+        <h2 class="mt-4 font-serif text-3xl leading-tight sm:text-4xl md:text-5xl">{title}</h2>
         <div class="gold-rule mt-5"></div>
         <p class="mt-5 text-base leading-8 text-graphite/72">
-        Odpowiedzi na najczęstsze pytania dotyczące regresji poprzednich wcieleń, przygotowania i przebiegu sesji.
+        {intro}
         </p>
       </div>
     <div class="divide-y divide-ink/10 border-y border-ink/10">

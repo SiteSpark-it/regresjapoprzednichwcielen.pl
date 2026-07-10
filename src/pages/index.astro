@@ -1,18 +1,19 @@
 ---
 import ArticleCard from "@/components/ArticleCard.astro";
 import CTASection from "@/components/CTASection.astro";
+import ContactForm from "@/components/ContactForm.astro";
 import DisclaimerBox from "@/components/DisclaimerBox.astro";
 import FAQ from "@/components/FAQ.astro";
 import Hero from "@/components/Hero.astro";
 import ServiceCard from "@/components/ServiceCard.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { faqItems, snippetAnswers } from "@/content/faqItems";
-import { faqSchema, serviceSchema } from "@/content/schema";
+import { faqSchema, organizationSchema, personSchema, serviceSchema } from "@/content/schema";
 import { prioritySitelinks, siteData } from "@/content/siteData";
 
-const title = "Regresja poprzednich wcieleń — sesja PLR online";
+const title = "Regresja poprzednich wcieleń — sesja PLR online i Rzeszów";
 const description =
-  "Regresja poprzednich wcieleń jako spokojna praca z obrazami, emocjami i historią duszy. Sesje PLR online, bez presji i obietnic.";
+  "Regresja poprzednich wcieleń: sesja PLR online i w Rzeszowie. Spokojna praca z obrazami, emocjami i wzorcami. Zapytaj o konsultację.";
 
 const sessionSteps = [
   "Krótka rozmowa o intencji, granicach i tym, z czym przychodzisz.",
@@ -24,11 +25,11 @@ const sessionSteps = [
 ];
 ---
 
-<BaseLayout title={title} description={description} schema={[serviceSchema, faqSchema]}>
+<BaseLayout title={title} description={description} schema={[organizationSchema, personSchema, serviceSchema, faqSchema]}>
   <main>
     <Hero
       title="Regresja poprzednich wcieleń — podróż do historii duszy"
-      subtitle="Spokojna sesja regresji duchowej dla osób, które chcą przyjrzeć się obrazom, emocjom, snom, relacjom i wzorcom kojarzonym z poprzednim życiem — bez presji jednej interpretacji."
+      subtitle="Sesja PLR online oraz stacjonarnie w Rzeszowie dla osób, które chcą przyjrzeć się obrazom, emocjom, snom, relacjom i wzorcom kojarzonym z poprzednim życiem — bez presji jednej interpretacji."
     />
 
     <section class="bg-vellum py-16" aria-labelledby="najwazniejsze-tematy">
@@ -41,7 +42,7 @@ const sessionSteps = [
               Jeśli jesteś tu pierwszy raz, możesz czytać spokojnie. Jeśli już czujesz, że temat dotyczy Ciebie, przejdź od razu do kontaktu i opisz w jednym zdaniu, z czym przychodzisz.
             </p>
             <div class="mt-7 flex flex-col gap-3 sm:flex-row">
-              <a class="btn-primary" href={siteData.cta.url} data-track="topics-consultation">Umów konsultację</a>
+              <a class="btn-primary" href={siteData.cta.url} data-track="topics-consultation">Zapytaj o konsultację</a>
               <a class="btn-secondary" href={siteData.contact.emailHref} data-track="topics-email">Napisz email</a>
             </div>
           </div>
@@ -253,7 +254,7 @@ const sessionSteps = [
             <h2 id="dalej" class="mt-4 font-serif text-3xl leading-tight sm:text-4xl md:text-5xl">Od ciekawości do rozmowy</h2>
             <div class="gold-rule mt-5"></div>
             <p class="mt-5 text-base leading-8 text-graphite/76">
-              Ta strona nie ma popychać do decyzji. Ma pomóc nazwać temat i zobaczyć, czy rozmowa o sesji ma sens. Jeśli coś w opisie jest bliskie Twojemu doświadczeniu, możesz napisać krótko i zwyczajnie.
+              Ta strona ma pomóc nazwać temat i podjąć świadomą decyzję. Jeśli coś w opisie jest bliskie Twojemu doświadczeniu, możesz napisać krótko i zwyczajnie, a konsultacja pozwoli sprawdzić, czy sesja PLR jest właściwym kierunkiem.
             </p>
           </div>
           <div class="grid gap-4 md:grid-cols-3">
@@ -276,7 +277,7 @@ const sessionSteps = [
         </div>
         <div class="mt-10 flex flex-col gap-3 sm:flex-row">
           <a class="btn-primary" href={siteData.cta.url} data-track="next-step-consultation">
-            Umów konsultację
+            Zapytaj o konsultację
           </a>
           <a class="btn-secondary" href={siteData.contact.whatsapp} rel="noopener noreferrer" data-track="next-step-whatsapp">
             Napisz na WhatsApp
@@ -314,7 +315,7 @@ const sessionSteps = [
         <div class="relative border-l border-gold/50 bg-white/72 p-8 shadow-[0_18px_55px_rgba(7,17,31,0.08)]">
           <span class="absolute -left-px top-8 h-20 w-px bg-gold-fill"></span>
           <p class="font-serif text-2xl leading-tight text-ink md:text-3xl">„Największą wartością nie była obietnica niezwykłego efektu, tylko spokojne prowadzenie, granice i przestrzeń na własne znaczenie doświadczenia.”</p>
-          <p class="mt-6 text-sm leading-7 text-graphite/70">perspektywa osoby korzystającej z sesji</p>
+          <p class="mt-6 text-sm leading-7 text-graphite/78">perspektywa osoby korzystającej z sesji</p>
         </div>
         <div>
           <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">rekomendowany prowadzący</p>
@@ -328,7 +329,7 @@ const sessionSteps = [
               Maciej pracuje z regresją duchową i regresją poprzednich wcieleń, ukończył szkolenia z regresji i hipnozy regresyjnej, studiuje psychologię w Warszawie i rozwija autorską metodę Brama Dusz LBL. W opisie jego pracy ważne są spokój, granice, brak tonu guru i odpowiedzialne rozróżnienie między sesją rozwojową a terapią kliniczną.
             </p>
             <p>
-              Kontakt w sprawie sesji jest dostępny na tej stronie: przez email, telefon, WhatsApp i formularz. Główne miejsce informacji organizacyjnych i zapisów to <a class="text-gold underline underline-offset-4" href={siteData.links.booking} rel="noopener noreferrer">Instytut Regresji</a>.
+              Kontakt w sprawie sesji jest dostępny bezpośrednio na tej stronie: przez email, telefon, WhatsApp i formularz. Dodatkowe informacje o działalności prowadzącego można znaleźć w serwisie <a class="text-gold underline underline-offset-4" href={siteData.links.booking} rel="noopener noreferrer">Instytutu Regresji</a>.
             </p>
           </div>
         </div>
@@ -349,6 +350,9 @@ const sessionSteps = [
             <ArticleCard title="Czym jest regresja poprzednich wcieleń?" text="Edukacyjne wyjaśnienie PLR bez presji przyjmowania jednej interpretacji." href="/czym-jest-regresja-poprzednich-wcielen/" />
             <ArticleCard title="Regresja do poprzedniego życia" text="Jak wygląda sesja, czego się spodziewać i jak przygotować się bez napięcia." href="/regresja-do-poprzedniego-zycia/" />
             <ArticleCard title="Regresja poprzednich wcieleń dla sceptyków" text="Jak podejść do sesji bez konieczności przyjmowania gotowego światopoglądu." href="/baza-wiedzy/regresja-poprzednich-wcielen-dla-sceptykow/" />
+            <ArticleCard title="Kim byłem w poprzednim wcieleniu?" text="Jak pracować z tym pytaniem bez wymuszania nazwisk, dat i efektownej historii." href="/baza-wiedzy/kim-bylem-w-poprzednim-wcieleniu/" />
+            <ArticleCard title="Hipnoza a poprzednie wcielenia" text="Co dzieje się podczas skupienia, ile zachowujesz kontroli i dlaczego obrazy wymagają ostrożnej interpretacji." href="/baza-wiedzy/hipnoza-poprzednie-wcielenia-czym-jest/" />
+            <ArticleCard title="Czy regresja jest bezpieczna?" text="Granice, sytuacje wymagające ostrożności i pytania, które warto zadać przed sesją." href="/baza-wiedzy/czy-regresja-poprzednich-wcielen-jest-bezpieczna/" />
             <ArticleCard title="Symbol czy wspomnienie w sesji PLR?" text="Co zrobić, gdy doświadczenie jest obrazem, odczuciem albo niejednoznacznym znakiem." href="/baza-wiedzy/symbol-czy-wspomnienie-w-sesji-plr/" />
             <ArticleCard title="Brama Dusz LBL" text="Opis autorskiej metody, jej granic i relacji do publikacji dr. Michaela Newtona." href="/brama-dusz-lbl/" />
             <ArticleCard title="Regresja między wcieleniami" text="Czym jest praca z przestrzenią między wcieleniami i jak odróżnić ją od PLR." href="/regresja-miedzy-wcieleniami/" />
@@ -358,7 +362,26 @@ const sessionSteps = [
       </div>
     </section>
 
+    <section class="bg-vellum py-14 md:py-20" aria-labelledby="napisz-o-temacie">
+      <div class="container-page grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+        <div class="lg:sticky lg:top-24">
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">konsultacja na tej stronie</p>
+          <h2 id="napisz-o-temacie" class="mt-4 font-serif text-3xl leading-tight sm:text-4xl md:text-5xl">Opisz temat w kilku zdaniach</h2>
+          <div class="gold-rule mt-5"></div>
+          <p class="mt-5 text-base leading-8 text-graphite/76">
+            Nie musisz wiedzieć, czy potrzebujesz PLR, Bramy Dusz LBL czy tylko rozmowy organizacyjnej. Napisz, co wraca w Twoim doświadczeniu. Odpowiedź pomoże ustalić właściwy następny krok.
+          </p>
+          <ul class="mt-6 grid gap-3 text-sm leading-7 text-graphite/74">
+            <li><span class="font-semibold text-ink">Bez rezerwacji:</span> formularz rozpoczyna rozmowę, nie kupuje sesji.</li>
+            <li><span class="font-semibold text-ink">Bez długiej historii:</span> temat, kontakt i kilka zdań wystarczą.</li>
+            <li><span class="font-semibold text-ink">Bez przekierowania:</span> wiadomość wysyłasz bezpośrednio z tej strony.</li>
+          </ul>
+        </div>
+        <ContactForm compact formId="szybki-kontakt" heading="Zapytaj o konsultację" />
+      </div>
+    </section>
+
     <FAQ items={faqItems} />
-    <CTASection title="Jeśli to Twój temat, nie odkładaj pierwszej rozmowy" text="Najprościej zacząć od krótkiej wiadomości. Opisz jednym zdaniem, co wraca w Twoim doświadczeniu, i wybierz kontakt zwrotny: email, telefon albo WhatsApp." />
+    <CTASection title="Możesz zacząć od zwykłego pytania" text="Napisz przez formularz, email lub WhatsApp albo zadzwoń. Najpierw można spokojnie wyjaśnić wątpliwości, a dopiero później zdecydować o sesji." />
   </main>
 </BaseLayout>

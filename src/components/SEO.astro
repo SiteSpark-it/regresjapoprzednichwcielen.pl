@@ -1,6 +1,6 @@
 ---
 import { siteData } from "@/content/siteData";
-import { breadcrumbSchema, organizationSchema, personSchema, type BreadcrumbItem } from "@/content/schema";
+import { breadcrumbSchema, publisherSchema, websiteSchema, type BreadcrumbItem } from "@/content/schema";
 
 interface Props {
   title: string;
@@ -12,6 +12,9 @@ interface Props {
   schema?: unknown[];
   breadcrumbs?: BreadcrumbItem[];
   noindex?: boolean;
+  ogType?: "website" | "article";
+  publishedAt?: string;
+  updatedAt?: string;
 }
 
 const {
@@ -23,35 +26,41 @@ const {
   ogImage = siteData.ogImage,
   schema = [],
   breadcrumbs = [],
-  noindex = false
+  noindex = false,
+  ogType = "website",
+  publishedAt,
+  updatedAt
 } = Astro.props;
 
 const absoluteOgImage = new URL(ogImage, siteData.url).toString();
 const currentUrl = new URL(Astro.url.pathname, siteData.url).toString();
-const baseSchema = [
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: siteData.name,
-    url: siteData.url,
-    inLanguage: "pl-PL"
-  },
-  organizationSchema,
-  personSchema
-];
+const baseSchema = [websiteSchema, publisherSchema];
 
 const jsonLd = [
   ...baseSchema,
-  ...(!noindex ? [breadcrumbSchema(breadcrumbs, currentUrl)] : []),
+  ...(!noindex && breadcrumbs.length ? [breadcrumbSchema(breadcrumbs, currentUrl)] : []),
   ...schema
 ];
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": jsonLd.map((item) => {
+    if (item && typeof item === "object" && "@context" in item) {
+      const { "@context": context, ...entity } = item as Record<string, unknown>;
+      return entity;
+    }
+    return item;
+  })
+};
 ---
 
 <title>{title}</title>
 <meta name="description" content={description} />
+<meta name="author" content={siteData.author} />
 <link rel="canonical" href={canonical} />
-<meta name="robots" content={noindex ? "noindex,follow" : "index,follow,max-image-preview:large"} />
-<meta property="og:type" content="website" />
+<link rel="alternate" hreflang="pl-PL" href={canonical} />
+<link rel="alternate" hreflang="x-default" href={canonical} />
+<meta name="robots" content={noindex ? "noindex,follow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"} />
+<meta property="og:type" content={ogType} />
 <meta property="og:locale" content="pl_PL" />
 <meta property="og:site_name" content={siteData.name} />
 <meta property="og:title" content={ogTitle} />
@@ -60,8 +69,11 @@ const jsonLd = [
 <meta property="og:image" content={absoluteOgImage} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="686" />
+<meta property="og:image:alt" content={`${ogTitle} — ${siteData.name}`} />
+{ogType === "article" && publishedAt && <meta property="article:published_time" content={publishedAt} />}
+{ogType === "article" && updatedAt && <meta property="article:modified_time" content={updatedAt} />}
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={ogTitle} />
 <meta name="twitter:description" content={ogDescription} />
 <meta name="twitter:image" content={absoluteOgImage} />
-<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />

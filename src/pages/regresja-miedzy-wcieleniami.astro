@@ -10,12 +10,12 @@ import { siteData } from "@/content/siteData";
 
 const title = "Regresja między wcieleniami — czym różni się od PLR?";
 const description =
-  "Regresja między wcieleniami: czym jest, czym różni się od regresji poprzednich wcieleń i jak rozumieć ją duchowo oraz symbolicznie.";
+  "Regresja między wcieleniami: czym różni się od PLR, jakie pytania porusza i jak rozumieć doświadczenie duchowo lub symbolicznie, bez obietnic.";
 const breadcrumbs = [{ label: "Regresja między wcieleniami" }];
 const pageFaq = pageFaqs.betweenLives;
 ---
 
-<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, articleSchema({ title, description, url: `${siteData.url}/regresja-miedzy-wcieleniami/` }), createFaqSchema(pageFaq)]}>
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} ogType="article" publishedAt="2026-07-08" updatedAt="2026-07-10" schema={[serviceSchema, articleSchema({ title, description, url: `${siteData.url}/regresja-miedzy-wcieleniami/`, publishedAt: "2026-07-08", updatedAt: "2026-07-10" }), createFaqSchema(pageFaq)]}>
   <main>
     <section class="subpage-hero pb-20 text-ink">
       <Breadcrumbs items={breadcrumbs} />

@@ -4,7 +4,8 @@ import CTASection from "@/components/CTASection.astro";
 import FAQ from "@/components/FAQ.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { faqItems } from "@/content/faqItems";
-import { faqSchema, serviceSchema } from "@/content/schema";
+import { faqSchema, serviceSchema, webPageSchema } from "@/content/schema";
+import { siteData } from "@/content/siteData";
 
 const title = "FAQ — regresja poprzednich wcieleń, PLR i Brama Dusz LBL";
 const description =
@@ -12,7 +13,7 @@ const description =
 const breadcrumbs = [{ label: "FAQ" }];
 ---
 
-<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, faqSchema]}>
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[webPageSchema({ name: title, description, url: `${siteData.url}/faq/` }), serviceSchema, faqSchema]}>
   <main>
     <section class="subpage-hero pb-16 text-ink">
       <Breadcrumbs items={breadcrumbs} />
@@ -23,7 +24,11 @@ const breadcrumbs = [{ label: "FAQ" }];
         </p>
       </div>
     </section>
-    <FAQ items={faqItems} />
-    <CTASection title="Masz pytanie przed sesją?" text="Przejdź do Instytutu Regresji i sprawdź aktualną formę kontaktu. Decyzję o sesji możesz podjąć spokojnie, bez presji." />
+    <FAQ
+      items={faqItems}
+      title="Najczęstsze pytania i odpowiedzi"
+      intro="Odpowiedzi są celowo konkretne: wyjaśniają przebieg, granice, przygotowanie, bezpieczeństwo i różnice między PLR a pracą między wcieleniami."
+    />
+    <CTASection title="Nie znalazłeś odpowiedzi na swoje pytanie?" text="Napisz przez formularz na tej stronie albo wybierz telefon, WhatsApp lub email. Najpierw możesz wyjaśnić wątpliwości, a dopiero później zdecydować o sesji." />
   </main>
 </BaseLayout>

@@ -10,12 +10,12 @@ import { siteData } from "@/content/siteData";
 
 const title = "Past life regression po polsku — co oznacza PLR?";
 const description =
-  "Past life regression po polsku: czym jest PLR, jak rozumieć regresję poprzednich wcieleń i czym różni się od pracy LBL.";
+  "Past life regression po polsku: czym jest sesja PLR, jak wygląda hipnoza poprzednich wcieleń i czym różni się od LBL. Przeczytaj przed konsultacją.";
 const breadcrumbs = [{ label: "Past life regression po polsku" }];
 const pageFaq = pageFaqs.englishTerm;
 ---
 
-<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schema={[serviceSchema, articleSchema({ title, description, url: `${siteData.url}/past-life-regression-po-polsku/` }), createFaqSchema(pageFaq)]}>
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} ogType="article" publishedAt="2026-07-08" updatedAt="2026-07-10" schema={[serviceSchema, articleSchema({ title, description, url: `${siteData.url}/past-life-regression-po-polsku/`, publishedAt: "2026-07-08", updatedAt: "2026-07-10" }), createFaqSchema(pageFaq)]}>
   <main>
     <section class="subpage-hero pb-20 text-ink">
       <Breadcrumbs items={breadcrumbs} />
