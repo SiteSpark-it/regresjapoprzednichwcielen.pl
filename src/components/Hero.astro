@@ -10,7 +10,7 @@ interface Props {
 const { title, subtitle, image = "/assets/hero-gateway.webp" } = Astro.props;
 ---
 
-<section class="relative isolate overflow-hidden bg-vellum text-ink lg:min-h-[650px]">
+<section class="relative isolate overflow-hidden bg-vellum text-ink">
   <img
     class="absolute inset-0 h-full w-full object-cover"
     src={image}
@@ -27,49 +27,49 @@ const { title, subtitle, image = "/assets/hero-gateway.webp" } = Astro.props;
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_67%_42%,rgba(255,201,40,0.44),transparent_25rem)]"></div>
   <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-vellum to-transparent"></div>
 
-  <div class="container-wide relative grid items-center gap-8 pb-10 pt-24 md:pb-14 lg:min-h-[650px] lg:pb-8 lg:pt-24 xl:grid-cols-[minmax(0,1fr)_370px] xl:gap-9">
-    <div class="max-w-3xl py-8 md:py-12 lg:py-10">
-      <div class="mb-6 flex items-center gap-4 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-gold sm:text-xs">
+  <div class="container-wide relative grid items-center gap-7 pb-8 pt-20 md:pb-10 md:pt-24 lg:pb-10 lg:pt-24 xl:grid-cols-[minmax(0,1fr)_360px] xl:gap-8">
+    <div class="max-w-3xl py-5 md:py-8 lg:py-9">
+      <div class="mb-5 flex items-center gap-4 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-gold sm:text-xs">
         <span class="h-px w-10 bg-gold-fill sm:w-14"></span>
-        spokojna praca z historią wewnętrzną
+        regresja PLR i LBL w Polsce
       </div>
-      <h1 class="text-balance max-w-3xl font-serif text-[2.55rem] leading-[1.04] text-ink sm:text-5xl md:text-[3.55rem] lg:text-[3.85rem] xl:text-[4.35rem]">{title}</h1>
-      <p class="mt-6 max-w-2xl text-base leading-8 text-graphite/82 md:text-lg lg:text-[1.15rem]">{subtitle}</p>
-      <p class="mt-5 max-w-xl border-l-2 border-gold-fill pl-4 text-base font-semibold leading-7 text-ink/86">
-        Jeśli temat wraca w Tobie od dłuższego czasu, zacznij od krótkiej konsultacji. Jedna wiadomość wystarczy, żeby sprawdzić najbliższy krok.
+      <h1 class="text-balance max-w-3xl font-serif text-[2.25rem] leading-[1.04] text-ink sm:text-5xl md:text-[3.2rem] lg:text-[3.55rem] xl:text-[3.95rem]">{title}</h1>
+      <p class="mt-5 max-w-2xl text-base leading-8 text-graphite/82 md:text-lg">{subtitle}</p>
+      <p class="mt-4 max-w-2xl border-l-2 border-gold-fill pl-4 text-base font-semibold leading-7 text-ink/86">
+        Jeżeli wraca do Ciebie relacja, sen, emocja albo pytanie „kim byłem w poprzednim wcieleniu”, zacznij od krótkiej wiadomości. Nie musisz mieć gotowej historii.
       </p>
-      <div class="mt-8 grid grid-cols-1 gap-3 min-[380px]:grid-cols-2 sm:flex sm:flex-row">
+      <div class="mt-7 grid grid-cols-1 gap-3 min-[380px]:grid-cols-2 sm:flex sm:flex-row">
         <a class="btn-primary" href={siteData.cta.url} data-track="hero-consultation">
-          {siteData.cta.label}
+          Umów konsultację
         </a>
         <a class="btn-secondary" href={siteData.contact.emailHref} data-track="hero-email">
-          Napisz email
+          Napisz na email
         </a>
       </div>
-      <dl class="mt-8 hidden max-w-3xl gap-5 border-y border-gold-fill/25 py-4 text-sm text-graphite/74 md:grid md:grid-cols-3">
+      <dl class="mt-6 hidden max-w-3xl gap-3 border-y border-gold-fill/25 py-4 text-sm text-graphite/74 md:grid md:grid-cols-3">
         <div>
           <dt class="font-semibold uppercase tracking-[0.18em] text-gold">Forma</dt>
-          <dd class="mt-2 leading-6">kontakt przez tę stronę, email, telefon lub WhatsApp</dd>
+          <dd class="mt-2 leading-6">online, telefon, WhatsApp lub formularz</dd>
         </div>
         <div>
-          <dt class="font-semibold uppercase tracking-[0.18em] text-gold">Podejście</dt>
-          <dd class="mt-2 leading-6">duchowe, symboliczne albo psychologiczno-duchowe</dd>
+          <dt class="font-semibold uppercase tracking-[0.18em] text-gold">Sesje</dt>
+          <dd class="mt-2 leading-6">PLR, regresja poprzednich wcieleń i LBL</dd>
         </div>
         <div>
-          <dt class="font-semibold uppercase tracking-[0.18em] text-gold">Bez presji</dt>
-          <dd class="mt-2 leading-6">bez obietnic leczenia i bez narzucania interpretacji</dd>
+          <dt class="font-semibold uppercase tracking-[0.18em] text-gold">Kontakt</dt>
+          <dd class="mt-2 leading-6">{siteData.contact.phone}</dd>
         </div>
       </dl>
     </div>
 
     <aside class="threshold-panel hidden p-5 md:p-6 xl:block xl:self-center" aria-label="Kontakt w sprawie sesji">
       <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">najprostszy krok</p>
-      <h2 class="mt-4 font-serif text-2xl leading-tight text-ink md:text-3xl">Napisz krótko. Resztę doprecyzujesz w rozmowie.</h2>
+      <h2 class="mt-4 font-serif text-2xl leading-tight text-ink md:text-3xl">Krótka konsultacja zamiast kolejnych domysłów.</h2>
       <p class="mt-4 text-sm leading-7 text-graphite/72">
         Nie musisz opisywać całej historii. Wystarczy temat: relacja, sen, emocja, powracający wzorzec albo pytanie o sens sesji.
       </p>
       <ul class="mt-5 grid gap-2 text-sm font-semibold text-ink/82">
-        <li class="flex gap-2"><span class="text-gold">01</span> kontakt bez przekierowania na inną stronę</li>
+        <li class="flex gap-2"><span class="text-gold">01</span> kontakt bezpośrednio z tej strony</li>
         <li class="flex gap-2"><span class="text-gold">02</span> telefon, WhatsApp, email albo formularz</li>
         <li class="flex gap-2"><span class="text-gold">03</span> spokojne ustalenie, czy sesja pasuje do tematu</li>
       </ul>
@@ -83,7 +83,7 @@ const { title, subtitle, image = "/assets/hero-gateway.webp" } = Astro.props;
           <span class="relative mt-1 block text-sm text-gold">{siteData.contact.email}</span>
         </a>
         <a class="btn-primary" href={siteData.cta.url} data-track="hero-card-consultation">
-          <span class="relative">Zapytaj o konsultację</span>
+          <span class="relative">Umów konsultację</span>
         </a>
       </div>
       <p class="mt-5 text-xs leading-6 text-graphite/78">

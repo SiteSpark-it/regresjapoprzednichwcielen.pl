@@ -44,27 +44,27 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "Czy PLR i LBL oznaczają to samo?",
       answer:
-        "Nie. PLR skupia się głównie na poprzednich wcieleniach. LBL, czyli Life Between Lives, odnosi się do pracy z przestrzenią między wcieleniami. Brama Dusz LBL jest autorską metodą inspirowaną publikacjami dr. Michaela Newtona, nie oficjalną usługą MNI."
+        "Nie. PLR skupia się głównie na poprzednich wcieleniach. LBL, czyli Life Between Lives, odnosi się do pracy z przestrzenią między wcieleniami. W praktyce PLR pomaga wejść w historię, a LBL może poszerzyć ją o sens, relacje duszy i integrację doświadczenia."
     },
     {
       question: "Dlaczego warto szukać polskiego opisu PLR?",
       answer:
-        "Wiele materiałów o past life regression jest po angielsku i bywa mocno sensacyjnych. Polski, spokojny opis pomaga zrozumieć temat bez presji, bez obietnic i bez mylenia pracy duchowej z leczeniem, diagnozą albo oficjalną psychoterapią."
+        "Wiele materiałów o past life regression jest po angielsku i bywa mocno sensacyjnych. Polski, spokojny opis pomaga zrozumieć temat bez presji, bez obietnic i bez mylenia pracy duchowej z leczeniem, diagnozą albo psychoterapią kliniczną."
     }
   ],
   gate: [
     {
-      question: "Czym Brama Dusz LBL różni się od zwykłej sesji PLR?",
+      question: "Czym Regresja LBL różni się od zwykłej sesji PLR?",
       answer:
-        "PLR zwykle koncentruje się na historii poprzedniego życia. Brama Dusz LBL może obejmować także symboliczne przejście i pracę z doświadczeniem między wcieleniami. To autorska metoda regresji duchowej, prowadzona z ostrożnym językiem i bez obietnic gotowych odpowiedzi."
+        "PLR zwykle koncentruje się na historii poprzedniego życia. Regresja LBL może obejmować także symboliczne przejście i pracę z doświadczeniem między wcieleniami. To pogłębiona forma regresji duchowej, prowadzona z ostrożnym językiem i bez obietnic gotowych odpowiedzi."
     },
     {
-      question: "Czy Brama Dusz LBL jest oficjalną usługą The Michael Newton Institute?",
+      question: "Czy warto zaczynać od PLR przed LBL?",
       answer:
-        "Nie. Brama Dusz LBL jest autorską metodą inspirowaną publikacjami dr. Michaela Newtona. Nie jest oficjalną usługą The Michael Newton Institute, a użycie nazwy Life Between Lives i skrótu LBL ma charakter informacyjny."
+        "Często tak, bo poprzednie wcielenie daje konkretny punkt wejścia: scenę, relację, ciało, emocję albo decyzję. Dopiero później łatwiej przejść do pracy LBL, czyli pytań o przestrzeń między wcieleniami, sens doświadczeń i szerszą perspektywę duszy."
     },
     {
-      question: "Dla kogo może być Brama Dusz LBL?",
+      question: "Dla kogo może być Regresja LBL?",
       answer:
         "Dla osób, które interesuje nie tylko historia poprzedniego wcielenia, ale też szerszy sens relacji, przejść, powtarzających się wzorców i duchowej perspektywy. Nadal jest to praca rozwojowa, a nie leczenie ani obietnica konkretnego przeżycia."
     }
@@ -90,7 +90,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "Kim jest Maciej Maślanka w kontekście regresji?",
       answer:
-        "Maciej Maślanka pracuje z regresją duchową, regresją poprzednich wcieleń oraz autorską metodą Brama Dusz LBL. Ukończył szkolenia z regresji i hipnozy regresyjnej, studiuje psychologię w Warszawie i rozwija się dalej w obszarze pracy inspirowanej LBL."
+        "Maciej Maślanka pracuje z regresją duchową, regresją poprzednich wcieleń oraz LBL. Ukończył szkolenia z regresji i hipnozy regresyjnej, studiuje psychologię w Warszawie i rozwija się dalej w obszarze pracy z doświadczeniem wewnętrznym, symbolami i integracją psychologiczno-duchową."
     },
     {
       question: "Czy sesje są opisywane jako terapia kliniczna?",
@@ -107,7 +107,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "Od którego tekstu w bazie wiedzy najlepiej zacząć?",
       answer:
-        "Jeśli temat jest nowy, najlepiej zacząć od wyjaśnienia, czym jest regresja poprzednich wcieleń, a potem przejść do opisu przebiegu sesji PLR. Dopiero później warto czytać o Brama Dusz LBL i regresji między wcieleniami."
+        "Jeśli temat jest nowy, najlepiej zacząć od wyjaśnienia, czym jest regresja poprzednich wcieleń, a potem przejść do opisu przebiegu sesji PLR. Dopiero później warto czytać o regresji LBL i regresji między wcieleniami."
     },
     {
       question: "Czy teksty pomagają przygotować się do sesji?",
@@ -134,7 +134,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "Dlaczego serwis poleca Macieja Maślankę?",
       answer:
-        "Rekomendacja wynika z doświadczenia sposobu prowadzenia: spokojnego języka, szacunku dla granic i braku tonu guru. Serwis opisuje jego kwalifikacje ostrożnie oraz nie sugeruje oficjalnej certyfikacji The Michael Newton Institute. Decyzję o konsultacji każdy podejmuje samodzielnie."
+        "Rekomendacja wynika z doświadczenia sposobu prowadzenia: spokojnego języka, szacunku dla granic i braku tonu guru. Ważne jest też to, że kontakt można zacząć zwyczajnie: od krótkiej wiadomości, pytania o temat, formę sesji i najbliższy możliwy krok."
     }
   ],
   contact: [
@@ -151,7 +151,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "Czy mogę najpierw zapytać o właściwą formę sesji?",
       answer:
-        "Tak. Nie trzeba od razu wiedzieć, czy lepsza będzie sesja PLR, Brama Dusz LBL czy spokojna rozmowa wstępna. Możesz opisać temat jednym zdaniem, a dalszy kierunek można doprecyzować przez kontakt na tej stronie lub w Instytucie Regresji."
+        "Tak. Nie trzeba od razu wiedzieć, czy lepsza będzie sesja PLR, regresja LBL czy spokojna rozmowa wstępna. Możesz opisać temat jednym zdaniem, a dalszy kierunek można doprecyzować przez kontakt na tej stronie lub w Instytucie Regresji."
     }
   ]
 };

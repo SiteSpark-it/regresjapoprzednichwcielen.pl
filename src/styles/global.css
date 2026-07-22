@@ -4,7 +4,7 @@
 
 :root {
   color-scheme: light;
-  --page-bg: #fff9dd;
+  --page-bg: #fff7d2;
   --ink: #19150c;
 }
 
@@ -18,9 +18,9 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at 12% 0%, rgba(255, 214, 82, 0.52), transparent 31rem),
-    radial-gradient(circle at 88% 12%, rgba(255, 242, 168, 0.72), transparent 26rem),
-    linear-gradient(180deg, #fffef7 0%, var(--page-bg) 48%, #ffefc7 100%);
+    radial-gradient(circle at 12% 0%, rgba(255, 218, 82, 0.42), transparent 28rem),
+    radial-gradient(circle at 88% 12%, rgba(255, 246, 178, 0.66), transparent 24rem),
+    linear-gradient(180deg, #fffef7 0%, var(--page-bg) 48%, #fff0bb 100%);
   color: var(--ink);
   font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
   text-rendering: optimizeLegibility;
@@ -31,7 +31,7 @@ body {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 78% 18%, rgba(255, 214, 82, 0.56), transparent 24rem),
+    radial-gradient(circle at 78% 18%, rgba(255, 214, 82, 0.48), transparent 22rem),
     radial-gradient(circle at 16% 0%, rgba(255, 247, 191, 0.9), transparent 25rem),
     linear-gradient(135deg, #fffdf4 0%, #fff4bc 52%, #ffe49a 100%);
 }
@@ -112,7 +112,7 @@ summary:focus-visible {
 }
 
 .container-wide {
-  width: min(calc(100% - 2rem), 1360px);
+  width: min(calc(100% - 2rem), 1280px);
   margin-inline: auto;
 }
 
@@ -129,7 +129,7 @@ summary:focus-visible {
 
 .threshold-panel {
   background:
-    linear-gradient(145deg, rgba(255, 253, 244, 0.96), rgba(255, 229, 148, 0.78)),
+    linear-gradient(145deg, rgba(255, 253, 244, 0.98), rgba(255, 232, 143, 0.84)),
     rgba(255, 253, 244, 0.9);
   border: 1px solid rgba(245, 181, 31, 0.62);
   box-shadow: 0 34px 90px rgba(156, 95, 0, 0.2);
@@ -167,7 +167,7 @@ summary:focus-visible {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #ffd966 0%, #f5b51f 52%, #e99a00 100%);
+  background: linear-gradient(135deg, #ffe789 0%, #f7be24 52%, #e99a00 100%);
   color: #1e1608;
   border: 1px solid rgba(156, 95, 0, 0.26);
   box-shadow: 0 20px 44px rgba(245, 181, 31, 0.32);
@@ -208,7 +208,7 @@ summary:focus-visible {
 }
 
 .btn-secondary {
-  background: rgba(255, 253, 244, 0.82);
+  background: rgba(255, 253, 244, 0.9);
   color: #9c5f00;
   border: 1px solid rgba(156, 95, 0, 0.22);
 }
@@ -284,7 +284,17 @@ summary:focus-visible {
   }
 
   .container-wide {
-    width: min(calc(100% - 6rem), 1360px);
+    width: min(calc(100% - 5rem), 1280px);
+  }
+}
+
+@media (min-width: 1920px) {
+  .container-page {
+    width: min(calc(100% - 8rem), 1180px);
+  }
+
+  .container-wide {
+    width: min(calc(100% - 8rem), 1280px);
   }
 }
 

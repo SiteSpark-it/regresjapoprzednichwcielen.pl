@@ -3,13 +3,13 @@ import LogoMark from "@/components/LogoMark.astro";
 import { navigation, siteData } from "@/content/siteData";
 ---
 
-<header class="absolute inset-x-0 top-0 z-30 border-b border-gold-fill/24 bg-warm-white/96 text-ink shadow-[0_12px_36px_rgba(126,82,0,0.08)] md:bg-warm-white/82 md:backdrop-blur-md">
-  <nav class="container-wide flex min-h-[4.5rem] items-center justify-between gap-4" aria-label="Główna nawigacja">
+<header class="absolute inset-x-0 top-0 z-30 border-b border-gold-fill/24 bg-warm-white/96 text-ink shadow-[0_12px_36px_rgba(126,82,0,0.08)] md:bg-warm-white/88 md:backdrop-blur-md">
+  <nav class="container-wide flex min-h-[4.25rem] items-center justify-between gap-4" aria-label="Główna nawigacja">
     <a href="/" class="flex min-w-0 items-center gap-3" aria-label={`${siteData.name} - strona główna`} data-track="header-logo-home">
       <span class="grid h-11 w-11 shrink-0 place-items-center border border-gold-fill/80 bg-lemon text-gold shadow-[0_14px_30px_rgba(245,181,31,0.22)] sm:h-12 sm:w-12" aria-hidden="true">
         <LogoMark class="h-8 w-8 sm:h-9 sm:w-9" />
       </span>
-      <span class="max-w-[11rem] text-[0.82rem] font-semibold leading-tight tracking-wide sm:max-w-48 sm:text-sm">{siteData.name}</span>
+      <span class="max-w-[11rem] text-[0.82rem] font-semibold leading-tight tracking-wide text-ink sm:max-w-48 sm:text-sm">{siteData.name}</span>
     </a>
 
     <div class="hidden items-center gap-4 xl:flex 2xl:gap-5">
@@ -31,7 +31,7 @@ import { navigation, siteData } from "@/content/siteData";
         href={siteData.cta.url}
         data-track="header-consultation"
       >
-        {siteData.cta.label}
+        Umów konsultację
       </a>
     </div>
 
@@ -49,7 +49,7 @@ import { navigation, siteData } from "@/content/siteData";
             ))
           }
           <a class="btn-primary mt-2 px-4 py-3 text-sm" href={siteData.cta.url} data-track="mobile-menu-consultation">
-            {siteData.cta.label}
+            Umów konsultację
           </a>
           <a class="btn-secondary px-4 py-3 text-sm" href={siteData.contact.emailHref} data-track="mobile-menu-email">
             Napisz email

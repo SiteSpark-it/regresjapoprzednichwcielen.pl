@@ -901,7 +901,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
       {
         heading: "Jak pytać o kwalifikacje",
         paragraphs: [
-          "Poproś o konkret: jakie szkolenia zostały ukończone, czego dotyczyły i jak osoba rozwija warsztat. Sformułowanie „w procesie dalszego rozwoju” jest uczciwsze niż sugerowanie oficjalnej certyfikacji, której nie można potwierdzić.",
+          "Poproś o konkret: jakie szkolenia zostały ukończone, czego dotyczyły i jak osoba rozwija warsztat. Warto też zapytać, jak prowadzący pracuje z granicami, trudną emocją i sytuacjami, w których lepiej odłożyć sesję albo wybrać inną formę wsparcia.",
           "Warto też sprawdzić, czy prowadzący rozróżnia sesję rozwojową od psychoterapii klinicznej i nie używa tytułów zawodowych bez formalnych podstaw."
         ]
       },

@@ -10,9 +10,9 @@ export const faqItems = [
       "Regresja poprzednich wcieleń to sesja rozwojowa i duchowa, w której osoba w stanie relaksu eksploruje obrazy, emocje, symbole i historie odbierane jako poprzednie życie lub znacząca opowieść wewnętrzna. Nie chodzi o sensację, ale o lepsze zrozumienie relacji, wzorców i doświadczeń."
   },
   {
-    question: "Czym różni się PLR od Bramy Dusz LBL?",
+    question: "Czym różni się PLR od regresji LBL?",
     answer:
-      "PLR zwykle skupia się na historii poprzedniego wcielenia: scenach, relacjach, emocjach i ważnych momentach. Brama Dusz LBL jest autorską metodą, która może prowadzić dalej: przez przejście, integrację i symboliczne doświadczenie przestrzeni między wcieleniami. Nie jest oficjalną usługą MNI."
+      "PLR zwykle skupia się na historii poprzedniego wcielenia: scenach, relacjach, emocjach i ważnych momentach. Regresja LBL idzie szerzej: może prowadzić przez doświadczenie przejścia, integrację i przestrzeń między wcieleniami. W praktyce konsultacja pomaga ustalić, od której formy najlepiej zacząć."
   },
   {
     question: "Czy sesja online ma sens?",
@@ -100,9 +100,9 @@ export const faqItems = [
       "Sesja duchowa nie zastępuje interwencji kryzysowej, leczenia ani psychoterapii klinicznej. Przy silnej destabilizacji, braku snu, wpływie substancji albo trudnościach wymagających opieki specjalistycznej regresję lepiej odłożyć. W konsultacji warto opisać aktualną sytuację i w razie wątpliwości skorzystać z właściwej pomocy."
   },
   {
-    question: "Czy to jest oficjalna sesja Life Between Lives The Michael Newton Institute?",
+    question: "Czy w Instytucie Regresji można zapytać o LBL?",
     answer:
-      "Nie. Ta strona i metoda Brama Dusz LBL nie są oficjalną usługą The Michael Newton Institute. Nazwy Life Between Lives i LBL są używane informacyjnie. Odwołania do dr. Michaela Newtona dotyczą inspiracji publikacjami."
+      "Tak. W konsultacji można zapytać zarówno o regresję poprzednich wcieleń, jak i o LBL. Nie musisz samodzielnie wybierać metody przed pierwszym kontaktem. Wystarczy opisać temat: relację, sen, emocję, powtarzający się wzorzec albo pytanie o sens, a dalszy kierunek można ustalić w rozmowie."
   }
 ];
 
@@ -125,7 +125,7 @@ export const snippetAnswers = [
   {
     question: "Czym różni się PLR od LBL?",
     answer:
-      "PLR skupia się głównie na poprzednim wcieleniu: historii, relacjach, emocjach i kluczowych scenach. LBL odnosi się do pracy z przestrzenią między wcieleniami. Brama Dusz LBL jest autorską metodą inspirowaną publikacjami dr. Michaela Newtona, ale nie oficjalną usługą MNI ani obietnicą konkretnego doświadczenia."
+      "PLR skupia się głównie na poprzednim wcieleniu: historii, relacjach, emocjach i kluczowych scenach. LBL odnosi się do pracy z przestrzenią między wcieleniami, czyli do szerszej perspektywy duszy, sensu doświadczeń, relacji i wyborów. W praktyce konsultacja pomaga ustalić, od czego najlepiej zacząć."
   },
   {
     question: "Czy regresja działa online?",

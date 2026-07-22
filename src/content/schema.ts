@@ -60,7 +60,7 @@ export const personSchema = {
     "@id": `${siteData.organizationUrl}/#organization`
   },
   description:
-    "Praktyk regresji duchowej, studiujący psychologię w Warszawie, pracujący z regresją poprzednich wcieleń i autorską metodą Brama Dusz LBL."
+    "Praktyk regresji duchowej, studiujący psychologię w Warszawie, pracujący z regresją poprzednich wcieleń, LBL i integracją psychologiczno-duchową."
 };
 
 export const serviceSchema = {

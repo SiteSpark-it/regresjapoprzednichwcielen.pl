@@ -7,7 +7,7 @@ export const siteData = {
   practitioner: "Maciej Maślanka",
   organization: "Instytut Regresji",
   organizationUrl: "https://instytutregresji.pl",
-  tagline: "Regresja poprzednich wcieleń prowadzona spokojnie, z szacunkiem do emocji, symboli i historii wewnętrznej.",
+  tagline: "Regresja poprzednich wcieleń i LBL prowadzona spokojnie, z uważnością na emocje, symbole, relacje i historię duszy.",
   cta: {
     label: "Zapytaj o konsultację",
     secondaryLabel: "Zobacz, jak wygląda sesja",
@@ -36,15 +36,15 @@ export const siteData = {
   },
   ogImage: "/assets/og-image.jpg",
   disclaimer:
-    "Strona/metoda nie jest oficjalną usługą The Michael Newton Institute. Nazwy Life Between Lives i LBL są używane wyłącznie informacyjnie.",
+    "Sesje regresji poprzednich wcieleń i LBL mają charakter rozwojowy oraz duchowy.",
   disclaimerNote:
-    "Odwołania do publikacji dr. Michaela Newtona i pojęcia LBL mają charakter informacyjny. Sesja ma charakter rozwojowy i duchowy; nie zastępuje diagnozy, leczenia, psychoterapii klinicznej ani konsultacji medycznej."
+    "Nie zastępują diagnozy, leczenia, psychoterapii klinicznej ani konsultacji medycznej. Przy silnym kryzysie lub trudnościach zdrowotnych pierwszeństwo ma właściwa pomoc specjalistyczna."
 };
 
 export const navigation = [
   { label: "Czym jest PLR", href: "/czym-jest-regresja-poprzednich-wcielen/" },
   { label: "Przebieg sesji", href: "/regresja-do-poprzedniego-zycia/" },
-  { label: "Brama Dusz LBL", href: "/brama-dusz-lbl/" },
+  { label: "Regresja LBL", href: "/brama-dusz-lbl/" },
   { label: "Baza wiedzy", href: "/baza-wiedzy/" },
   { label: "FAQ", href: "/faq/" },
   { label: "O prowadzącym", href: "/o-macieju/" }
@@ -62,7 +62,7 @@ export const prioritySitelinks = [
   { title: "Czym jest regresja poprzednich wcieleń?", href: "/czym-jest-regresja-poprzednich-wcielen/" },
   { title: "Jak wygląda sesja PLR?", href: "/regresja-do-poprzedniego-zycia/" },
   { title: "Past life regression po polsku", href: "/past-life-regression-po-polsku/" },
-  { title: "Brama Dusz LBL", href: "/brama-dusz-lbl/" },
+  { title: "Regresja LBL", href: "/brama-dusz-lbl/" },
   { title: "Regresja między wcieleniami", href: "/regresja-miedzy-wcieleniami/" },
   { title: "Baza wiedzy", href: "/baza-wiedzy/" },
   { title: "FAQ przed sesją", href: "/faq/" },
